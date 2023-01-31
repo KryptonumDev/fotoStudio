@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --bg: #000000;
     --color: #ffffff;
-    --hamburger-color: #F2F0E3;
+    --accent-color: #F2F0E3;
   }
   body {
     background-color: var(--bg);
@@ -18,10 +18,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    min-width: 320px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     font-family: 'Argent CF', serif;
+    color: var(--accent-color);
   }
   svg {
     vertical-align: top;
@@ -35,6 +38,16 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+  .scrollSnap {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow: auto;
+  }
+  .sec {
+    height: 100vh;
+    border-top: 5px solid #ffffff;
+    scroll-snap-align: start;
   }
 `
 
