@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url(../resources/fonts/Montserrat-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url(../resources/fonts/Montserrat-SemiBold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Argent CF";
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+  src: url(../resources/fonts/ArgentCF-Light.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Argent CF";
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+  src: url(../resources/fonts/ArgentCF-ExtraBold.woff2) format("woff2");
+}
