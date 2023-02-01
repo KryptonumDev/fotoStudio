@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { Logo } from "../atoms/Icons"
 
 const Nav = () => {
+  const navMenu = useRef();
+  const handleNavMenu = () => {
+    navMenu.current.classList.toggle('active');
+  }
+
   return (
     <StyledNav className="nav">
       <div className="max-width">
         <Link to="/">
           <Logo />
         </Link>
-        <input type="checkbox" id="navToggle" />
-        <div className="nav-links">
+        <div className="nav-links" ref={navMenu}>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/o-mnie">O mnie</Link></li>
@@ -20,24 +24,34 @@ const Nav = () => {
             <li><Link to="/kontakt">Kontakt</Link></li>
           </ul>
         </div>
-        <label htmlFor="navToggle" id="navToggle-btn">
+        <button id="navToggle" onClick={handleNavMenu}>
           <span></span>
           <span></span>
           <span></span>
-        </label>
+        </button>
       </div>
     </StyledNav>
   );
 }
 
 const StyledNav = styled.nav`
+  &::before {
+    content: '';
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(var(--bg),rgba(0,0,0,0));
+    z-index: -1;
+    pointer-events: none;
+  }
   position: fixed;
   z-index: 9;
   left: 0;
   top: 0;
   width: 100%;
   height: 122px;
-  background: linear-gradient(var(--bg),rgba(0,0,0,0));
   & > .max-width {
     display: flex;
     align-items: center;
@@ -54,17 +68,12 @@ const StyledNav = styled.nav`
     width: auto;
     height: 78px;
   }
-  input {
-    opacity: 0;
-    position: absolute;
-  }
-  #navToggle, #navToggle-btn {
+  #navToggle {
+    background-color: transparent;
+    border: none;
     display: none;
-  }
-  #navToggle-btn {
     padding: 17px 9.5px;
     margin-right: -9.5px;
-    cursor: pointer;
     span {
       display: block;
       width: 29px;
@@ -98,14 +107,14 @@ const StyledNav = styled.nav`
     svg {
       height: 50px
     }
-    #navToggle, #navToggle-btn {
+    #navToggle {
       display: block;
     }
-    #navToggle:checked + .nav-links {
+    .nav-links.active {
       opacity: 1;
       visibility: visible;
     }
-    #navToggle:checked ~ #navToggle-btn {
+    .nav-links.active + #navToggle {
       span:nth-child(1) {
         transform: translateY(6px) rotate(45deg);
       }
