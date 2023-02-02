@@ -1,14 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Hero from "../components/sections/HomeHero"
-import Hello from "../components/sections/HomeHello"
+import HomeHero from "../components/sections/HomeHero"
+import HomeHello from "../components/sections/HomeHello"
+import HomeLab from "../components/sections/HomeLab"
 
 const IndexPage = ({data}) => {
-  const {hero, hello} = data.home;
+  const {hero, hello, lab} = data.home;
   return (
     <div className="scrollSnap">
-      <Hero asset={{hero}}/>
-      <Hello asset={{hello}}/>
+      <HomeHero data={{hero}}/>
+      <HomeHello data={{hello}}/>
+      <HomeLab data={{lab}}/>
       <section className="sec"></section>
       <section className="sec"></section>
       <section className="sec"></section>
@@ -26,6 +28,10 @@ export const query = graphql`
         alt
       }
       hello {
+        gatsbyImageData(placeholder: NONE)
+        alt
+      }
+      lab {
         gatsbyImageData(placeholder: NONE)
         alt
       }

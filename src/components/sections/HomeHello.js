@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Button from "../atoms/Button";
 
-const Hello = ({asset}) => {
+const HomeHello = ({data}) => {
   return (
     <StyledHello className="hello sec">
       <div className="max-width">
@@ -18,28 +18,25 @@ const Hello = ({asset}) => {
             <p>Korzystam z&nbsp;nowoczesnego sprzętu i&nbsp;innowacyjnych rozwiązań, uważam jednak że to miłość do fotografowania tworzy dobre ujęcie.</p>
           </div>
         </header>
-        <GatsbyImage image={asset.hello.gatsbyImageData} alt={asset.hello.alt} className="hello-img" />
       </div>
+      <GatsbyImage image={data.hello.gatsbyImageData} alt={data.hello.alt} className="hello-img" />
     </StyledHello>
   );
 }
 
 const StyledHello = styled.section`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   & > .max-width {
+    min-height: inherit;
     display: flex;
     align-items: center;
     max-height: 1080px;
-    top: 50%;
-    transform: translateY(-50%);
-    position: relative;
   }
   .hello-header {
     display: flex;
-    h2 {
-      font-size: ${42/16}rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
     & > :nth-child(1) {
       margin-right: 60px;
     }
@@ -51,30 +48,33 @@ const StyledHello = styled.section`
       line-height: 1.58;
       letter-spacing: -0.022rem;
       &:not(:last-child) {
-        margin-bottom: 48px;
+        margin-bottom: ${24/19.2}vw;
       }
     }
   }
   .hello-img {
     position: absolute;
+    top: 0;
     right: 0;
     z-index: -1;
     max-width: 840px;
     max-height: 100%;
     margin-right: -22px;
     flex-shrink: 0;
+    margin-left: auto;
     img {
       object-position: top;
     }
   }
   @media only screen and (min-width: 1824px){
     .hello-img {
-      max-width: 840px;
-      margin-left: auto;
       margin-right: calc((100vw - 1780px) / 2 * -1);
     }
   }
-  @media only screen and (max-width: 1599px){
+  @media only screen and (max-width: 1499px){
+    .max-width {
+      max-width: calc(100% - 250px);
+    }
     .hello-header {
       display: block;
       h2 {
@@ -82,13 +82,10 @@ const StyledHello = styled.section`
       }
       & > :nth-child(1) {
         margin-right: 0;
-        margin-bottom: 82px;
+        margin-bottom: ${82/10.24}vh;
       }
       & > :nth-child(2) {
-        max-width: 376px;
-      }
-      p:not(:last-child) {
-        margin-bottom: 32px;
+        max-width: 443px;
       }
     }
     .hello-img {
@@ -105,11 +102,13 @@ const StyledHello = styled.section`
       }
     }
   }
-  @media only screen and (max-width: 599px){
-    > .max-width {
+  @media only screen and (max-width: 729px){
+    .max-width {
+      max-width: 100%;
       align-items: flex-end;
     }
     .hello-header {
+      margin-left: 0;
       h2 {
         position: absolute;
         right: 0;
@@ -126,6 +125,9 @@ const StyledHello = styled.section`
         max-width: 100%;
         margin-bottom: 22px;
       }
+      p {
+        font-size: 13px;
+      }
       p:not(:last-child) {
         margin-bottom: 11px;
       }
@@ -140,4 +142,4 @@ const StyledHello = styled.section`
   }
 `
  
-export default Hello;
+export default HomeHello;

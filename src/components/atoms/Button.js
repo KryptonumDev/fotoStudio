@@ -16,9 +16,10 @@ const StyledLink = styled(gatsbyLink)`
   display: inline-block;
   font-size: ${42/16}rem;
   font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
-  padding: ${24/10.8}vh ${120/19.2}vw;
+  padding: ${24/10.8}vh ${110/19.2}vw;
   max-width: 376px;
   letter-spacing: 0.03rem;
+  white-space: nowrap;
   font-family: "Argent CF", sans-serif;
   text-align: center;
   border: 1px solid var(--color);

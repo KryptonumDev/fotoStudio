@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Button from "../atoms/Button";
 
-const Hero = ({asset}) => {
+const HomeHero = ({data}) => {
   return (
     <StyledHero className="hero sec">
       <div className="max-width">
@@ -11,7 +11,7 @@ const Hero = ({asset}) => {
           <h1>Stwórzmy coś pięknego</h1>
           <Button link="/kontakt">Kontakt</Button>
         </div>
-        <GatsbyImage image={asset.hero.gatsbyImageData} alt={asset.hero.alt} className="hero-img" objectFit="contain" />
+        <GatsbyImage image={data.hero.gatsbyImageData} alt={data.hero.alt} className="hero-img" objectFit="contain" />
       </div>
     </StyledHero>
   );
@@ -20,6 +20,7 @@ const Hero = ({asset}) => {
 const StyledHero = styled.section`
   position: relative;
   .hero-copy {
+    position: relative;
     transform: translateY(50%);
     h1 {
       white-space: nowrap;
@@ -66,4 +67,4 @@ const StyledHero = styled.section`
   }
 `
  
-export default Hero;
+export default HomeHero;
