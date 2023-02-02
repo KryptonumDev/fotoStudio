@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .sec {
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
     scroll-snap-align: start;
   }
   .footer {
