@@ -51,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
   .scrollSnap {
     scroll-snap-type: y mandatory;
     height: 100vh;
+    height: 100dvh;
     overflow: auto;
   }
   .sec {
