@@ -38,13 +38,19 @@ const Nav = () => {
   return (
     <StyledNav className="nav">
       <div className="max-width">
-        <Link to="/" aria-label="Strona główna">
+        <Link to="/" aria-label="Strona główna" className="nav-logo">
           <Logo />
         </Link>
         <div className="nav-links" ref={navMenu}>
           <ul>
             {links.map((link, i) => (
-              <li key={i}><Link to={link.link} onClick={handleNavLink}>{link.text}</Link></li>
+              <li key={i}>
+                <Link to={link.link} onClick={handleNavLink}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 41 40" fill="#fff"><path d="M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z"/></svg>
+                  <span>{link.text}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 41 40" fill="#fff"><path d="M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z"/></svg>
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
@@ -85,11 +91,37 @@ const StyledNav = styled.nav`
   ul {
     list-style-type: none;
     a {
+      padding: 10px;
+      margin: -10px;
       font-weight: 600;
       letter-spacing: -0.023rem;
+      position: relative;
+      &:hover svg {
+        &:first-child {
+          transform: translate(-11px, 5.5px);
+        }
+        &:last-child {
+          transform: translate(11px, -5.5px);
+        }
+        opacity: 1;
+      }
+      svg {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s, transform .3s;
+        &:first-child {
+          bottom: 0;
+          left: 0;
+        }
+        &:last-child {
+          right: 0;
+          top: 0;
+        }
+      }
     }
   }
-  svg {
+  .nav-logo svg {
     width: auto;
     height: 78px;
   }
@@ -129,7 +161,7 @@ const StyledNav = styled.nav`
   }
   @media only screen and (max-width: 767px){
     height: 74px;
-    svg {
+    .nav-logo svg {
       height: 50px
     }
     #navToggle {
