@@ -20,17 +20,12 @@ const Hero = ({asset}) => {
 const StyledHero = styled.section`
   position: relative;
   .hero-copy {
-    position: absolute;
-    left: 22px;
-    right: 22px;
-    bottom: calc(50% - 74px);
     transform: translateY(50%);
-    z-index: 2;
     h1 {
       white-space: nowrap;
       writing-mode: vertical-rl;
       font-size: ${64/16}rem;
-      font-size: clamp(${42/16}rem, ${64/10.8}vh, ${64/16}rem);
+      font-size: clamp(${36/16}rem, ${64/10.8}vh, ${64/16}rem);
       letter-spacing: 0.03rem;
     }
     a {
@@ -40,10 +35,13 @@ const StyledHero = styled.section`
     }
   }
   .hero-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
     max-width: 1131px;
     margin: 42px ${80/19.2}vw auto auto;
     height: 100%;
-    display: block;
     img {
       object-position: top;
     }
@@ -59,14 +57,11 @@ const StyledHero = styled.section`
       h1 {
         margin-left: -11px;
       }
-      bottom: calc(50% - 74px);
       a {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
       }
-    }
-    .hero-img {
     }
   }
 `

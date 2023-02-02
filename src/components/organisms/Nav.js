@@ -3,10 +3,36 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { Logo } from "../atoms/Icons"
 
+const links = [
+  {
+    link: "/",
+    text: "Home",
+  },
+  {
+    link: "/o-mnie",
+    text: "O mnie",
+  },
+  {
+    link: "/portfolio",
+    text: "Portfolio",
+  },
+  {
+    link: "/cennik",
+    text: "Cennik",
+  },
+  {
+    link: "/kontakt",
+    text: "Kontakt",
+  },
+]
+
 const Nav = () => {
   const navMenu = useRef();
-  const handleNavMenu = () => {
+  const handleNavToggle = () => {
     navMenu.current.classList.toggle('active');
+  }
+  const handleNavLink = () => {
+    navMenu.current.classList.remove('active');
   }
 
   return (
@@ -17,14 +43,12 @@ const Nav = () => {
         </Link>
         <div className="nav-links" ref={navMenu}>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/o-mnie">O mnie</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/cennik">Cennik</Link></li>
-            <li><Link to="/kontakt">Kontakt</Link></li>
+            {links.map((link, i) => (
+              <li key={i}><Link to={link.link} onClick={handleNavLink}>{link.text}</Link></li>
+            ))}
           </ul>
         </div>
-        <button id="navToggle" onClick={handleNavMenu}>
+        <button id="navToggle" onClick={handleNavToggle}>
           <span></span>
           <span></span>
           <span></span>

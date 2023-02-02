@@ -48,11 +48,13 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-  .scrollSnap {
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    height: 100dvh;
-    overflow: auto;
+  @media only screen and (min-height: 570px){
+    .scrollSnap {
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      height: 100dvh;
+      overflow: auto;
+    }
   }
   .sec {
     overflow: hidden;
