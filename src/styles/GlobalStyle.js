@@ -9,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
   }
   :root {
     --bg: #000000;
-    --color: #ffffff;
-    --accent-color: #F2F0E3;
+    --white: #ffffff;
+    --color: #F2F0E3;
   }
   body {
     background-color: var(--bg);
@@ -24,7 +24,16 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     font-family: 'Argent CF', serif;
-    color: var(--accent-color);
+    color: var(--color);
+  }
+  button {
+    cursor: pointer;
+  }
+  input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
   }
   svg {
     vertical-align: top;
@@ -45,8 +54,11 @@ const GlobalStyle = createGlobalStyle`
     overflow: auto;
   }
   .sec {
+    overflow: hidden;
     height: 100vh;
-    border-top: 5px solid #ffffff;
+    scroll-snap-align: start;
+  }
+  .footer {
     scroll-snap-align: start;
   }
 `

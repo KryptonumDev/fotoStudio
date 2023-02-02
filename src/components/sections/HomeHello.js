@@ -1,7 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import Button from "../../atoms/Button";
+import Button from "../atoms/Button";
 
 const Hello = ({asset}) => {
   return (
@@ -47,7 +47,7 @@ const StyledHello = styled.section`
       max-width: 609px;
     }
     p {
-      font-size: ${24/16}rem;
+      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
       line-height: 1.58;
       letter-spacing: -0.022rem;
       &:not(:last-child) {
@@ -87,11 +87,8 @@ const StyledHello = styled.section`
       & > :nth-child(2) {
         max-width: 376px;
       }
-      p {
-        font-size: 1rem;
-        &:not(:last-child) {
-          margin-bottom: 32px;
-        }
+      p:not(:last-child) {
+        margin-bottom: 32px;
       }
     }
     .hello-img {
@@ -129,10 +126,8 @@ const StyledHello = styled.section`
         max-width: 100%;
         margin-bottom: 22px;
       }
-      p {
-        &:not(:last-child) {
-          margin-bottom: 11px;
-        }
+      p:not(:last-child) {
+        margin-bottom: 11px;
       }
     }
     .hello-img {

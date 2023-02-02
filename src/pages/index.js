@@ -1,25 +1,20 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/sections/Layout"
-import Nav from "../components/organisms/Nav"
-import Hero from "../components/sections/home/Hero"
-import Hello from "../components/sections/home/Hello"
+import Hero from "../components/sections/HomeHero"
+import Hello from "../components/sections/HomeHello"
 
 const IndexPage = ({data}) => {
   const {hero, hello} = data.home;
   return (
-    <Layout>
-      <Nav />
-      <div className="scrollSnap">
-        <Hero asset={{hero}}/>
-        <Hello asset={{hello}}/>
-        <section className="sec"></section>
-        <section className="sec"></section>
-        <section className="sec"></section>
-        <section className="sec"></section>
-        <section className="sec"></section>
-      </div>
-    </Layout>
+    <div className="scrollSnap">
+      <Hero asset={{hero}}/>
+      <Hello asset={{hello}}/>
+      <section className="sec"></section>
+      <section className="sec"></section>
+      <section className="sec"></section>
+      <section className="sec"></section>
+      <section className="sec"></section>
+    </div>
   )
 }
 
@@ -40,4 +35,4 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Foto Studio</title>

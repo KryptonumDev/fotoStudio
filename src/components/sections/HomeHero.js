@@ -1,7 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import Button from "../../atoms/Button";
+import Button from "../atoms/Button";
 
 const Hero = ({asset}) => {
   return (
@@ -11,20 +11,18 @@ const Hero = ({asset}) => {
           <h1>Stwórzmy coś pięknego</h1>
           <Button link="/kontakt">Kontakt</Button>
         </div>
-        <GatsbyImage image={asset.hero.gatsbyImageData} alt={asset.hero.alt} className="hero-img" />
+        <GatsbyImage image={asset.hero.gatsbyImageData} alt={asset.hero.alt} className="hero-img" objectFit="contain" />
       </div>
     </StyledHero>
   );
 }
 
 const StyledHero = styled.section`
-  & > .max-width {
-    position: relative;
-    overflow: hidden;
-  }
+  position: relative;
   .hero-copy {
     position: absolute;
-    left: 0;
+    left: 22px;
+    right: 22px;
     bottom: calc(50% - 74px);
     transform: translateY(50%);
     z-index: 2;
@@ -32,39 +30,36 @@ const StyledHero = styled.section`
       white-space: nowrap;
       writing-mode: vertical-rl;
       font-size: ${64/16}rem;
+      font-size: clamp(${42/16}rem, ${64/10.8}vh, ${64/16}rem);
       letter-spacing: 0.03rem;
     }
     a {
       position: absolute;
-      left: 200%;
+      left: 12%;
       bottom: 0;
     }
   }
   .hero-img {
-    width: 80%;
     max-width: 1131px;
-    margin-left: auto;
-    margin-right: 80px;
+    margin: 42px ${80/19.2}vw auto auto;
     height: 100%;
     display: block;
     img {
       object-position: top;
     }
   }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1399px){
     .hero-img {
-      margin-right: -100px;
-      margin-top: 122px;
+      margin-right: ${-(200/19.2)}vw;
+      margin-top: ${120/10.24}vh;
     }
   }
   @media only screen and (max-width: 767px) {
     .hero-copy{
       h1 {
-        font-size: ${42/16}rem;
         margin-left: -11px;
       }
       bottom: calc(50% - 74px);
-      width: 100%;
       a {
         position: absolute;
         left: 50%;
@@ -72,11 +67,6 @@ const StyledHero = styled.section`
       }
     }
     .hero-img {
-      width: calc(100% + 100px);
-      margin-right: -100px;
-      img {
-        margin-top: 74px;
-      }
     }
   }
 `

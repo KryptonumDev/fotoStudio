@@ -35,6 +35,7 @@ const Nav = () => {
 }
 
 const StyledNav = styled.nav`
+  color: var(--white);
   &::before {
     content: '';
     width: 100%;
@@ -78,7 +79,7 @@ const StyledNav = styled.nav`
       display: block;
       width: 29px;
       height: 2px;
-      background-color: var(--accent-color);
+      background-color: var(--color);
       &:not(:last-child){
         margin-bottom: 4px;
       }

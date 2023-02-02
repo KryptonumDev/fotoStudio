@@ -15,15 +15,17 @@ const Button = ({link, children}) => {
 const StyledLink = styled(gatsbyLink)`
   display: inline-block;
   font-size: ${42/16}rem;
+  font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
+  padding: ${24/10.8}vh ${120/19.2}vw;
+  max-width: 376px;
   letter-spacing: 0.03rem;
   font-family: "Argent CF", sans-serif;
-  padding: 21px 70px;
-  min-width: 376px;
   text-align: center;
   border: 1px solid var(--color);
   position: relative;
   svg {
     position: absolute;
+    transition: transform .3s;
     &:first-child {
       bottom: -6px;
       left: -6px;
@@ -32,6 +34,21 @@ const StyledLink = styled(gatsbyLink)`
       top: -6px;
       right: -6px;
     }
+  }
+  &:hover {
+    svg {
+      &:first-child {
+        transform: translate(6px, -6px);
+      }
+      &:last-child {
+        transform: translate(-6px, 6px);
+      }
+    }
+  }
+  @media only screen and (max-width: 767px){
+    font-size: ${24/16}rem;
+    min-width: auto;
+    padding: 12px 42px;
   }
 `
  
