@@ -38,7 +38,7 @@ const Nav = () => {
   return (
     <StyledNav className="nav">
       <div className="max-width">
-        <Link to="/">
+        <Link to="/" aria-label="Strona główna">
           <Logo />
         </Link>
         <div className="nav-links" ref={navMenu}>
@@ -48,7 +48,7 @@ const Nav = () => {
             ))}
           </ul>
         </div>
-        <button id="navToggle" onClick={handleNavToggle}>
+        <button id="navToggle" onClick={handleNavToggle} aria-label="Pokaż/Ukryj nawigację mobilną">
           <span></span>
           <span></span>
           <span></span>
