@@ -12,14 +12,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": `${__dirname}/src/resources/images/`
-      },
-      __key: "images"
-    },
-    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.API_DATOCMS,
