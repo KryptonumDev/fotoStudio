@@ -54,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
       height: 100vh;
       height: 100dvh;
       overflow: auto;
+      scroll-behavior: smooth;
     }
   }
   .sec {
@@ -68,6 +69,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 42px;
       font-weight: 800;
       letter-spacing: 0.03em;
+      line-height: 1.5;
       margin-bottom: 8px;
     }
   }

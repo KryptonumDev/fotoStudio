@@ -2,6 +2,7 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Button from "../atoms/Button";
+import ScrollDown from "../atoms/ScrollDown";
 
 const HomeHero = ({data}) => {
   return (
@@ -13,6 +14,7 @@ const HomeHero = ({data}) => {
         </div>
         <GatsbyImage image={data.hero.gatsbyImageData} alt={data.hero.alt} className="hero-img" objectFit="contain" />
       </div>
+      <ScrollDown />
     </StyledHero>
   );
 }

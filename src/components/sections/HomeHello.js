@@ -5,7 +5,7 @@ import Button from "../atoms/Button";
 
 const HomeHello = ({data}) => {
   return (
-    <StyledHello className="hello sec">
+    <StyledHello className="hello sec" id="czesc">
       <div className="max-width">
         <header className="hello-header">
           <div>
