@@ -63,7 +63,10 @@ const StyledNotFound = styled.section`
       white-space: nowrap;
       writing-mode: vertical-rl;
       animation: marquee 8s infinite linear;
-      font-size: min(${200/10.8}vh, ${100/16}rem);
+      font-size: ${200/10.8}vh;
+      @media only screen and (max-width: 449px){
+        font-size: ${150/10.8}vh;
+      }
       line-height: 1;
       font-family: "DM Serif Display", serif;
       &:nth-child(2){
@@ -73,7 +76,7 @@ const StyledNotFound = styled.section`
         margin-bottom: ${89/10.8}vh;
       }
     }
-
+    
   }
   @keyframes marquee {
     0% {
