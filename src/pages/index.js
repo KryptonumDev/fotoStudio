@@ -4,6 +4,7 @@ import HomeHero from "../components/sections/HomeHero"
 import HomeSlider from "../components/sections/HomeSlider"
 import HomeHello from "../components/sections/HomeHello"
 import HomeLab from "../components/sections/HomeLab"
+import Footer from "../components/organisms/Footer"
 
 const IndexPage = ({data}) => {
   const {hero, slider, hello, lab} = data.home;
@@ -13,7 +14,7 @@ const IndexPage = ({data}) => {
       <HomeSlider data={{slider}} />
       <HomeHello data={{hello}}/>
       <HomeLab data={{lab}}/>
-      <footer className="footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore explicabo accusantium culpa, similique autem possimus ipsam atque neque eveniet perferendis in! Facilis sunt molestias autem dicta fuga praesentium consequatur corrupti, laboriosam suscipit accusamus unde blanditiis vel minima velit numquam dolorum tenetur. Eligendi, magni fugit. Aliquid obcaecati autem ipsa delectus quidem? Veniam quos accusantium magnam aperiam consequuntur, inventore facere hic delectus fuga perspiciatis consectetur, illum repudiandae laborum numquam blanditiis! Doloremque ex saepe deserunt repellendus, temporibus dolor mollitia dolore voluptate quidem maiores minus non ut ducimus, sit quasi quaerat eligendi eius, et fugiat nihil? Obcaecati, commodi consequuntur iusto nesciunt sit esse ad ea! Quod veniam, molestias libero consectetur, architecto, repellendus modi at sapiente molestiae ipsa in. Earum sapiente distinctio in, minus, ullam, dicta quae atque fugiat expedita maiores nihil sequi consectetur? Error asperiores laborum non assumenda rerum nobis obcaecati ipsa eos odio fugiat ad in animi quo cum omnis officia vero similique architecto, perspiciatis magni debitis molestiae. Ab, consequuntur! Nam nulla quo pariatur asperiores, vel itaque dignissimos enim perferendis mollitia porro vero nisi cum ipsam molestiae obcaecati aliquid veritatis quam quidem tempora? Ratione, quam dignissimos quas ullam, iusto harum pariatur voluptatem reprehenderit exercitationem, dicta assumenda ipsam. Tenetur velit animi placeat id nihil?</footer>
+      <Footer />
     </div>
   )
 }
