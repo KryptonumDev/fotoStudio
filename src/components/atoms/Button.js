@@ -16,11 +16,12 @@ const StyledLink = styled(gatsbyLink)`
   display: inline-block;
   font-size: ${42/16}rem;
   font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
-  padding: ${24/10.8}vh ${110/19.2}vw;
+  padding: ${10/16}em ${42/16}em;
   max-width: 376px;
   letter-spacing: 0.03rem;
+  line-height: 1;
   white-space: nowrap;
-  font-family: "Argent CF", sans-serif;
+  font-family: 'DM Serif Display', serif;
   text-align: center;
   border: 1px solid var(--color);
   position: relative;
@@ -45,11 +46,6 @@ const StyledLink = styled(gatsbyLink)`
         transform: translate(-6px, 6px);
       }
     }
-  }
-  @media only screen and (max-width: 767px){
-    font-size: ${24/16}rem;
-    min-width: auto;
-    padding: 12px 42px;
   }
 `
  
