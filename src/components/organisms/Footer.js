@@ -14,7 +14,7 @@ const Footer = () => {
               <span>chrapekadam@gmail.com</span>
               <ArrowRight fill="#fff" />
             </a>
-            <a href="https://goo.gl/maps/NtLVBf6oZ9Qb2y5CA" target="_blank"><span>Al. Niepodległości 18, 98-100 Łask</span></a>
+            <a href="https://goo.gl/maps/NtLVBf6oZ9Qb2y5CA" target="_blank" rel="noreferrer"><span>Al. Niepodległości 18, 98-100 Łask</span></a>
             <p>
               <a href="tel:+48505190830"><span>505 190 830</span></a>
               &nbsp;|&nbsp;
@@ -22,10 +22,10 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer-social">
-            <a href="https://www.facebook.com/fotoadamchrapek/" target="_blank">
+            <a href="https://www.facebook.com/fotoadamchrapek/" target="_blank" rel="noreferrer">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/adam.chrapek" target="_blank">
+            <a href="https://www.instagram.com/adam.chrapek" target="_blank" rel="noreferrer">
               <InstagramIcon />
             </a>
           </div>
