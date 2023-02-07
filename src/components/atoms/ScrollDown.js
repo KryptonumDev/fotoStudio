@@ -4,7 +4,7 @@ import {ArrowDown} from "./Icons";
 
 const ScrollDown = ({href}) => {
   return (
-    <StyledArrow href={href} className="scrollDown">
+    <StyledArrow href={href} className="scrollDown" aria-hidden="true">
       <ArrowDown />
     </StyledArrow>
   );

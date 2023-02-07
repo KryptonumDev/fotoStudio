@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
     } 
     h2 {
-      font-size: ${42/8}vh;
+      font-size: clamp(${34/16}rem, ${42/10.8}vh, ${42/16}rem);
       font-weight: 800;
       letter-spacing: 0.03em;
       line-height: 1.5;
