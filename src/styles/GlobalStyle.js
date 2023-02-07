@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .sec {
     overflow: hidden;
-    min-height: 667px;
+    min-height: 815px;
     height: 1px;
     scroll-snap-align: start;
     & > .max-width {
@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: 8px;
     }
   }
-  @media only screen and (min-height: 600px){
+  @media only screen and (min-height: 548px){
     .scrollSnap {
       scroll-snap-type: y mandatory;
       height: 100vh;
