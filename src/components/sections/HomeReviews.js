@@ -22,21 +22,21 @@ const reviews = [
 ]
 
 const HomeReviews = () => {
-  const reviewsItems = document.querySelectorAll('.reviewsWrapper-item');
-  useEffect(() => {
-    document.querySelector('.reviewsContent-snap').addEventListener('scroll', () => {
-      reviewsItems.forEach(review => {
-        let rect = review.getBoundingClientRect();
-        if(rect.top + (rect.height) <= window.innerHeight){
-          review.classList.add('active');
-        }
-      });
-    })
-  }, [])
+  // const reviewsItems = document.querySelectorAll('.reviewsWrapper-item');
+  // useEffect(() => {
+  //   document.querySelector('.reviewsContent-snap').addEventListener('scroll', () => {
+  //     reviewsItems.forEach(review => {
+  //       let rect = review.getBoundingClientRect();
+  //       if(rect.top + (rect.height) <= window.innerHeight){
+  //         review.classList.add('active');
+  //       }
+  //     });
+  //   })
+  // }, [])
 
-  const handleReviewSwiper = () => {
-    document.querySelector('#swiper2').scrollIntoView({behavior: "smooth",block: "center", inline: "center"})
-  }
+  // const handleReviewSwiper = () => {
+  //   document.querySelector('#swiper2').scrollIntoView({behavior: "smooth",block: "center", inline: "center"})
+  // }
 
   return (
     <StyledReviewss className="reviews sec" id="opinie">
@@ -45,7 +45,7 @@ const HomeReviews = () => {
           <h2>Opinie</h2>
           <p>Każda klient ma inne oczekiwania, dlatego każda sesja jest inna.</p>
           <p>Zobacz, co moi klienci powiedzieli o&nbsp;pracy ze mną.</p>
-          <button onClick={handleReviewSwiper}>Click</button>
+          {/* <button onClick={handleReviewSwiper}>Click</button> */}
         </header>
         <div className="reviews-content">
           <div className="reviewsContent-snap">
