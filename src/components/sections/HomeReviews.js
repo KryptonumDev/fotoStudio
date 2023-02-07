@@ -7,11 +7,11 @@ const reviews = [
     author: "Sandra Hachuła"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
+    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej.",
     author: "Sandra Hachuła"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
+    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
     author: "Sandra Hachuła"
   },
   {
@@ -24,20 +24,20 @@ const HomeReviews = () => {
   return (
     <StyledReviewss className="reviews sec" id="opinie">
       <div className="max-width">
-        <header className="hello-header">
+        <header className="reviews-header">
           <h2>Opinie</h2>
           <p>Każda klient ma inne oczekiwania, dlatego każda sesja jest inna.</p>
           <p>Zobacz, co moi klienci powiedzieli o&nbsp;pracy ze mną.</p>
         </header>
-      </div>
-      <div className="reviews-content">
-        <div className="reviewsContent-snap">
-          {reviews.map((review, i) => (
-            <div className="reviewsWrapper-item" key={i} id={`swiper${i}`}>
-              <blockquote>{review.content}</blockquote>
-              <cite>{review.author}</cite>
-            </div>
-          ))}
+        <div className="reviews-content">
+          <div className="reviewsContent-snap">
+            {reviews.map((review, i) => (
+              <div className="reviewsContentSnap-item" key={i} id={`swiper${i}`}>
+                <blockquote>{review.content}</blockquote>
+                <cite>{review.author}</cite>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </StyledReviewss>
@@ -48,59 +48,87 @@ const StyledReviewss = styled.section`
   position: relative;
   & > .max-width {
     display: flex;
-    & > * {
-      width: 50%;
+    justify-content: space-between;
+    max-width: calc(100% - ${336/19.2}vw);
+  }
+  .reviews-header {
+    margin-top: ${256/10.8}vh;
+    max-width: max(${450/19.2}vw, 280px);
+    line-height: 1.5;
+    font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+    p:not(:last-child){
+      margin-bottom: ${26/10.8}vh;
     }
   }
   .reviews-content {
-    position: absolute;
-    right: 0;
+    position: relative;
     width: 50%;
-    top: 0;
     height: 100%;
+    overflow: hidden;
     &::before, &::after {
       content: '';
       width: 100%;
-      height: ${300/10.8}vh;
+      height: 30%;
       position: absolute;
       left: 0;
     }
     &::before {
       top: 0;
-      background: linear-gradient(#000,rgba(0,0,0,0) ${300/10.8}vh);
+      background: linear-gradient(#000,rgba(0,0,0,0));
     }
     &::after {
       bottom: 0;
-      background: linear-gradient(0deg, #000, rgba(0,0,0,0) ${300/10.8}vh);
+      background: linear-gradient(0deg, #000, rgba(0,0,0,0));
+    }
+  }
+  .reviewsContent-snap {
+    height: 100%;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    padding: 50vh 0;
+  }
+  .reviewsContentSnap-item {
+    margin: ${78/10.8}vh 0;
+    scroll-snap-align: center;
+    blockquote {
+      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+      line-height: 1.5;
+    }
+    cite {
+      text-align: right;
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+    border: 1px solid var(--white);
+    padding: ${42/10.8}vh ${64/19.2}vw;
+  }
+  @media only screen and (max-width: 1199px){
+    & > .max-width {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .reviews-header {
+      margin-top: ${188/10.24}vh;
+    }
+    .reviews-content {
+      height: 50%;
+      width: 100%;
     }
     .reviewsContent-snap {
-      height: 100%;
-      overflow: auto;
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-      scroll-padding: 50vh;
-      padding: 50vh 22px
+      padding: 25vh 0;
     }
-    width: 50%;
-    height: 100%;
-    .reviewsWrapper-item {
-      &.active {
-        background-color: #f00;
-      }
-      margin: ${78/10.8}vh 0;
-      scroll-snap-align: center;
-      p {
-        font-size: ${24/19.2}vw;
-        line-height: 1.5;
-      }
-      cite {
-        text-align: right;
-        display: block;
-        margin-top: 8px;
-        font-weight: 600;
-      }
-      border: 1px solid var(--white);
-      padding: ${42/16}rem ${64/16}rem;
+  }
+  @media only screen and (max-width: 729px){
+    & > .max-width {
+      max-width: 100%;
+    }
+    .reviews-header {
+      font-size: ${14/16}rem;
+    }
+    .reviews-content {
+      height: 60%;
     }
   }
 `
