@@ -12,6 +12,10 @@ export const ArrowRight = ({fill}) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="34" height="54" viewBox="0 0 34 54" fill={fill || 'none'} stroke="#fff"><path strokeMiterlimit="10" d="m2 1 4.54.342L33 27.038 6.54 52.316 2 53l26.54-26L2 1Z"/></svg>
 )
 
+export const ArrowDown = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="49" height="31" viewBox="0 0 49 31" fill="none" stroke="#fff"><path strokeMiterlimit="10" d="m48 2-.31 4.1L24.467 30 1.618 6.1A9129.95 9129.95 0 0 1 1 2l23.5 23.972L48 2Z"/></svg>
+)
+
 export const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 57 57" fill="#fff"><path d="M57 28.5C57 12.76 44.24 0 28.5 0S0 12.76 0 28.5c0 14.225 10.422 26.016 24.047 28.154V36.738H16.81V28.5h7.236v-6.279c0-7.143 4.255-11.088 10.765-11.088 3.117 0 6.38.557 6.38.557v7.013h-3.594c-3.54 0-4.645 2.197-4.645 4.453V28.5h7.904l-1.263 8.238h-6.64v19.916C46.577 54.516 57 42.725 57 28.5Z"/></svg>
 )

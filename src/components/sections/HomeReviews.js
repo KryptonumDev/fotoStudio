@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import styled from "styled-components";
 
 const reviews = [
@@ -22,22 +21,6 @@ const reviews = [
 ]
 
 const HomeReviews = () => {
-  // const reviewsItems = document.querySelectorAll('.reviewsWrapper-item');
-  // useEffect(() => {
-  //   document.querySelector('.reviewsContent-snap').addEventListener('scroll', () => {
-  //     reviewsItems.forEach(review => {
-  //       let rect = review.getBoundingClientRect();
-  //       if(rect.top + (rect.height) <= window.innerHeight){
-  //         review.classList.add('active');
-  //       }
-  //     });
-  //   })
-  // }, [])
-
-  // const handleReviewSwiper = () => {
-  //   document.querySelector('#swiper2').scrollIntoView({behavior: "smooth",block: "center", inline: "center"})
-  // }
-
   return (
     <StyledReviewss className="reviews sec" id="opinie">
       <div className="max-width">
@@ -45,17 +28,16 @@ const HomeReviews = () => {
           <h2>Opinie</h2>
           <p>Każda klient ma inne oczekiwania, dlatego każda sesja jest inna.</p>
           <p>Zobacz, co moi klienci powiedzieli o&nbsp;pracy ze mną.</p>
-          {/* <button onClick={handleReviewSwiper}>Click</button> */}
         </header>
-        <div className="reviews-content">
-          <div className="reviewsContent-snap">
-            {reviews.map((review, i) => (
-              <div className="reviewsWrapper-item" key={i} id={`swiper${i}`}>
-                <blockquote>{review.content}</blockquote>
-                <cite>{review.author}</cite>
-              </div>
-            ))}
-          </div>
+      </div>
+      <div className="reviews-content">
+        <div className="reviewsContent-snap">
+          {reviews.map((review, i) => (
+            <div className="reviewsWrapper-item" key={i} id={`swiper${i}`}>
+              <blockquote>{review.content}</blockquote>
+              <cite>{review.author}</cite>
+            </div>
+          ))}
         </div>
       </div>
     </StyledReviewss>
@@ -63,6 +45,7 @@ const HomeReviews = () => {
 }
 
 const StyledReviewss = styled.section`
+  position: relative;
   & > .max-width {
     display: flex;
     & > * {
@@ -70,7 +53,11 @@ const StyledReviewss = styled.section`
     }
   }
   .reviews-content {
-    position: relative;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 0;
+    height: 100%;
     &::before, &::after {
       content: '';
       width: 100%;
@@ -92,7 +79,7 @@ const StyledReviewss = styled.section`
       scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
       scroll-padding: 50vh;
-      padding: 50vh 0;
+      padding: 50vh 22px
     }
     width: 50%;
     height: 100%;

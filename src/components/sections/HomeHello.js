@@ -26,27 +26,23 @@ const HomeHello = ({data}) => {
 
 const StyledHello = styled.section`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   & > .max-width {
-    min-height: inherit;
     display: flex;
     align-items: center;
-    max-height: 1080px;
+    max-width: calc(100% - ${336/19.2}vw);
   }
   .hello-header {
     display: flex;
     & > :nth-child(1) {
-      margin-right: 60px;
+      margin-right: ${60/19.2}vw;
     }
     & > :nth-child(2) {
-      max-width: 609px;
+      max-width: ${609/19.2}vw;
     }
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
       line-height: 1.58;
-      letter-spacing: -0.022rem;
+      letter-spacing: -0.022em;
       &:not(:last-child) {
         margin-bottom: ${24/19.2}vw;
       }
@@ -54,42 +50,32 @@ const StyledHello = styled.section`
   }
   .hello-img {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
+    transform: translateY(-50%);
     z-index: -1;
     max-width: 840px;
-    max-height: 100%;
-    margin-right: -22px;
-    flex-shrink: 0;
-    margin-left: auto;
     img {
       object-position: top;
     }
   }
-  @media only screen and (min-width: 1824px){
-    .hello-img {
-      margin-right: calc((100vw - 1780px) / 2 * -1);
-    }
-  }
-  @media only screen and (max-width: 1499px){
-    .max-width {
-      max-width: calc(100% - 250px);
-    }
+  @media only screen and (max-width: 1299px){
     .hello-header {
       display: block;
       h2 {
-        margin-bottom: 21px;
+        margin-bottom: ${13/10.8}vh;
       }
       & > :nth-child(1) {
         margin-right: 0;
-        margin-bottom: ${82/10.24}vh;
+        margin-bottom: ${34/10.24}vh;
       }
       & > :nth-child(2) {
         max-width: 443px;
       }
     }
     .hello-img {
-      margin-right: -250px;
+      height: 100%;
+      right: -200px;
       &::before {
         content: '';
         position: absolute;
@@ -97,7 +83,7 @@ const StyledHello = styled.section`
         top: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0) 50%);
+        background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0) 60%);
         z-index: 1;
       }
     }
@@ -108,15 +94,6 @@ const StyledHello = styled.section`
       align-items: flex-end;
     }
     .hello-header {
-      margin-left: 0;
-      h2 {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        white-space: nowrap;
-        writing-mode: vertical-rl;
-        transform: translate(25%, -50%);
-      }
       & > :nth-child(1) {
         text-align: center;
         margin-bottom: 28px;
@@ -133,10 +110,9 @@ const StyledHello = styled.section`
       }
     }
     .hello-img {
-      height: 100%;
-      margin: 0 -22px;
+      right: 0;
       &::before {
-        background: linear-gradient(rgba(0,0,0,0) 42%, #000 76%);
+        background: linear-gradient(rgba(0,0,0,0) 30%, #000 80%);
       }
     }
   }

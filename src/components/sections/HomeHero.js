@@ -12,18 +12,23 @@ const HomeHero = ({data}) => {
           <h1>Stwórzmy coś pięknego</h1>
           <Button link="/kontakt">Kontakt</Button>
         </div>
-        <GatsbyImage image={data.hero.gatsbyImageData} alt={data.hero.alt} className="hero-img" objectFit="contain" />
       </div>
-      <ScrollDown />
+      <GatsbyImage image={data.hero.gatsbyImageData} alt={data.hero.alt} className="hero-img" objectFit="contain" />
+      <ScrollDown href="#galeria" />
     </StyledHero>
   );
 }
 
 const StyledHero = styled.section`
   position: relative;
+  & > .max-width {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
   .hero-copy {
     position: relative;
-    transform: translateY(50%);
+    margin-bottom: ${148/10.8}vh;
     h1 {
       white-space: nowrap;
       writing-mode: vertical-rl;
@@ -33,7 +38,7 @@ const StyledHero = styled.section`
     }
     a {
       position: absolute;
-      left: 12%;
+      left: ${137/19.2}vw;
       bottom: 0;
     }
   }

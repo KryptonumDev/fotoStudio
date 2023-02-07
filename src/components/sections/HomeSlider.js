@@ -19,7 +19,7 @@ const HomeSlider = ({data}) => {
   }, [activeSlider])
 
   return (
-    <StyledSlider className="slider sec">
+    <StyledSlider className="slider sec" id="galeria">
       <div className="slider-copy">
         <h2 ref={heading}>{activeHeading}</h2>
         <Button link="/portfolio">Portfolio</Button>
@@ -61,8 +61,6 @@ const StyledSlider = styled.section`
     .sliderWrapper-item {
       width: 100%;
       flex-shrink: 0;
-    }
-    .slider-img {
       position: relative;
       &::before {
         content: '';
@@ -73,9 +71,12 @@ const StyledSlider = styled.section`
         height: 100%;
         background: linear-gradient(#000, rgba(0,0,0,0) 20%),
                     linear-gradient(90deg, #000, rgba(0,0,0,0) 40%),
-                    linear-gradient(rgba(0,0,0,0) 80%, #000);
+                    linear-gradient(rgba(0,0,0,0) 80%, #000)
+                    rgba(0,0,0,.1);
         z-index: 1;
       }
+    }
+    .slider-img {
       width: 100%;
       display: block;
       @media only screen and (min-width: 999px){

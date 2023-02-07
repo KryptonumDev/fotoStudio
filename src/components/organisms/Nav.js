@@ -69,7 +69,7 @@ const StyledNav = styled.nav`
   &::before {
     content: '';
     width: 100%;
-    height: 200%;
+    height: 150%;
     position: absolute;
     left: 0;
     top: 0;
