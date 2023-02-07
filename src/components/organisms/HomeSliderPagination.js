@@ -29,16 +29,21 @@ const HomeSliderPagination = ({activeSlider, setActiveSlider}) => {
       >
         <ArrowLeft />
       </button>
-      {array.map(elem => (
-        <button
-          key={elem}
-          className={activeSlider === elem ? 'active' : ''}
-          aria-label={`Przejdź do ${elem} sladju`}
-          onClick={() => setActiveSlider(elem)}
-        >
-          <span>0{elem}</span>
-        </button>
-      ))}
+      <div className="sliderPagination-desktop">
+        {array.map(elem => (
+          <button
+            key={elem}
+            className={activeSlider === elem ? 'active' : ''}
+            aria-label={`Przejdź do ${elem} sladju`}
+            onClick={() => setActiveSlider(elem)}
+          >
+            <span>0{elem}</span>
+          </button>
+        ))}
+      </div>
+      <div className="sliderPagination-mobile">
+        <span><span>0{activeSlider}</span> / 0{array.length}</span>
+      </div>
       <button
         aria-label="Przejdź do następnego sladju"
         onClick={() => sliderButton('next')}
@@ -55,13 +60,15 @@ const StyledSliderPagination = styled.div`
   bottom: ${70/10.8}vh;
   display: flex;
   align-items: center;
+  button, .sliderPagination-mobile span {
+    font-size: ${42/19.2}vw;
+    font-family: "Argent CF", serif;
+  }
   button {
     width: ${70/19.2}vw;
     height: ${70/19.2}vw;
-    text-align: center;
     line-height: ${70/19.2}vw;
-    font-size: ${42/19.2}vw;
-    font-family: "Argent CF", serif;
+    text-align: center;
     &:not(:last-child){
       margin-right: ${25/19.2}vw;
     }
@@ -79,6 +86,25 @@ const StyledSliderPagination = styled.div`
       height: 100%;
       margin: auto;
       display: block;
+    }
+  }
+  .sliderPagination-mobile {
+    display: none;
+  }
+  @media only screen and (max-width: 899px){
+    .sliderPagination-desktop {
+      display: none;
+    }
+    button {
+      width: ${48/16}rem;
+      height: ${48/16}rem;
+      line-height: ${70/19.2}vw;
+    }
+    .sliderPagination-mobile {
+      display: block;
+      span {
+        font-size: ${24/16}rem;
+      }
     }
   }
 `

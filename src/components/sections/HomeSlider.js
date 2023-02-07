@@ -1,16 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import HomeSliderPagination from "../organisms/HomeSliderPagination";
+import Button from "../atoms/Button";
+
+const headings = ["Portretowa", "Portretowa", "Weselna", "Reportażowa", "Reportażowa", "Produktowa", "Produktowa", "Analogowa", "Analogowa"];
 
 const HomeSlider = ({data}) => {
   const [activeSlider, setActiveSlider] = useState(1);
+  const [activeHeading, setActiveHeading] = useState(headings[activeSlider-1]);
+  const heading = useRef('');
+  useEffect(() => {
+    heading.current.classList.add('change');
+    setTimeout(() => {
+      setActiveHeading(headings[activeSlider-1]);
+      heading.current.classList.remove('change');
+    }, 400);
+  }, [activeSlider])
+
   return (
     <StyledSlider className="slider sec">
+      <div className="slider-copy">
+        <h2 ref={heading}>{activeHeading}</h2>
+        <Button link="/portfolio">Portfolio</Button>
+      </div>
       <div className="slider-wrapper" style={{transform: `translateX(-${(activeSlider-1)*100}%)`}}>
         {data.slider.map((slide, i) => (
           <div className="sliderWrapper-item" key={i}>
-            <GatsbyImage image={slide.gatsbyImageData} alt={slide.alt || ""} className="slider-img" objectFit="contain" />
+            <GatsbyImage image={slide.gatsbyImageData} alt={slide.alt || ""} className="slider-img" />
           </div>
         ))}
       </div>
@@ -21,7 +38,21 @@ const HomeSlider = ({data}) => {
 
 const StyledSlider = styled.section`
   position: relative;
+  .slider-copy {
+    margin-top: ${256/10.8}vh;
+    margin-left: ${168/19.2}vw;
+    h2 {
+      transition: opacity .4s;
+    }
+    h2.change {
+      opacity: 0;
+    }
+  }
   .slider-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
     display: flex;
     transition: transform 800ms cubic-bezier(0.52, 0.16, 0.24, 1);
     flex-wrap: nowrap;
@@ -47,12 +78,11 @@ const StyledSlider = styled.section`
       }
       width: 100%;
       display: block;
-      max-width: ${1388/19.2}vw;
+      @media only screen and (min-width: 999px){
+        max-width: ${1388/19.2}vw;
+      }
       margin-left: auto;
       height: 100%;
-      img {
-        object-position: right bottom;
-      }
     }
   }
 `
