@@ -20,9 +20,11 @@ const HomeSlider = ({data}) => {
 
   return (
     <StyledSlider className="slider sec" id="galeria">
-      <div className="slider-copy">
-        <h2 ref={heading}>{activeHeading}</h2>
-        <Button link="/portfolio">Portfolio</Button>
+      <div className="max-width">
+        <div className="slider-copy">
+          <h2 ref={heading}>{activeHeading}</h2>
+          <Button link="/portfolio">Portfolio</Button>
+        </div>
       </div>
       <div className="slider-wrapper" style={{transform: `translateX(-${(activeSlider-1)*100}%)`}}>
         {data.slider.map((slide, i) => (
@@ -38,9 +40,11 @@ const HomeSlider = ({data}) => {
 
 const StyledSlider = styled.section`
   position: relative;
-  .slider-copy {
+  & > .max-width {
+    max-width: calc(100% - ${336/19.2}vw);
     margin-top: ${256/10.8}vh;
-    margin-left: ${168/19.2}vw;
+  }
+  .slider-copy {
     h2 {
       transition: opacity .4s;
     }

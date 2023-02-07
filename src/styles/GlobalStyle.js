@@ -53,18 +53,18 @@ const GlobalStyle = createGlobalStyle`
     min-height: 667px;
     height: 1px;
     scroll-snap-align: start;
-    .max-width {
+    & > .max-width {
       position: relative;
-    }
+    } 
     h2 {
-      font-size: 42px;
+      font-size: ${42/8}vh;
       font-weight: 800;
       letter-spacing: 0.03em;
       line-height: 1.5;
       margin-bottom: 8px;
     }
   }
-  @media only screen and (min-height: 667px){
+  @media only screen and (min-height: 600px){
     .scrollSnap {
       scroll-snap-type: y mandatory;
       height: 100vh;
@@ -73,6 +73,7 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: smooth;
     }
     .sec {
+      min-height: 100%;
       height: 100%;
     }
   }
@@ -81,10 +82,10 @@ const GlobalStyle = createGlobalStyle`
       header h2 {
         position: absolute;
         right: 0;
-        top: 50%;
+        top: 25%;
         white-space: nowrap;
         writing-mode: vertical-rl;
-        transform: translate(25%, -50%);
+        transform: translate(35%, -50%);
       }
     }
   }

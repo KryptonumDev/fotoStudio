@@ -37,7 +37,7 @@ const StyledHello = styled.section`
       margin-right: ${60/19.2}vw;
     }
     & > :nth-child(2) {
-      max-width: ${609/19.2}vw;
+      max-width: ${600/19.2}vw;
     }
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
@@ -55,6 +55,7 @@ const StyledHello = styled.section`
     transform: translateY(-50%);
     z-index: -1;
     max-width: 840px;
+    max-height: 100%;
     img {
       object-position: top;
     }
@@ -96,17 +97,17 @@ const StyledHello = styled.section`
     .hello-header {
       & > :nth-child(1) {
         text-align: center;
-        margin-bottom: 28px;
+        margin-bottom: ${21/6}vh;
       }
       & > :nth-child(2) {
         max-width: 100%;
         margin-bottom: 22px;
       }
       p {
-        font-size: 13px;
+        font-size: clamp(${13/16}rem, ${13/6}vh, 1rem);
       }
       p:not(:last-child) {
-        margin-bottom: 11px;
+        margin-bottom: ${8/6}vh;
       }
     }
     .hello-img {

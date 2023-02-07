@@ -14,6 +14,10 @@ const StyledArrow = styled.a`
   position: absolute;
   left: 21px;
   bottom: 21px;
+  svg {
+    width: 44px;
+    height: 44px;
+  }
 `
  
 export default ScrollDown;
