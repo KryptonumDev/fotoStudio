@@ -48,19 +48,10 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-  @media only screen and (min-height: 668px){
-    .scrollSnap {
-      scroll-snap-type: y mandatory;
-      height: 100vh;
-      height: 100dvh;
-      overflow: auto;
-      scroll-behavior: smooth;
-    }
-  }
   .sec {
     overflow: hidden;
     min-height: 667px;
-    height: 100%;
+    height: 1px;
     scroll-snap-align: start;
     .max-width {
       position: relative;
@@ -71,6 +62,18 @@ const GlobalStyle = createGlobalStyle`
       letter-spacing: 0.03em;
       line-height: 1.5;
       margin-bottom: 8px;
+    }
+  }
+  @media only screen and (min-height: 667px){
+    .scrollSnap {
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      height: 100dvh;
+      overflow: auto;
+      scroll-behavior: smooth;
+    }
+    .sec {
+      height: 100%;
     }
   }
   @media only screen and (max-width: 729px){
