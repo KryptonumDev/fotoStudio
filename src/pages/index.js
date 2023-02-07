@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
       <HomeHello data={{hello}}/>
       <HomeReviews />
       <HomeLab data={{lab}}/>
-      <Footer />
+      <Footer data={data.footer} />
     </div>
   )
 }
@@ -40,6 +40,15 @@ export const query = graphql`
         gatsbyImageData(placeholder: NONE)
         alt
       }
+    }
+    footer: datoCmsFooter {
+      email
+      address
+      addressMaps
+      phone1
+      phone2
+      instagram
+      facebook
     }
   }
 `

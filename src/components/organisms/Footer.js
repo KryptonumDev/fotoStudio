@@ -3,29 +3,29 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { ArrowRight, FacebookIcon, InstagramIcon, Logo } from "../atoms/Icons";
 
-const Footer = () => {
+const Footer = ({data}) => {
   return (
     <StyledFooter className="footer">
       <div className="max-width">
         <div className="footer-info">
           <Logo className="footer-logo" />
           <div className="footer-inTouch">
-            <a href="mailto:chrapekadam@gmail.com">
-              <span>chrapekadam@gmail.com</span>
+            <a href={`mailto:${data.email}`}>
+              <span>{data.email}</span>
               <ArrowRight fill="#fff" />
             </a>
-            <a href="https://goo.gl/maps/NtLVBf6oZ9Qb2y5CA" target="_blank" rel="noreferrer"><span>Al. Niepodległości 18, 98-100 Łask</span></a>
+            <a href={data.addressMaps} target="_blank" rel="noreferrer"><span>{data.address}</span></a>
             <p>
-              <a href="tel:+48505190830"><span>505 190 830</span></a>
+              <a href={`tel:+48${data.phone1.replace(/\s/g,'')}`}><span>{data.phone1}</span></a>
               &nbsp;|&nbsp;
-              <a href="tel:+48883736548"><span>883 736 548</span></a>
+              <a href={`tel:+48${data.phone2.replace(/\s/g,'')}`}><span>{data.phone2}</span></a>
             </p>
           </div>
           <div className="footer-social">
-            <a href="https://www.facebook.com/fotoadamchrapek/" target="_blank" rel="noreferrer">
+            <a href={data.facebook} target="_blank" rel="noreferrer">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/adam.chrapek" target="_blank" rel="noreferrer">
+            <a href={data.instagram} target="_blank" rel="noreferrer">
               <InstagramIcon />
             </a>
           </div>
