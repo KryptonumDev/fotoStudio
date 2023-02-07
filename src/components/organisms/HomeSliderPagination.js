@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowLeft, ArrowRight } from "../atoms/Icons";
 
 const array = [1,2,3,4,5,6,7,8,9];
 
 const HomeSliderPagination = ({activeSlider, setActiveSlider}) => {
-  const sliderButton = (direction) => {
+  const sliderButton = useCallback((direction) => {
     if(direction === 'prev'){
       setActiveSlider(prevState => prevState === 1 ? 9 : --prevState)
     } else if(direction === 'next'){
       setActiveSlider(prevState => prevState === 9 ? 1 : ++prevState)
     }
-  }
+  }, [setActiveSlider]);
   useEffect(() => {
-    document.addEventListener('keydown',function(e){
+    document.addEventListener('keydown', (e) => {
       if(e.key === "ArrowLeft"){
         sliderButton('prev');
       } else if(e.key === "ArrowRight"){
         sliderButton('next');
       }
     })
-  }, [])
+  }, [sliderButton])
   return (
     <StyledSliderPagination className="slider-pagination">
       <button
