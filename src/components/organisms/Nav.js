@@ -27,12 +27,12 @@ const links = [
 ]
 
 const Nav = () => {
-  const navMenu = useRef();
+  const navMenuBtn = useRef();
   const handleNavToggle = () => {
-    navMenu.current.classList.toggle('active');
+    navMenuBtn.current.classList.toggle('active');
   }
   const handleNavLink = () => {
-    navMenu.current.classList.remove('active');
+    navMenuBtn.current.classList.remove('active');
   }
 
   return (
@@ -41,7 +41,12 @@ const Nav = () => {
         <Link to="/" aria-label="Strona główna" className="nav-logo">
           <Logo />
         </Link>
-        <div className="nav-links" ref={navMenu}>
+        <button id="navToggle" onClick={handleNavToggle} aria-label="Pokaż/Ukryj nawigację mobilną" ref={navMenuBtn}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div className="nav-links">
           <ul>
             {links.map((link, i) => (
               <li key={i}>
@@ -54,11 +59,6 @@ const Nav = () => {
             ))}
           </ul>
         </div>
-        <button id="navToggle" onClick={handleNavToggle} aria-label="Pokaż/Ukryj nawigację mobilną">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </StyledNav>
   );
@@ -167,21 +167,6 @@ const StyledNav = styled.nav`
     #navToggle {
       display: block;
     }
-    .nav-links.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .nav-links.active + #navToggle {
-      span:nth-child(1) {
-        transform: translateY(6px) rotate(45deg);
-      }
-      span:nth-child(2) {
-        transform: scaleX(0);
-      }
-      span:nth-child(3) {
-        transform: translateY(-6px) rotate(-45deg);
-      }
-    }
     .nav-links {
       opacity: 0;
       visibility: hidden;
@@ -207,6 +192,21 @@ const StyledNav = styled.nav`
       a {
         font-size: ${24/16}rem;
       }
+    }
+    #navToggle.active {
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        transform: scaleX(0);
+      }
+      span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+    #navToggle.active + .nav-links {
+      opacity: 1;
+      visibility: visible;
     }
   }
 `

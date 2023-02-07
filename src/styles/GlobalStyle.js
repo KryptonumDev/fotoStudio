@@ -22,8 +22,8 @@ const GlobalStyle = createGlobalStyle`
     min-width: 320px;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-    font-family: 'Argent CF', serif;
+    font-weight: 400;
+    font-family: 'DM Serif Display', serif;
     color: var(--color);
   }
   button {
