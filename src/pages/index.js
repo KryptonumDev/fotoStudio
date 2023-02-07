@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import HomeHero from "../components/sections/HomeHero"
 import HomeSlider from "../components/sections/HomeSlider"
 import HomeHello from "../components/sections/HomeHello"
+import HomeReviews from "../components/sections/HomeReviews"
 import HomeLab from "../components/sections/HomeLab"
 import Footer from "../components/organisms/Footer"
 
@@ -13,6 +14,7 @@ const IndexPage = ({data}) => {
       <HomeHero data={{hero}}/>
       <HomeSlider data={{slider}} />
       <HomeHello data={{hello}}/>
+      <HomeReviews />
       <HomeLab data={{lab}}/>
       <Footer />
     </div>
