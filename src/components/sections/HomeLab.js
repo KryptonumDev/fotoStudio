@@ -8,7 +8,7 @@ const HomeLab = ({data}) => {
       <div className="max-width">
         <header className="lab-header">
             <h2>Pracownia</h2>
-            <p>Moja pracownia to nie tylko sesje zdjęciowe. To także szerokie portfolio usług związanych z&nbsp;fotografią, realizowanych w&nbsp;formie stacjonarnej.</p>
+            <p>Moja pracownia to nie tylko sesje zdjęciowe. To&nbsp;także szerokie portfolio usług związanych z&nbsp;fotografią, realizowanych w&nbsp;formie stacjonarnej.</p>
         </header>
         <div className="lab-copy">
           <h2>W moim studiu:</h2>
@@ -30,37 +30,39 @@ const StyledLab = styled.section`
   display: flex;
   align-items: center;
   .max-width {
+    max-width: calc(100% - ${336/19.2}vw);
     height: auto;
     display: flex;
-    justify-content: space-around;
+    & > * {
+      width: 50%;
+    }
   }
   .lab-header {
-    max-width: clamp(390px, ${530/19.2}vw, 530px);
+    padding-right: 1.5em;
     p {
-      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+      font-size: clamp(${13/16}rem, ${24/19.2}vw, ${24/16}rem);
+      max-width: clamp(390px, ${530/19.2}vw, 530px);
       line-height: 1.5;
     }
   }
   .lab-copy {
-    margin-bottom: ${46/19.2}vw;
-    max-width: clamp(390px, ${530/19.2}vw, 530px);
+    max-width: clamp(390px, ${580/19.2}vw, 580px);
     h2 {
-      margin-bottom: ${46/19.2}vw;
+      margin-bottom: ${18/10.8}vh;
     }
     ol {
-      padding-left: 21px;
+      padding-left: 1.5em;
     }
     li {
       &::marker {
-        font-family: 'Argent CF', serif;
+        font-family: 'DM Serif Display', serif;
         font-weight: 800;
         font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
-        margin-right: 5px;
       }
-      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+      font-size: clamp(${13/16}rem, ${24/19.2}vw, ${24/16}rem);
       line-height: 1.5;
       &:not(:last-child){
-        margin-bottom: ${35/19.2}vw;
+        margin-bottom: ${8/10.8}vh;
       }
     }
   }
@@ -84,11 +86,13 @@ const StyledLab = styled.section`
   }
   @media only screen and (max-width: 1099px){
     .max-width {
-      max-width: calc(100% - 250px);
       display: block;
+      & > * {
+        width: 100%;
+      }
     }
     .lab-header {
-      margin-bottom: ${88/10.24}vh;
+      margin-bottom: ${34/10.24}vh;
     }
     .lab-copy {
       h2 {
@@ -105,10 +109,11 @@ const StyledLab = styled.section`
   }
   @media only screen and (max-width: 729px){
     .max-width {
-      max-width: calc(100% - 44px);
+      max-width: 100%;
     }
     .lab-copy {
-      padding-right: 50px;
+      width: 90%;
+      max-width: 100%;
     }
     .lab-img {
       width: 100%;
