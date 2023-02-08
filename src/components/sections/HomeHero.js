@@ -38,7 +38,7 @@ const StyledHero = styled.section`
     }
     a {
       position: absolute;
-      left: ${137/19.2}vw;
+      left: ${230/19.2}vw;
       bottom: 0;
     }
   }

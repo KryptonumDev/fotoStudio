@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color);
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.022em;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
     min-width: 320px;
@@ -24,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.03em;
     color: var(--color);
   }
   button {

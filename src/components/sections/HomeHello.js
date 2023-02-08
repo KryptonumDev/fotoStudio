@@ -41,8 +41,6 @@ const StyledHello = styled.section`
     }
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
-      line-height: 1.58;
-      letter-spacing: -0.022em;
       &:not(:last-child) {
         margin-bottom: ${24/19.2}vw;
       }

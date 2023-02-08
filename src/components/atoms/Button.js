@@ -17,7 +17,6 @@ const StyledLink = styled(gatsbyLink)`
   font-size: ${42/16}rem;
   font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
   padding: ${10/16}em ${42/16}em;
-  max-width: 376px;
   letter-spacing: 0.03rem;
   line-height: 1;
   white-space: nowrap;
