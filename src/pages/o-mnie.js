@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import AboutHero from "../components/sections/AboutHero"
 import AboutSlider from "../components/sections/AboutSlider"
 import AboutCooperation from "../components/sections/AboutCooperation"
+import AboutCooperationProcess from "../components/sections/AboutCooperationProcess"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -14,6 +15,7 @@ const IndexPage = ({data}) => {
         <AboutHero data={hero} />
         <AboutSlider data={slider} />
         <AboutCooperation data={cooperation} />
+        <AboutCooperationProcess />
         <Footer data={data.footer} />
       </PageIndicator>
     </div>

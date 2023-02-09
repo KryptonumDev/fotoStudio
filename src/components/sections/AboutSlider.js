@@ -58,7 +58,7 @@ const StyledHero = styled.section`
   .sliderGallery-wrapper {
     display: flex;
     flex-wrap: nowrap;
-    transition: transform 800ms cubic-bezier(0.52, 0.16, 0.24, 1);
+    transition: transform 400ms cubic-bezier(0.52, 0.16, 0.24, 1);
     will-change: transform;
     padding: 0 calc(50% - 180px);
   }
@@ -81,7 +81,7 @@ const StyledHero = styled.section`
     }
     .slider-gallery {
       bottom: 0;
-      transform: translateY(-3%);
+      transform: translateY(-1rem);
       width: 100%;
     }
   }

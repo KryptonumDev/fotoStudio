@@ -58,7 +58,7 @@ const StyledSliderPagination = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: ${21/16}rem;
+  margin-top: ${34/16}rem;
   display: inline-flex;
   align-items: center;
   > span {
@@ -75,6 +75,7 @@ const StyledSliderPagination = styled.div`
     }
   }
   @media only screen and (max-width: 999px){
+    margin-top: 1rem;
     > span {
       font-size: ${24/16}rem;
       margin: 0 1rem;

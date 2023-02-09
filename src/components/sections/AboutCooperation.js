@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 
 const AboutCooperation = ({data}) => {
-  console.log(data);
   return (
     <StyledCooperation className="cooperation sec">
       <div className="max-width">
