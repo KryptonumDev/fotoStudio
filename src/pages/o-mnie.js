@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import AboutHero from "../components/sections/AboutHero"
+import AboutSlider from "../components/sections/AboutSlider"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -9,6 +10,8 @@ const IndexPage = ({data}) => {
   return (
     <div className="scrollSnap">
       <PageIndicator>
+        <AboutHero data={hero} />
+        <AboutSlider data={slider} />
         <AboutHero data={hero} />
         <Footer data={data.footer} />
       </PageIndicator>

@@ -27,7 +27,7 @@ const HomeSlider = ({data}) => {
         </div>
       </div>
       <div className="slider-wrapper" style={{transform: `translateX(-${(activeSlider-1)*100}%)`}}>
-        {data.slider.map((slide, i) => (
+        {data.map((slide, i) => (
           <div className="sliderWrapper-item" key={i}>
             <GatsbyImage image={slide.gatsbyImageData} alt={slide.alt || ""} className="slider-img" />
           </div>

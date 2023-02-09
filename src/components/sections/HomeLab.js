@@ -20,7 +20,7 @@ const HomeLab = ({data}) => {
           </ol>
         </div>
       </div>
-      <GatsbyImage image={data.lab.gatsbyImageData} alt={data.lab.alt} className="lab-img" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="lab-img" />
     </StyledLab>
   );
 }

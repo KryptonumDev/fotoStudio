@@ -1,7 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import Button from "../atoms/Button";
 import ScrollDown from "../atoms/ScrollDown";
 
 const AboutHero = ({data}) => {
@@ -12,8 +11,8 @@ const AboutHero = ({data}) => {
         <p>Pasją do fotografowania zaraziłem się wiele lat temu. Na początku robiłem zdjęcia wszędzie, gdzie działo się coś ważnego. Dziś, choć w&nbsp;swojej pracy korzystam z&nbsp;nowoczesnego sprzętu i&nbsp;innowacyjnych rozwiązań, uważam, że to miłość do fotografowania tworzy dobre ujęcie.</p>
         <p>Każda sesja zdjęciowa to szansa na uchwycenie niepowtarzalnego momentu i&nbsp;towarzyszącej mu wyjątkowej atmosfery. Nie mogę się doczekać naszej wspólnej sesji!</p>
       </div>
-      <ScrollDown href="#slider" />
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt} className="hero-img" />
+      <ScrollDown href="#zobacz" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
     </StyledHero>
   );
 }

@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 800;
       letter-spacing: 0.03em;
       line-height: 1.5;
-      margin-bottom: 8px;
+      margin-bottom: .4em;
     }
   }
   @media only screen and (min-height: 548px){
@@ -85,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
       header h2 {
         position: absolute;
         right: 0;
-        top: 25%;
+        top: 35%;
         white-space: nowrap;
         writing-mode: vertical-rl;
         transform: translate(35%, -50%);

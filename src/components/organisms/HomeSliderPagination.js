@@ -7,9 +7,9 @@ const array = [1,2,3,4,5,6,7,8,9];
 const HomeSliderPagination = ({activeSlider, setActiveSlider}) => {
   const sliderButton = useCallback((direction) => {
     if(direction === 'prev'){
-      setActiveSlider(prevState => prevState === 1 ? 9 : --prevState)
+      setActiveSlider(prevState => prevState === 1 ? array.length : --prevState)
     } else if(direction === 'next'){
-      setActiveSlider(prevState => prevState === 9 ? 1 : ++prevState)
+      setActiveSlider(prevState => prevState === array.length ? 1 : ++prevState)
     }
   }, [setActiveSlider]);
   useEffect(() => {
@@ -62,12 +62,12 @@ const StyledSliderPagination = styled.div`
   align-items: center;
   button, .sliderPagination-mobile span {
     font-size: ${42/19.2}vw;
-    font-family: "Argent CF", serif;
+    font-family: "DM Serif Display", serif;
   }
   button {
-    width: ${70/19.2}vw;
-    height: ${70/19.2}vw;
-    line-height: ${70/19.2}vw;
+    width: max(44px, ${70/19.2}vw);
+    height: max(44px, ${70/19.2}vw);
+    line-height: max(44px, ${70/19.2}vw);
     text-align: center;
     &:not(:last-child){
       margin-right: ${25/19.2}vw;

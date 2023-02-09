@@ -13,11 +13,11 @@ const IndexPage = ({data}) => {
   return (
     <div className="scrollSnap">
       <PageIndicator>
-        <HomeHero data={{hero}}/>
-        <HomeSlider data={{slider}} />
-        <HomeHello data={{hello}}/>
+        <HomeHero data={hero}/>
+        <HomeSlider data={slider} />
+        <HomeHello data={hello}/>
         <HomeReviews />
-        <HomeLab data={{lab}}/>
+        <HomeLab data={lab}/>
         <Footer data={data.footer} />
       </PageIndicator>
     </div>

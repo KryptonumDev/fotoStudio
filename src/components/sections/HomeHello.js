@@ -19,7 +19,7 @@ const HomeHello = ({data}) => {
           </div>
         </header>
       </div>
-      <GatsbyImage image={data.hello.gatsbyImageData} alt={data.hello.alt} className="hello-img" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hello-img" />
     </StyledHello>
   );
 }
