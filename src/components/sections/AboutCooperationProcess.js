@@ -40,7 +40,7 @@ const AboutCooperationProcess = () => {
     setTimeout(() => {
       setActiveSliderDelay(activeSlider);
       slider.current.classList.remove('change');
-    }, 400);
+    }, 250);
   }, [activeSlider])
 
   return (
@@ -92,7 +92,7 @@ const StyledCooperationProcess = styled.section`
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    transition: opacity 800ms cubic-bezier(0.52, 0.16, 0.24, 1);
+    transition: opacity 500ms cubic-bezier(0.52, 0.16, 0.24, 1);
     will-change: opacity;
     &.change {
       opacity: 0;
