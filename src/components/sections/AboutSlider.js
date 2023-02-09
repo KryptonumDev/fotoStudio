@@ -29,6 +29,9 @@ const StyledHero = styled.section`
   position: relative;
   .max-width {
     height: unset;
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
     margin-top: ${196/10.8}vh;
     z-index: 2;
   }
@@ -61,7 +64,9 @@ const StyledHero = styled.section`
   }
   .sliderGalleryWrapper-item {
     width: 360px;
-    max-height: ${580/10.24}vh;
+    @media only screen and (min-height: 548px){
+      max-height: ${580/10.24}vh;
+    }
     flex-shrink: 0;
     &:not(:last-child) {
       margin-right: 60px;

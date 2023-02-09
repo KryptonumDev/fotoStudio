@@ -49,7 +49,9 @@ const StyledReviewss = styled.section`
   & > .max-width {
     display: flex;
     justify-content: space-between;
-    max-width: calc(100% - ${336/19.2}vw);
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
   }
   .reviews-header {
     margin-top: ${256/10.8}vh;
@@ -121,9 +123,6 @@ const StyledReviewss = styled.section`
     }
   }
   @media only screen and (max-width: 729px){
-    & > .max-width {
-      max-width: 100%;
-    }
     .reviews-header {
       font-size: ${14/16}rem;
     }

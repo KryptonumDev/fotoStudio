@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
       letter-spacing: 0.03em;
       line-height: 1.5;
       margin-bottom: .4em;
+      z-index: 2;
     }
   }
   @media only screen and (min-height: 548px){

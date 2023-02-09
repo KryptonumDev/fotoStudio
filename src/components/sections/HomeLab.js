@@ -30,7 +30,9 @@ const StyledLab = styled.section`
   display: flex;
   align-items: center;
   .max-width {
-    max-width: calc(100% - ${336/19.2}vw);
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
     height: auto;
     display: flex;
     & > * {
@@ -108,9 +110,6 @@ const StyledLab = styled.section`
     }
   }
   @media only screen and (max-width: 729px){
-    .max-width {
-      max-width: 100%;
-    }
     .lab-copy {
       width: 90%;
       max-width: 100%;

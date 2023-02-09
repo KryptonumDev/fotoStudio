@@ -29,7 +29,9 @@ const StyledHello = styled.section`
   & > .max-width {
     display: flex;
     align-items: center;
-    max-width: calc(100% - ${336/19.2}vw);
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
   }
   .hello-header {
     display: flex;
@@ -89,7 +91,6 @@ const StyledHello = styled.section`
   }
   @media only screen and (max-width: 729px){
     .max-width {
-      max-width: 100%;
       align-items: flex-end;
     }
     .hello-header {

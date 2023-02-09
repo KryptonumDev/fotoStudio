@@ -61,17 +61,15 @@ const StyledSliderPagination = styled.div`
   display: flex;
   align-items: center;
   button, .sliderPagination-mobile span {
-    font-size: ${42/19.2}vw;
+    font-size: min(${44/16}rem, ${42/19.2}vw);
     font-family: "DM Serif Display", serif;
   }
   button {
-    width: max(44px, ${70/19.2}vw);
-    height: max(44px, ${70/19.2}vw);
-    line-height: max(44px, ${70/19.2}vw);
+    width: min(44px, ${70/19.2}vw);
+    height: min(44px, ${70/19.2}vw);
+    line-height: min(44px, ${70/19.2}vw);
     text-align: center;
-    &:not(:last-child){
-      margin-right: ${25/19.2}vw;
-    }
+    margin-right: min(${32/16}rem, ${25/19.2}vw);
     span {
       pointer-events: none;
       transition: transform 400ms cubic-bezier(0.52, 0.16, 0.24, 1);

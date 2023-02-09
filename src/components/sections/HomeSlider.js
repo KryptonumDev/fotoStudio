@@ -41,7 +41,9 @@ const HomeSlider = ({data}) => {
 const StyledSlider = styled.section`
   position: relative;
   & > .max-width {
-    max-width: calc(100% - ${336/19.2}vw);
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
     margin-top: ${256/10.8}vh;
   }
   .slider-copy {
