@@ -9,10 +9,6 @@ const AboutHero = ({data}) => {
 
   return (
     <StyledHero className="slider sec" id="zobacz">
-      <header className="max-width">
-        <h2>Zobacz co możemy stworzyć</h2>
-        <Button link="/portfolio">Portfolio</Button>
-      </header>
       <div className="slider-gallery">
         <div className="sliderGallery-wrapper" style={{transform: `translateX(-${(activeSlider-1) * (360 + 60)}px)`}}>
           {data.map((slide, i) => (
@@ -21,6 +17,10 @@ const AboutHero = ({data}) => {
         </div>
         <AboutSliderPagination activeSlider={activeSlider} setActiveSlider={setActiveSlider} />
       </div>
+      <header className="max-width">
+        <h2>Zobacz co możemy stworzyć</h2>
+        <Button link="/portfolio">Portfolio</Button>
+      </header>
     </StyledHero>
   );
 }
