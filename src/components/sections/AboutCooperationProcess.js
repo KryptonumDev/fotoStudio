@@ -1,33 +1,33 @@
 import React, {useState, useEffect, useRef} from "react";
 import styled from "styled-components";
-import { Cooperation_Step1, Cooperation_Step2, Cooperation_Step3, Cooperation_Step4, Cooperation_Step5 } from "../atoms/Icons";
+import { CooperationStep1, CooperationStep2, CooperationStep3, CooperationStep4, CooperationStep5 } from "../atoms/Icons";
 import AboutCooperationProcessPagination from "../organisms/AboutCooperationProcessPagination";
 
 const steps = [
   {
     title: "1. Przygotowanie",
     description: 'Na tym etapie poznaję Ciebie i Twoje potrzeby. Wysłucham Twoich oczekiwań i zaproponuję co razem możemy stworzyć.',
-    icon: <Cooperation_Step1 />
+    icon: <CooperationStep1 />
   },
   {
     title: "2. Sesja próbna",
     description: 'Dzięki sesji próbnej zweryfikujemy pomysły i sprawdzimy, jak otoczenie spełnia nasze oczekiwania.',
-    icon: <Cooperation_Step2 />
+    icon: <CooperationStep2 />
   },
   {
     title: "3. Sesja właściwa",
     description: 'Dbam o każdy element nawet najmniejszy. Dzięki naszej współpracy dopracowany będzie każdy szczegół. A ja zjawię się w wyznaczonym miejscu jako pierwszy.',
-    icon: <Cooperation_Step3 />
+    icon: <CooperationStep3 />
   },
   {
     title: "4. Wybór zdjęć",
     description: 'To jeden z najtrudniejszych etapów, w którym w pełni służę pomocą. Doradzam, wspieram, pomagam w obiektywnej ocenie tak, aby Twój zestaw zdjęć był idealny.',
-    icon: <Cooperation_Step4 />
+    icon: <CooperationStep4 />
   },
   {
     title: "5. Obróbka zdjęć",
     description: 'Dokładam wszelkich starań, aby każda fotografia była dopracowana. Wieloletnie doświadczenie pomaga mi wydobyć ze zdjęcia idealną głębię.',
-    icon: <Cooperation_Step5 />
+    icon: <CooperationStep5 />
   },
 ]
 

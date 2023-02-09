@@ -10,7 +10,7 @@ const AboutCooperationProcessPagination = ({activeSlider, setActiveSlider, steps
     } else if(direction === 'next'){
       setActiveSlider(prevState => prevState === stepsLength ? 1 : ++prevState)
     }
-  }, [setActiveSlider]);
+  }, [setActiveSlider, stepsLength]);
 
   const handleArrowKey = useCallback((e) => {
     if(e.key === "ArrowLeft"){
