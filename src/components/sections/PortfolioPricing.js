@@ -29,16 +29,6 @@ const StyledPricing = styled.section`
     }
     header {
       max-width: ${630/19.2}vw;
-      h2 {
-        font-size: ${42/19.2}vw;
-        margin-bottom: .6em;
-      }
-      p {
-        font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
-        &:not(:last-of-type){
-          margin-bottom: .6em;
-        }
-      }
       a {
         margin-top: min(${48/10.8}vh, ${32/16}rem);
       }
@@ -61,9 +51,6 @@ const StyledPricing = styled.section`
       max-width: 90%;
       header {
         max-width: 100%;
-        h2 {
-          font-size: ${32/16}rem;
-        }
       }
     }
     .pricing-img {
