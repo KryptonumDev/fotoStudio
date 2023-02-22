@@ -6,7 +6,7 @@ const TheyTrusted = () => {
     <StyledTrusted className="trusted sec">
       <div className="max-width">
         <header>
-          <h2 class="notVertical">Zaufali mi</h2>
+          <h2 className="notVertical">Zaufali mi</h2>
           <p>Pracuję nie tylko z klientami indywidualnymi. Miałem również przyjemność realizować firmowe sesje zdjęciowe.</p>
         </header>
         <div className="trusted-wrapper">

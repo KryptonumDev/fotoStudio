@@ -22,7 +22,7 @@ const Slider = ({data}) => {
   return (
     <StyledSlider className="slider">
       <div className="slider-wrapper"
-        style={{transform: `translateX(${(-400 + (activeSlide-1 * 20)) * (activeSlide-1)}px)`}}
+        style={{transform: `translateX(${((400 * (activeSlide-1)) + (activeSlide-1) * 20) * -1}px)`}}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -60,12 +60,18 @@ const StyledSlider = styled.section`
   .slider-item {
     width: 400px;
     height: auto;
-    max-height: 500px;
+    max-height: 60vh;
     flex-shrink: 0;
     transform: translateX(-50%);
     &:not(:last-child){
       margin-right: 20px;
     }
+  }
+  @media only screen and (max-width: 1299px){
+    width: 100%;
+    top: auto;
+    bottom: 2rem;
+    transform: translateY(0%);
   }
 `
  

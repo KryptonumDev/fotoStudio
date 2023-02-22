@@ -18,7 +18,6 @@ const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
     } else if(e.key === "ArrowRight"){
       sliderButton('next');
     }
-    console.log('ee')
   }, [sliderButton])
   
   useEffect(() => {

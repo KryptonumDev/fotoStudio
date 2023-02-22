@@ -45,3 +45,5 @@ export const query = graphql`
 `
  
 export default ContactPage;
+
+export const Head = () => <title>Kontakt - Adam Chrapek</title>

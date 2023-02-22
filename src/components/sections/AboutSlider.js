@@ -76,14 +76,13 @@ const StyledHero = styled.section`
       width: 100%;
     }
   }
-  @media only screen and (max-width: 767px){
-    .max-width {
+  @media only screen and (max-width: 729px){
+    header.max-width {
       position: static;
       h2 {
         z-index: 2;
         top: 50%;
         transform: translate(0%, -50%);
-        font-size: ${24/16}rem;
       }
     }
     .sliderGalleryWrapper-item {
