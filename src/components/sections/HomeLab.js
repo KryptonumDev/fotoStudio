@@ -42,9 +42,7 @@ const StyledLab = styled.section`
   .lab-header {
     padding-right: 1.5em;
     p {
-      font-size: clamp(${13/16}rem, ${24/19.2}vw, ${24/16}rem);
       max-width: clamp(390px, ${530/19.2}vw, 530px);
-      line-height: 1.5;
     }
   }
   .lab-copy {

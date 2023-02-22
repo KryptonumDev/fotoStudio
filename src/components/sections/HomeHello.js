@@ -41,12 +41,6 @@ const StyledHello = styled.section`
     & > :nth-child(2) {
       max-width: ${600/19.2}vw;
     }
-    p {
-      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
-      &:not(:last-child) {
-        margin-bottom: ${24/19.2}vw;
-      }
-    }
   }
   .hello-img {
     position: absolute;
@@ -101,12 +95,6 @@ const StyledHello = styled.section`
       & > :nth-child(2) {
         max-width: 100%;
         margin-bottom: 22px;
-      }
-      p {
-        font-size: clamp(${13/16}rem, ${13/6}vh, 1rem);
-      }
-      p:not(:last-child) {
-        margin-bottom: ${8/6}vh;
       }
     }
     .hello-img {

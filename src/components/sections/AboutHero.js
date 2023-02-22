@@ -30,10 +30,6 @@ const StyledHero = styled.section`
     }
     p {
       max-width: max(${785/19.2}vw, 439px);
-      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
-      &:not(:last-child){
-        margin-bottom: min(${48/10.8}vh, ${48/16}rem);
-      }
     }
   }
   .hero-img {
@@ -70,10 +66,6 @@ const StyledHero = styled.section`
       }
       p {
         max-width: 100%;
-        font-size: ${14/16}rem;
-        &:not(:last-child){
-          margin-bottom: .6rem;
-        }
       }
     }
   }

@@ -64,8 +64,14 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 800;
       letter-spacing: 0.03em;
       line-height: 1.5;
-      margin-bottom: .4em;
+      margin-bottom: .6em;
       z-index: 2;
+    }
+    p {
+      font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+      &:not(:last-of-type){
+        margin-bottom: .6em;
+      }
     }
   }
   @media only screen and (min-height: 548px){

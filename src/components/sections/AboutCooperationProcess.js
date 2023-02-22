@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import styled from "styled-components";
 import { CooperationStep1, CooperationStep2, CooperationStep3, CooperationStep4, CooperationStep5 } from "../atoms/Icons";
-import AboutCooperationProcessPagination from "../organisms/AboutCooperationProcessPagination";
+import SliderPagination from "../organisms/SliderPagination";
 
 const steps = [
   {
@@ -60,7 +60,7 @@ const AboutCooperationProcess = () => {
             </div>
           ))}
         </div>
-        <AboutCooperationProcessPagination activeSlider={activeSlider} setActiveSlider={setActiveSlider} stepsLength={steps.length} />
+        <SliderPagination activeSlide={activeSlider} setActiveSlide={setActiveSlider} sliderLength={steps.length} />
       </div>
     </StyledCooperationProcess>
   );
@@ -117,10 +117,10 @@ const StyledCooperationProcess = styled.section`
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
     }
-    svg {
-      max-width: 230px;
+    .max-width > svg {
+      width: 233px;
+      height: 233px;
       margin: 0 3%;
-      height: auto;
     }
   }
   @media only screen and (max-width: 999px){
@@ -136,8 +136,6 @@ const StyledCooperationProcess = styled.section`
         text-align: left;
       }
       svg {
-        width: ${360/7.68}vw;
-        height: ${360/7.68}vw;
         padding: 8%;
         margin: 0;
       }

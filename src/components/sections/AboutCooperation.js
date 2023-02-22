@@ -34,12 +34,6 @@ const StyledCooperation = styled.section`
       a {
         margin-bottom: ${44/10.8}vh;
       }
-      p {
-        font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
-        &:not(:last-child){
-          margin-bottom: ${24/10.8}vh;
-        }
-      }
     }
   }
   .cooperation-img {
@@ -71,12 +65,6 @@ const StyledCooperation = styled.section`
         max-width: 100%;
         h2 {
           transform: translate(0%,-50%);
-        }
-        p {
-          font-size: ${14/16}rem;
-          &:not(:last-child){
-            margin-bottom: .6rem;
-          }
         }
         a {
           position: relative;

@@ -7,7 +7,7 @@ import AboutCooperationProcess from "../components/sections/AboutCooperationProc
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
-const IndexPage = ({data}) => {
+const AboutPage = ({data}) => {
   const {hero, slider, cooperation, slider2} = data.about;
   return (
     <div className="scrollSnap">
@@ -54,6 +54,6 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default AboutPage
 
 export const Head = () => <title>O mnie - Adam Chrapek</title>

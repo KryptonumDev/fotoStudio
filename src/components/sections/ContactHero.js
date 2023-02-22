@@ -2,16 +2,13 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import ScrollDown from "../atoms/ScrollDown";
-import Button from "../atoms/Button";
 
-const PortfolioHero = ({data}) => {
+const ContactHero = ({data}) => {
   return (
     <StyledHero className="hero sec">
       <div className="max-width">
-        <h1>Portfolio</h1>
-        <p>Fotografia to mój sposób na życie, ale i&nbsp;pasja, która trwa niezmiennie od 40 lat.</p>
-        <p>Kocham uwieczniać niepowtarzalne chwile i&nbsp;tworzyć z&nbsp;nich wspomnienia, które zostają na długie lata.</p>
-        <Button link="/kontakt">Kontakt</Button>
+        <h1>Kontakt</h1>
+        <p>Porozmawiajmy o Twoich pomysłach na sesję zdjęciową.</p>
       </div>
       <ScrollDown href="#zobacz" />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
@@ -68,13 +65,9 @@ const StyledHero = styled.section`
       }
       p {
         max-width: 100%;
-        font-size: 1rem;
-        &:not(:last-child){
-          margin-bottom: .6rem;
-        }
       }
     }
   }
 `
  
-export default PortfolioHero;
+export default ContactHero;

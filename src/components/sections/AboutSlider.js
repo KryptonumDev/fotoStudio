@@ -1,22 +1,13 @@
-import React, { useState } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
 import styled from "styled-components";
 import Button from "../atoms/Button";
-import AboutSliderPagination from "../organisms/AboutSliderPagination";
+import Slider from "../organisms/Slider";
 
 const AboutHero = ({data}) => {
-  const [activeSlider, setActiveSlider] = useState(1);
 
   return (
     <StyledHero className="slider sec" id="zobacz">
-      <div className="slider-gallery">
-        <div className="sliderGallery-wrapper" style={{transform: `translateX(-${(activeSlider-1) * (360 + 60)}px)`}}>
-          {data.map((slide, i) => (
-            <GatsbyImage image={slide.gatsbyImageData} alt={slide.alt || ""} className="sliderGalleryWrapper-item" key={i} />
-          ))}
-        </div>
-        <AboutSliderPagination activeSlider={activeSlider} setActiveSlider={setActiveSlider} />
-      </div>
+      <Slider data={data} />
       <header className="max-width">
         <h2>Zobacz co możemy stworzyć</h2>
         <Button link="/portfolio">Portfolio</Button>
