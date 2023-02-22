@@ -5,6 +5,7 @@ import HomeSlider from "../components/sections/HomeSlider"
 import HomeHello from "../components/sections/HomeHello"
 import HomeReviews from "../components/sections/HomeReviews"
 import HomeLab from "../components/sections/HomeLab"
+import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -18,6 +19,7 @@ const IndexPage = ({data}) => {
         <HomeHello data={hello}/>
         <HomeReviews />
         <HomeLab data={lab}/>
+        <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
     </div>

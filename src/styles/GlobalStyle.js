@@ -89,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
   }
   @media only screen and (max-width: 729px){
     .sec {
-      header h2 {
+      header h2:not(.notVertical) {
         position: absolute;
         right: 0;
         top: 35%;

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import PortfolioHero from "../components/sections/PortfolioHero"
 import PortfolioPhotography from "../components/sections/PortfolioPhotography"
 import PortfolioPricing from "../components/sections/PortfolioPricing"
+import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -29,6 +30,7 @@ const PortfolioPage = ({data}) => {
           content={['Jeśli chcesz zareklamować swoje produkty w sieci, profesjonalne zdjęcia to konieczność. Produktowa sesja zdjęciowa świetnie sprawdzi się zarówno na Twojej stronie, jak i różnego rodzaju serwisach sprzedażowych. Chętnie pomogę Ci wyeksponować produkty, które masz w swojej ofercie.']}
         />
         <PortfolioPricing data={pricing} />
+        <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
     </div>

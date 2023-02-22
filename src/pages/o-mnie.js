@@ -4,6 +4,7 @@ import AboutHero from "../components/sections/AboutHero"
 import AboutSlider from "../components/sections/AboutSlider"
 import AboutCooperation from "../components/sections/AboutCooperation"
 import AboutCooperationProcess from "../components/sections/AboutCooperationProcess"
+import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -16,6 +17,7 @@ const AboutPage = ({data}) => {
         <AboutSlider data={slider} />
         <AboutCooperation data={cooperation} />
         <AboutCooperationProcess />
+        <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
     </div>

@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import ContactHero from "../components/sections/ContactHero"
 import ContactDetails from "../components/sections/ContactDetails"
+import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
@@ -12,6 +13,7 @@ const ContactPage = ({data}) => {
       <PageIndicator>
         <ContactHero data={hero} />
         <ContactDetails data={{details, contact: data.footer}} />
+        <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
     </div>
