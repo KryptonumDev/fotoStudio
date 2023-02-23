@@ -56,6 +56,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 815px;
     height: 1px;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     & > .max-width {
       position: relative;
     } 
@@ -69,6 +70,9 @@ const GlobalStyle = createGlobalStyle`
     }
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
+      @media only screen and (max-width: 459px){
+        font-size: ${14/16}rem;
+      }
       &:not(:last-of-type){
         margin-bottom: .6em;
       }

@@ -59,6 +59,16 @@ const StyledPricing = styled.section`
       top: 0;
       right: 50%;
       transform: translateX(50%);
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0), #000);
+        z-index: 1;
+      }
     }
   }
   @media only screen and (max-width: 729px){

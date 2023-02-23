@@ -67,6 +67,12 @@ const StyledSlider = styled.section`
       margin-right: 20px;
     }
   }
+  @media only screen and (max-width: 449px){
+    .slider-item img {
+      transform-origin: bottom;
+      transform: scale(.8);
+    }
+  }
   @media only screen and (max-width: 1299px){
     width: 100%;
     top: auto;
