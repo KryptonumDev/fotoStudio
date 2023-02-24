@@ -123,6 +123,7 @@ const StyledForm = styled.section`
         resize: none;
         transition: background-color 0s 5000s, color 0s 5000s;
         color: #fff;
+        -webkit-appearance: none;
       }
       textarea {
         height: 96px;
@@ -130,7 +131,7 @@ const StyledForm = styled.section`
     }
   }
   button {
-    margin-top: ${21/16}rem;
+    margin-top: ${34/16}rem;
   }
   @media only screen and (max-width: 1199px){
     .max-width {
@@ -168,9 +169,9 @@ const StyledForm = styled.section`
   }
   @media only screen and (max-width: 729px) and (max-height: 749px){
     height: 150%;
-    .slider {
-      bottom: 25%;
-    }
+  }
+  @media only screen and (max-width: 729px) and (max-height: 649px){
+    height: 180%;
   }
 `
  
