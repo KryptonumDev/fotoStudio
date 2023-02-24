@@ -1,11 +1,12 @@
 {
   "version": 2,
   "name": "FotoStudio SMTP",
-  "functions": {
-      "contactForm.js": {
-         "runtime": "@vercel/node"
+  "builds": [
+      {
+         "src": "contactForm.js",
+         "use": "@vercel/node"
       }
-   },
+  ],
   "rewrites": [
       {
          "source": "/kontakt/send",
