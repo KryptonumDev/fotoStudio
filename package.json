@@ -15,7 +15,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "express": "^4.18.2",
     "gatsby": "^5.5.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-sharp": "^5.5.0",

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "FotoStudio SMTP",
+  "builds": [
+     { "src": "contactForm.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+     { "src": "/kontakt", "methods": ["POST"], "dest": "contactForm.js" }
+  ]
+}
