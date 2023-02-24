@@ -7,7 +7,7 @@
   "redirects": [
       {
          "source": "/kontakt/send",
-         "dest": "contactForm.js"
+         "destination": "contactForm.js"
       }
    ]
 }
