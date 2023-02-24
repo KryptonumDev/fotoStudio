@@ -43,6 +43,35 @@ const GlobalStyle = createGlobalStyle`
   svg {
     vertical-align: top;
   }
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--white);
+    transform: translateY(-0.075em);
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    & + span {
+      vertical-align: middle;
+    }
+  }
+  input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 60%;
+    height: 60%;
+    background-color: var(--white);
+    transition: transform .2s;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: translate(-50%,-50%) scale(1);
+  }
   .max-width {
     width: calc(100% - 44px);
     max-width: 1780px;

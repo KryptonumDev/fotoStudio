@@ -3,18 +3,27 @@ import { graphql } from "gatsby"
 import ContactHero from "../components/sections/ContactHero"
 import ContactForm from "../components/sections/ContactForm"
 import ContactDetails from "../components/sections/ContactDetails"
+import HomeReviews from "../components/sections/HomeReviews"
+import AboutSlider from "../components/sections/AboutSlider"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 
 const ContactPage = ({data}) => {
   const {hero, details} = data.contact;
+  const { slider } = data.about;
   return (
     <div className="scrollSnap">
       <PageIndicator>
         <ContactHero data={hero} />
         <ContactForm />
         <ContactDetails data={{details, contact: data.footer}} />
+        <AboutSlider
+          heading="Fotografie"
+          button={{text: 'Portfolio', link: '/portfolio'}}
+          data={slider}
+        />
+        <HomeReviews />
         <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
@@ -30,6 +39,12 @@ export const query = graphql`
         alt
       }
       details {
+        gatsbyImageData
+        alt
+      }
+    }
+    about: datoCmsAboutMe {
+      slider {
         gatsbyImageData
         alt
       }

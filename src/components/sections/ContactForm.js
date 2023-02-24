@@ -7,7 +7,9 @@ const ContactForm = ({data}) => {
   return (
     <StyledForm className="form sec">
       <div className="max-width">
-        <h1>Porozmawiajmy</h1>
+        <header>
+          <h2 className="notVertical">Porozmawiajmy!</h2>
+        </header>
         <form method="post" action="https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/">
           <div className="form-wrapper">
             <div className="form-item">
@@ -22,6 +24,18 @@ const ContactForm = ({data}) => {
             </div>
             <div className="form-item">
               <label>
+                <span>Adres e-mail</span>
+                <input type="email" name="email" placeholder="adamchrapek@gmail.com" />
+              </label>
+            </div>
+            <div className="form-item">
+              <label>
+                <span>Numer telefonu</span>
+                <input type="tel" name="tel" placeholder="+48 --- --- ---" />
+              </label>
+            </div>
+            <div className="form-item">
+              <label>
                 <span>Rodzaj sesji</span>
                 <select name="type" id="">
                   <option defaultValue disabled >Wybierz rodzaj sesji...</option>
@@ -31,18 +45,6 @@ const ContactForm = ({data}) => {
                   <option value="Produktowa">Produktowa</option>
                   <option value="Analogowa">Analogowa</option>
                 </select>
-              </label>
-            </div>
-            <div className="form-item">
-              <label>
-                <span>Adres e-mail</span>
-                <input type="email" name="email" placeholder="adamchrapek@gmail.com" />
-              </label>
-            </div>
-            <div className="form-item">
-              <label>
-                <span>Numer telefonu</span>
-                <input type="tel" name="tel" placeholder="+48 --- --- ---" />
               </label>
             </div>
             <div className="form-item">
@@ -70,18 +72,28 @@ const StyledForm = styled.section`
   align-items: center;
   .max-width {
     height: auto;
+    display: flex;
+    align-items: center;
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
   }
-  form {
+  form, header {
     width: 50%;
   }
+  header {
+    h2 {
+      font-size: clamp(${32/16}rem, ${64/19.2}vw, ${64/16}rem);
+    }
+  }
   .form-wrapper {
-    margin: -21px -13px;
+    margin: -${13/16}rem;
     display: flex;
     flex-wrap: wrap;
   }
   .form-item {
     width: 50%;
-    padding: 21px 13px;
+    padding: ${13/16}rem;
     &:nth-last-of-type(-n+2){
       width: 100%;
     }
@@ -93,16 +105,19 @@ const StyledForm = styled.section`
         margin-right: 8px;
         & + span {
           font-family: var(--sans-serif-font);
-          font-size: .8rem;
+          font-size: .7rem;
           a {
             font-weight: bold;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
       input:not([type="checkbox"]), textarea, select {
         display: block;
         width: 100%;
-        height: 55px;
+        height: 48px;
         padding: 13px;
         border-bottom: 1px solid var(--white);
         resize: none;
@@ -110,12 +125,52 @@ const StyledForm = styled.section`
         color: #fff;
       }
       textarea {
-        height: 110px;
+        height: 96px;
       }
     }
   }
   button {
-    margin-top: 34px;
+    margin-top: ${21/16}rem;
+  }
+  @media only screen and (max-width: 1199px){
+    .max-width {
+      display: block;
+    }
+    form, header {
+      width: 100%;
+    }
+    header {
+      h2 {
+        margin-bottom: ${21/16}rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 1199px){
+    .max-width {
+      display: block;
+    }
+    form, header {
+      width: 100%;
+    }
+    header {
+      h2 {
+        margin-bottom: ${21/16}rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 599px){
+    .form-item {
+      width: 100%;
+      &:nth-child(3), &:nth-child(4) {
+        width: 50%;
+      }
+    }
+  }
+  @media only screen and (max-width: 729px) and (max-height: 749px){
+    height: 150%;
+    .slider {
+      bottom: 25%;
+    }
   }
 `
  
