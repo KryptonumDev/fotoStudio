@@ -4,10 +4,7 @@
   "builds": [
      { "src": "contactForm.js", "use": "@vercel/node" }
   ],
-  "redirects": [
-      {
-         "source": "/kontakt/send",
-         "destination": "contactForm.js"
-      }
+   "routes": [
+      { "src": "/kontakt/send", "methods": ["POST"], "dest": "contactForm.js" }
    ]
 }
