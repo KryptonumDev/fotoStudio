@@ -124,6 +124,7 @@ const StyledForm = styled.section`
         transition: background-color 0s 5000s, color 0s 5000s;
         color: #fff;
         -webkit-appearance: none;
+        border-radius: 0;
       }
       textarea {
         height: 96px;

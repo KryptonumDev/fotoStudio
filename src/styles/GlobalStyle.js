@@ -46,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
   input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
+    border-radius: 0;
     width: 1rem;
     height: 1rem;
     border: 1px solid var(--white);
@@ -68,7 +69,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--white);
     transition: transform .2s;
   }
-
   input[type="checkbox"]:checked::before {
     transform: translate(-50%,-50%) scale(1);
   }
