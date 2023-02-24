@@ -4,15 +4,25 @@ import styled from "styled-components";
 
 const Button = ({link, children}) => {
   return (
-    <StyledLink to={link}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z"/></svg>
-      <span>{children}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z"/></svg>
-    </StyledLink>
+    <>
+    {link ? (
+      <StyledLink to={link}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z"/></svg>
+        <span>{children}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z"/></svg>
+      </StyledLink>
+    ) : (
+      <StyledButton type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z"/></svg>
+        {children}
+        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z"/></svg>
+      </StyledButton>
+    )}
+    </>
   );
 }
 
-const StyledLink = styled(gatsbyLink)`
+const styles = [`
   display: inline-block;
   font-size: ${42/16}rem;
   font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
@@ -20,7 +30,7 @@ const StyledLink = styled(gatsbyLink)`
   letter-spacing: 0.03rem;
   line-height: 1;
   white-space: nowrap;
-  font-family: 'DM Serif Display', serif;
+  font-family: var(--serif-font);
   text-align: center;
   border: 1px solid var(--color);
   position: relative;
@@ -69,7 +79,10 @@ const StyledLink = styled(gatsbyLink)`
         }
       }
     }
-  }   
-`
+  }
+`];
+
+const StyledLink = styled(gatsbyLink)(styles);
+const StyledButton = styled.button(styles);
  
 export default Button;
