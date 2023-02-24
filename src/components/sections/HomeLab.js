@@ -55,7 +55,7 @@ const StyledLab = styled.section`
     }
     li {
       &::marker {
-        font-family: 'DM Serif Display', serif;
+        font-family: var(--serif-font);
         font-weight: 800;
         font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
       }

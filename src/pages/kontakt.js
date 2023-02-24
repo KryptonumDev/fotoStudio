@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import ContactHero from "../components/sections/ContactHero"
+import ContactForm from "../components/sections/ContactForm"
 import ContactDetails from "../components/sections/ContactDetails"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
@@ -12,6 +13,7 @@ const ContactPage = ({data}) => {
     <div className="scrollSnap">
       <PageIndicator>
         <ContactHero data={hero} />
+        <ContactForm />
         <ContactDetails data={{details, contact: data.footer}} />
         <TheyTrusted />
         <Footer data={data.footer} />

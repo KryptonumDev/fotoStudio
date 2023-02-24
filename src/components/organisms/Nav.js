@@ -91,6 +91,9 @@ const StyledNav = styled.nav`
   ul {
     list-style-type: none;
     a {
+      &[aria-current="page"] span {
+        opacity: .6;
+      }
       padding: 10px;
       margin: -10px;
       font-weight: 600;

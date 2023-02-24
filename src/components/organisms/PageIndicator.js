@@ -16,7 +16,6 @@ const PageIndicator = ({children}) => {
 
 const StyledIndicator = styled.div`
   display: none;
-  
   position: fixed;
   left: 22px;
   top: 50%;

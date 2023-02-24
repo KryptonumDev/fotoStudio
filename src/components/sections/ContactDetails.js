@@ -3,14 +3,13 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const ContactDetails = ({data}) => {
-  console.log(data);
   return (
     <StyledDetails className="details sec">
       <div className="max-width">
         <h1>Dane kontaktowe</h1>
         <p>Porozmawiajmy o Twoich pomysłach na sesję zdjęciową.</p>
       </div>
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
+      {/* <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" /> */}
     </StyledDetails>
   );
 }

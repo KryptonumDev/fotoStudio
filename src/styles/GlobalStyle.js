@@ -11,11 +11,13 @@ const GlobalStyle = createGlobalStyle`
     --bg: #000000;
     --white: #ffffff;
     --color: #F2F0E3;
+    --serif-font: 'DM Serif Display', serif;
+    --sans-serif-font: 'Montserrat', sans-serif;
   }
   body {
     background-color: var(--bg);
     color: var(--color);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--sans-serif-font);
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: -0.022em;
@@ -25,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
-    font-family: 'DM Serif Display', serif;
+    font-family: var(--serif-font);
     letter-spacing: 0.03em;
     color: var(--color);
   }
