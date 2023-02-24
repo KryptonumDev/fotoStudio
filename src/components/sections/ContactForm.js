@@ -8,7 +8,7 @@ const ContactForm = ({data}) => {
     <StyledForm className="form sec">
       <div className="max-width">
         <h1>Porozmawiajmy</h1>
-        <form method="post" action="https://foto-studio-smtp.vercel.app/">
+        <form method="post" action="https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/">
           <div className="form-wrapper">
             <div className="form-item">
               <label>
