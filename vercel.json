@@ -7,14 +7,7 @@
   "redirects": [
       {
          "source": "/kontakt/send",
-         "dest": "contactForm.js",
-         "has": [
-            {
-              "type": "header",
-              "key": ":method",
-              "value": "POST"
-            }
-          ]
+         "dest": "contactForm.js"
       }
    ]
 }
