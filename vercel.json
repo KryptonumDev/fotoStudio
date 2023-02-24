@@ -5,6 +5,6 @@
      { "src": "contactForm.js", "use": "@vercel/node" }
   ],
   "routes": [
-     { "src": "/kontakt", "methods": ["POST"], "dest": "contactForm.js" }
+     { "src": "/(.*)", "dest": "contactForm.js" }
   ]
 }
