@@ -4,7 +4,7 @@ app.use(express.urlencoded({ extended: true }));
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-app.post("/", function (req, res) {
+app.post("/kontakt/send", function (req, res) {
   const data = {
     name: req.body.name,
     typeOfSession: req.body.type,
@@ -38,6 +38,10 @@ ${data.message}`,
   .catch(() => {
     res.status(500).json({ success: false })
   });
+})
+
+app.get("/kontakt/send", function (req, res) {
+  res.write('');
 })
 
 app.listen(443);
