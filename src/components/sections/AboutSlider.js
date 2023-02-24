@@ -3,14 +3,13 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 import Slider from "../organisms/Slider";
 
-const AboutHero = ({data}) => {
-
+const AboutHero = ({data, heading, button}) => {
   return (
     <StyledHero className="slider sec" id="zobacz">
       <Slider data={data} />
       <header className="max-width">
-        <h2>Zobacz co możemy stworzyć</h2>
-        <Button link="/portfolio">Portfolio</Button>
+        <h2>{heading}</h2>
+        <Button link={button.link}>{button.text}</Button>
       </header>
     </StyledHero>
   );

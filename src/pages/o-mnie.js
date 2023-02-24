@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, useScrollRestoration } from "gatsby"
 import AboutHero from "../components/sections/AboutHero"
 import AboutSlider from "../components/sections/AboutSlider"
 import AboutCooperation from "../components/sections/AboutCooperation"
@@ -10,13 +10,23 @@ import PageIndicator from "../components/organisms/PageIndicator"
 
 const AboutPage = ({data}) => {
   const {hero, slider, cooperation, slider2} = data.about;
+  const scrollRestoration = useScrollRestoration(`AboutPage`)
   return (
-    <div className="scrollSnap">
+    <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
         <AboutHero data={hero} />
-        <AboutSlider data={slider} />
+        <AboutSlider
+          heading="Zobacz co możemy stworzyć"
+          button={{text: 'Portfolio', link: '/portfolio'}}
+          data={slider}
+        />
         <AboutCooperation data={cooperation} />
         <AboutCooperationProcess />
+        <AboutSlider
+          heading="Fotografia reportażowa"
+          button={{text: 'Kontakt', link: '/kontakt'}}
+          data={slider2}
+        />
         <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
