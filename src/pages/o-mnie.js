@@ -7,6 +7,7 @@ import AboutCooperationProcess from "../components/sections/AboutCooperationProc
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
+import { Seo } from '../components/Seo'
 
 const AboutPage = ({data}) => {
   const {hero, slider, cooperation, slider2} = data.about;
@@ -68,4 +69,9 @@ export const query = graphql`
 
 export default AboutPage
 
-export const Head = () => <title>O mnie - Adam Chrapek</title>
+export const Head = () => (
+  <>
+    <Seo />
+    <title>O mnie - Adam Chrapek</title>
+  </>
+)

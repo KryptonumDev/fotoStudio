@@ -6,6 +6,7 @@ import PortfolioPricing from "../components/sections/PortfolioPricing"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
+import { Seo } from "../components/Seo"
 
 const PortfolioPage = ({data}) => {
   const {hero, reportage, analog, product, pricing} = data.portfolio;
@@ -76,4 +77,9 @@ export const query = graphql`
  
 export default PortfolioPage;
 
-export const Head = () => <title>Portfolio - Adam Chrapek</title>
+export const Head = () => (
+  <>
+    <Seo />
+    <title>Portfolio - Adam Chrapek</title>
+  </>
+)

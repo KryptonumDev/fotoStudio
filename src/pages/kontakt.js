@@ -8,6 +8,7 @@ import AboutSlider from "../components/sections/AboutSlider"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
+import { Seo } from "../components/Seo"
 
 const ContactPage = ({data}) => {
   const {hero, details} = data.contact;
@@ -63,4 +64,9 @@ export const query = graphql`
  
 export default ContactPage;
 
-export const Head = () => <title>Kontakt - Adam Chrapek</title>
+export const Head = () => (
+  <>
+    <Seo />
+    <title>Kontakt - Adam Chrapek</title>
+  </>
+)

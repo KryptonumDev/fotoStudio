@@ -8,6 +8,7 @@ import HomeLab from "../components/sections/HomeLab"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
+import { Seo } from '../components/Seo';
 
 const IndexPage = ({data}) => {
   const {hero, slider, hello, lab} = data.home;
@@ -60,4 +61,10 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = () => <title>Foto Studio</title>
+
+export const Head = () => (
+  <>
+    <Seo />
+    <title>Foto Studio</title>
+  </>
+)

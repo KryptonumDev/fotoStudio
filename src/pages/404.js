@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components";
 import Button from '../components/atoms/Button';
+import { Seo } from "../components/Seo";
 
 const NotFoundPage = () => {
   return (
@@ -90,4 +91,9 @@ const StyledNotFound = styled.section`
 
 export default NotFoundPage
 
-export const Head = () => <title>Strony nie znaleziono - Foto Studio</title>
+export const Head = () => (
+  <>
+    <Seo />
+    <title>Strony nie znaleziono - Foto Studio</title>
+  </>
+)
