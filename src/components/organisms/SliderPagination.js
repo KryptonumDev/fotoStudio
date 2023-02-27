@@ -2,7 +2,6 @@ import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowLeft, ArrowRight } from "../atoms/Icons";
 
-
 const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
   const sliderButton = useCallback((direction) => {
     if(direction === 'prev'){
@@ -10,7 +9,7 @@ const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
     } else if(direction === 'next'){
       setActiveSlide(prevState => prevState === sliderLength ? 1 : ++prevState)
     }
-  }, [setActiveSlide]);
+  }, [setActiveSlide, sliderLength]);
 
   const handleArrowKey = useCallback((e) => {
     if(e.key === "ArrowLeft"){
@@ -30,8 +29,6 @@ const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
     }, {threshold: .5})
     observer.observe(document.querySelector(".slider"))
   }, [handleArrowKey])
-
- 
 
   return (
     <StyledSliderPagination className="slider-pagination">

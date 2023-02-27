@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --bg: #000000;
     --white: #ffffff;
     --color: #F2F0E3;
+    --error-color: #de071c;
     --serif-font: 'DM Serif Display', serif;
     --sans-serif-font: 'Montserrat', sans-serif;
   }

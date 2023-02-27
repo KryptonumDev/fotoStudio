@@ -9,16 +9,27 @@ const HomeSliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
     } else if(direction === 'next'){
       setActiveSlide(prevState => prevState === sliderLength ? 1 : ++prevState)
     }
-  }, [setActiveSlide]);
-  useEffect(() => {
-    document.addEventListener('keydown', (e) => {
-      if(e.key === "ArrowLeft"){
-        sliderButton('prev');
-      } else if(e.key === "ArrowRight"){
-        sliderButton('next');
-      }
-    })
+  }, [setActiveSlide, sliderLength]);
+
+  const handleArrowKey = useCallback((e) => {
+    if(e.key === "ArrowLeft"){
+      sliderButton('prev');
+    } else if(e.key === "ArrowRight"){
+      sliderButton('next');
+    }
   }, [sliderButton])
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      if(entries[0].isIntersecting){
+        document.addEventListener('keydown', e => handleArrowKey(e))
+      } else {
+        document.removeEventListener('keydown', e => handleArrowKey(e))
+      }
+    }, {threshold: .5})
+    observer.observe(document.querySelector(".slider"))
+  }, [handleArrowKey])
+
   return (
     <StyledSliderPagination className="slider-pagination">
       <button
