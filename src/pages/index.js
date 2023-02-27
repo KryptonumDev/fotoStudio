@@ -1,9 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import HomeHero from "../components/sections/HomeHero"
-import HomeSlider from "../components/sections/HomeSlider"
+import HomeGallery from "../components/sections/HomeGallery"
 import HomeHello from "../components/sections/HomeHello"
-import HomeReviews from "../components/sections/HomeReviews"
+import Reviews from "../components/sections/Reviews"
 import HomeLab from "../components/sections/HomeLab"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
@@ -16,9 +16,9 @@ const IndexPage = ({data}) => {
     <div className="scrollSnap">
       <PageIndicator>
         <HomeHero data={hero}/>
-        <HomeSlider data={slider} />
+        <HomeGallery data={slider} />
         <HomeHello data={hello}/>
-        <HomeReviews />
+        <Reviews />
         <HomeLab data={lab}/>
         <TheyTrusted />
         <Footer data={data.footer} />

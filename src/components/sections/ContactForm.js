@@ -169,10 +169,8 @@ const StyledForm = styled.section`
     }
   }
   @media only screen and (max-width: 729px) and (max-height: 749px){
-    height: 150%;
-  }
-  @media only screen and (max-width: 729px) and (max-height: 649px){
     height: 180%;
+    padding-bottom: 30%;
   }
 `
  

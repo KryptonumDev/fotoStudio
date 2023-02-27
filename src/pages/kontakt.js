@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import ContactHero from "../components/sections/ContactHero"
 import ContactForm from "../components/sections/ContactForm"
 import ContactDetails from "../components/sections/ContactDetails"
-import HomeReviews from "../components/sections/HomeReviews"
+import Reviews from "../components/sections/Reviews"
 import AboutSlider from "../components/sections/AboutSlider"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
@@ -24,7 +24,7 @@ const ContactPage = ({data}) => {
           button={{text: 'Portfolio', link: '/portfolio'}}
           data={slider}
         />
-        <HomeReviews />
+        <Reviews />
         <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>
@@ -36,17 +36,17 @@ export const query = graphql`
   query {
     contact: datoCmsContact {
       hero {
-        gatsbyImageData
+        gatsbyImageData(placeholder: NONE)
         alt
       }
       details {
-        gatsbyImageData
+        gatsbyImageData(placeholder: NONE)
         alt
       }
     }
     about: datoCmsAboutMe {
       slider {
-        gatsbyImageData
+        gatsbyImageData(placeholder: NONE)
         alt
       }
     }

@@ -11,7 +11,7 @@ const reviews = [
     author: "Sandra Hachuła"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
+    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie! Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
     author: "Sandra Hachuła"
   },
   {
@@ -20,9 +20,9 @@ const reviews = [
   },
 ]
 
-const HomeReviews = () => {
+const Reviews = () => {
   return (
-    <StyledReviewss className="reviews sec" id="opinie">
+    <StyledReviews className="reviews sec" id="opinie">
       <div className="max-width">
         <header className="reviews-header">
           <h2>Opinie</h2>
@@ -40,11 +40,11 @@ const HomeReviews = () => {
           </div>
         </div>
       </div>
-    </StyledReviewss>
+    </StyledReviews>
   );
 }
 
-const StyledReviewss = styled.section`
+const StyledReviews = styled.section`
   position: relative;
   & > .max-width {
     display: flex;
@@ -70,7 +70,7 @@ const StyledReviewss = styled.section`
     &::before, &::after {
       content: '';
       width: 100%;
-      height: 30%;
+      height: 25%;
       position: absolute;
       left: 0;
     }
@@ -110,9 +110,10 @@ const StyledReviewss = styled.section`
     & > .max-width {
       flex-direction: column;
       justify-content: space-between;
+      gap: 5%;
     }
     .reviews-header {
-      margin-top: ${188/10.24}vh;
+      margin-top: ${123/10.24}vh;
     }
     .reviews-content {
       height: 50%;
@@ -123,13 +124,20 @@ const StyledReviewss = styled.section`
     }
   }
   @media only screen and (max-width: 729px){
+    .reviews-content {
+      height: 80%;
+    }
     .reviews-header {
       font-size: ${14/16}rem;
     }
-    .reviews-content {
-      height: 60%;
+    .reviewsContentSnap-item {
+      blockquote {
+        font-size: ${14/16}rem;
+      }
     }
+  }
+  @media only screen and (max-width: 729px) and (max-height: 749px){
   }
 `
  
-export default HomeReviews;
+export default Reviews;

@@ -2,16 +2,14 @@ import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
 import { ArrowLeft, ArrowRight } from "../atoms/Icons";
 
-const array = [1,2,3,4,5,6,7,8,9];
-
-const HomeSliderPagination = ({activeSlider, setActiveSlider}) => {
+const HomeSliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
   const sliderButton = useCallback((direction) => {
     if(direction === 'prev'){
-      setActiveSlider(prevState => prevState === 1 ? array.length : --prevState)
+      setActiveSlide(prevState => prevState === 1 ? sliderLength : --prevState)
     } else if(direction === 'next'){
-      setActiveSlider(prevState => prevState === array.length ? 1 : ++prevState)
+      setActiveSlide(prevState => prevState === sliderLength ? 1 : ++prevState)
     }
-  }, [setActiveSlider]);
+  }, [setActiveSlide]);
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       if(e.key === "ArrowLeft"){
@@ -30,19 +28,19 @@ const HomeSliderPagination = ({activeSlider, setActiveSlider}) => {
         <ArrowLeft />
       </button>
       <div className="sliderPagination-desktop">
-        {array.map(elem => (
+        {Array.from({length: sliderLength}, (x, i) => i).map((slide) => (
           <button
-            key={elem}
-            className={activeSlider === elem ? 'active' : ''}
-            aria-label={`Przejdź do ${elem} sladju`}
-            onClick={() => setActiveSlider(elem)}
+            key={++slide}
+            className={activeSlide === slide ? 'active' : ''}
+            aria-label={`Przejdź do ${slide} sladju`}
+            onClick={() => setActiveSlide(slide)}
           >
-            <span>0{elem}</span>
+            <span>0{slide}</span>
           </button>
         ))}
       </div>
       <div className="sliderPagination-mobile">
-        <span><span>0{activeSlider}</span> / 0{array.length}</span>
+        <span><span>0{activeSlide}</span> / 0{sliderLength}</span>
       </div>
       <button
         aria-label="Przejdź do następnego sladju"
@@ -60,6 +58,7 @@ const StyledSliderPagination = styled.div`
   bottom: ${70/10.8}vh;
   display: flex;
   align-items: center;
+  z-index: 3;
   button, .sliderPagination-mobile span {
     font-size: min(${44/16}rem, ${42/19.2}vw);
     font-family: "DM Serif Display", serif;

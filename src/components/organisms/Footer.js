@@ -22,10 +22,10 @@ const Footer = ({data}) => {
             </p>
           </div>
           <div className="footer-social">
-            <a href={data.facebook} target="_blank" rel="noreferrer">
+            <a href={data.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
               <FacebookIcon />
             </a>
-            <a href={data.instagram} target="_blank" rel="noreferrer">
+            <a href={data.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
               <InstagramIcon />
             </a>
           </div>

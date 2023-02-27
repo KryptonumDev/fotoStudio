@@ -56,6 +56,7 @@ const StyledSlider = styled.section`
     flex-wrap: nowrap;
     padding-left: 50%;
     transition: transform 500ms cubic-bezier(0.52, 0.16, 0.24, 1);
+    will-change: transform;
   }
   .slider-item {
     width: 400px;
