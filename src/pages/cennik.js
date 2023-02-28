@@ -24,7 +24,7 @@ const PricingPage = ({data}) => {
 
 export const query = graphql`
   query {
-    pricing: datoCmsAboutMe {
+    pricing: datoCmsPricing {
       hero {
         gatsbyImageData(placeholder: NONE)
         alt

@@ -8,9 +8,8 @@ const PricingHero = ({data}) => {
   return (
     <StyledHero className="hero sec">
       <div className="max-width">
-        <h1>Portfolio</h1>
-        <p>Fotografia to mój sposób na życie, ale i&nbsp;pasja, która trwa niezmiennie od 40 lat.</p>
-        <p>Kocham uwieczniać niepowtarzalne chwile i&nbsp;tworzyć z&nbsp;nich wspomnienia, które zostają na długie lata.</p>
+        <h1>Cennik</h1>
+        <p>Każdy klient jest wyjątkowy, dlatego o całkowitym koszcie sesji zdjęciowej decydują indywidualne potrzeby. Poniżej znajdziesz oferty, które pomogą Ci w dokonaniu odpowiedniego wyboru.</p>
         <Button link="/kontakt">Kontakt</Button>
       </div>
       <ScrollDown href="#zobacz" />
