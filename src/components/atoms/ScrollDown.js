@@ -2,9 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import {ArrowDown} from "./Icons";
 
-const ScrollDown = ({href}) => {
+const ScrollDown = () => {
+  const handleScroll = (e) => {
+    e.preventDefault();
+    document.getElementById('zobacz')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
   return (
-    <StyledArrow href={href} className="scrollDown" aria-hidden="true">
+    <StyledArrow href="#zobacz" className="scrollDown" aria-hidden="true" onClick={e => handleScroll(e)}>
       <ArrowDown />
     </StyledArrow>
   );

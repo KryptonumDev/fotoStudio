@@ -21,30 +21,32 @@ const ContactForm = ({data}) => {
     legal: '',
   })
   
-  const validateData = useCallback(() => {
+  const validateData = useCallback(async () => {
     formData.name.trim().length === 0
-    ? setFormError(prevState => ({...prevState, name: 'Pole nie może być puste'}))
+    ? setFormError(prevState => ({...prevState, name: 'Pole wymagane'}))
     : setFormError(prevState => ({...prevState, name: ''}));
 
     (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email.toLowerCase())
     ? setFormError(prevState => ({...prevState, email: ''})) 
-    : setFormError(prevState => ({...prevState, email: 'Wprowadź poprawny adres e-mail'}));
+    : setFormError(prevState => ({...prevState, email: 'Nieprawidłowy adres e-mail'}));
 
     (/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(formData.tel.replaceAll(' ', ''))
     ? setFormError(prevState => ({...prevState, tel: ''})) 
-    : setFormError(prevState => ({...prevState, tel: 'Wprowadź poprawny numer telefonu'}));
+    : setFormError(prevState => ({...prevState, tel: 'Nieprawidłowy numer telefonu'}));
 
     formData.type.length === 0
-    ? setFormError(prevState => ({...prevState, type: 'Pole nie może być puste'}))
+    ? setFormError(prevState => ({...prevState, type: 'Pole wymagane'}))
     : setFormError(prevState => ({...prevState, type: ''}));
 
     formData.message.length === 0
-    ? setFormError(prevState => ({...prevState, message: 'Pole nie może być puste'}))
+    ? setFormError(prevState => ({...prevState, message: 'Pole wymagane'}))
     : setFormError(prevState => ({...prevState, message: ''}));
     
     formData.legal === false
     ? setFormError(prevState => ({...prevState, legal: 'Zgoda jest wymagana'}))
     : setFormError(prevState => ({...prevState, legal: ''}));
+
+    return await formError;
   }, [formData]);
 
   useEffect(() => {
@@ -53,21 +55,27 @@ const ContactForm = ({data}) => {
     }
   }, [formData, validateData])
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     didSubmit = true;
-    e.preventDefault();
-    validateData();
+    // e.preventDefault();
+    console.log(await validateData());
+    console.log(formError);
+    // if(formError) {
+    //   e.preventDefault();
+    // } else {
+    //   sendEmail();
+    // }
   }
 
   return (
-    <StyledForm className="form sec">
+    <StyledForm className="form sec" id="zobacz">
       <div className="max-width">
         <header>
           <h2 className="notVertical">Porozmawiajmy!</h2>
         </header>
         <form
           method="post"
-          action="https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/"
+          action="http://localhost:443/api/send-email"
           onSubmit={e => handleSubmit(e)}
         >
           <div className="form-wrapper">
@@ -243,11 +251,15 @@ const StyledForm = styled.section`
       }
     }
     .error {
+      transition: max-height .5s;
+      max-height: 0;
       font-size: ${13/16}rem;
       color: var(--error-color);
       padding-left: 21px;
       margin-top: 5px;
+      overflow: hidden;
       &:not(:empty){
+        max-height: 50px;
         background: left / 18px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23de071c' stroke-miterlimit='10' stroke-width='32' d='M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z'/%3E%3Cpath fill='none' stroke='%23de071c' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M250.26 166.05 256 288l5.73-121.95a5.74 5.74 0 0 0-5.79-6h0a5.74 5.74 0 0 0-5.68 6z'/%3E%3Cpath fill='%23de071c' d='M256 367.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20z'/%3E%3C/svg%3E");
       }
     }

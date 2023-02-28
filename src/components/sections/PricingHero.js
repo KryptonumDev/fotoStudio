@@ -2,16 +2,18 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import ScrollDown from "../atoms/ScrollDown";
+import Button from "../atoms/Button";
 
-const AboutHero = ({data}) => {
+const PricingHero = ({data}) => {
   return (
     <StyledHero className="hero sec">
       <div className="max-width">
-        <h1>Cześć, tu Adam</h1>
-        <p>Pasją do fotografowania zaraziłem się wiele lat temu. Na początku robiłem zdjęcia wszędzie, gdzie działo się coś ważnego. Dziś, choć w&nbsp;swojej pracy korzystam z&nbsp;nowoczesnego sprzętu i&nbsp;innowacyjnych rozwiązań, uważam, że to miłość do fotografowania tworzy dobre ujęcie.</p>
-        <p>Każda sesja zdjęciowa to szansa na uchwycenie niepowtarzalnego momentu i&nbsp;towarzyszącej mu wyjątkowej atmosfery. Nie mogę się doczekać naszej wspólnej sesji!</p>
+        <h1>Portfolio</h1>
+        <p>Fotografia to mój sposób na życie, ale i&nbsp;pasja, która trwa niezmiennie od 40 lat.</p>
+        <p>Kocham uwieczniać niepowtarzalne chwile i&nbsp;tworzyć z&nbsp;nich wspomnienia, które zostają na długie lata.</p>
+        <Button link="/kontakt">Kontakt</Button>
       </div>
-      <ScrollDown />
+      <ScrollDown href="#zobacz" />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
     </StyledHero>
   );
@@ -20,8 +22,7 @@ const AboutHero = ({data}) => {
 const StyledHero = styled.section`
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   .max-width {
     height: auto;
     h1 {
@@ -29,23 +30,23 @@ const StyledHero = styled.section`
       margin-bottom: min(${32/10.8}vh, ${32/16}rem);
     }
     p {
-      max-width: max(${785/19.2}vw, 439px);
+      max-width: max(${660/19.2}vw, 439px);
+    }
+    a {
+      margin-top: min(${34/10.8}vh, ${34/16}rem);
     }
   }
   .hero-img {
     position: absolute;
     right: 0;
     top: 0;
-    width: 60%;
+    width: 50%;
     height: 100%;
     z-index: -1;
   }
   @media only screen and (max-width: 1199px){
-    justify-content: flex-end;
-    padding-bottom: ${186/10.24}vh;
     .hero-img {
       width: 100%;
-      margin-right: -8%;
       &::before {
         content: '';
         width: 100%;
@@ -54,7 +55,8 @@ const StyledHero = styled.section`
         left: 0;
         top: 0;
         z-index: 1;
-        background: linear-gradient(90deg,#000,rgba(0,0,0,0));
+        background: linear-gradient(90deg,#000,rgba(0,0,0,0)),
+                    linear-gradient(rgba(0,0,0,0) 75%, #000);
       }
     }
   }
@@ -66,9 +68,13 @@ const StyledHero = styled.section`
       }
       p {
         max-width: 100%;
+        font-size: 1rem;
+        &:not(:last-child){
+          margin-bottom: .6rem;
+        }
       }
     }
   }
 `
  
-export default AboutHero;
+export default PricingHero;

@@ -3,13 +3,28 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const ContactDetails = ({data}) => {
+  console.log(data);
   return (
     <StyledDetails className="details sec">
       <div className="max-width">
-        <h1>Dane kontaktowe</h1>
-        <p>Porozmawiajmy o Twoich pomysłach na sesję zdjęciową.</p>
+        <header>
+          <h2 className="notVertical">Dane kontaktowe</h2>
+          <p>Najszybciej skontaktujesz się ze mną za pośrednictwem formularza kontaktowego.</p>
+          <p>Jego wypełnienie zajmuję chwilę. Odpowiem na Twoją wiadomość najszybciej jak tylko potrafię</p>
+          <div className="details-info">
+            <p>Adam Chrapek</p>
+            <p><a href={data.contact.addressMaps} target="_blank" rel="noreferrer">{data.contact.address}</a></p>
+            <p><a href={`mailto:${data.contact.email}`}>{data.contact.email}</a></p>
+            <p>
+              <a href={`tel:+48${data.contact.phone1.replace(/\s/g,'')}`}>{data.contact.phone1}</a>
+              &nbsp;|&nbsp;
+              <a href={`tel:+48${data.contact.phone2.replace(/\s/g,'')}`}>{data.contact.phone2}</a>
+            </p>
+            <p></p>
+          </div>
+        </header>
       </div>
-      {/* <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" /> */}
+      <GatsbyImage image={data.details.gatsbyImageData} alt={data.details.alt || ""} className="hero-img" />
     </StyledDetails>
   );
 }
@@ -20,15 +35,25 @@ const StyledDetails = styled.section`
   align-items: center;
   .max-width {
     height: auto;
-    h1 {
+    @media only screen and (min-width: 729px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
+    header {
+      max-width: max(${660/19.2}vw, 439px);
+    }
+    h2 {
       font-size: clamp(${42/16}rem, ${64/19.2}vw, ${64/16}rem);
       margin-bottom: min(${32/10.8}vh, ${32/16}rem);
     }
-    p {
-      max-width: max(${660/19.2}vw, 439px);
-    }
     a {
       margin-top: min(${34/10.8}vh, ${34/16}rem);
+    }
+  }
+  .details-info {
+    margin-top: 2em;
+    font-family: var(--serif-font);
+    p {
+      margin-bottom: .4em;
     }
   }
   .hero-img {
@@ -57,11 +82,14 @@ const StyledDetails = styled.section`
   }
   @media only screen and (max-width: 599px){
     .max-width {
-      h1 {
+      h2 {
         font-size: ${34/16}rem;
         margin-bottom: 1rem;
       }
-      p {
+      .contact-details {
+        font-size: 1.1rem;
+      }
+      header {
         max-width: 100%;
       }
     }

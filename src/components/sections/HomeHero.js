@@ -14,7 +14,7 @@ const HomeHero = ({data}) => {
         </div>
       </div>
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt} className="hero-img" objectFit="contain" />
-      <ScrollDown href="#galeria" />
+      <ScrollDown />
     </StyledHero>
   );
 }

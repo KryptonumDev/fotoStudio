@@ -116,7 +116,6 @@ const GlobalStyle = createGlobalStyle`
       height: 100vh;
       height: 100dvh;
       overflow: auto;
-      scroll-behavior: smooth;
     }
     .sec {
       min-height: 100%;

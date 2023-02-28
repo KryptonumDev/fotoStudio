@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, useScrollRestoration } from "gatsby"
 import PortfolioHero from "../components/sections/PortfolioHero"
 import PortfolioPhotography from "../components/sections/PortfolioPhotography"
 import PortfolioPricing from "../components/sections/PortfolioPricing"
@@ -9,9 +9,10 @@ import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from "../components/Seo"
 
 const PortfolioPage = ({data}) => {
+  const scrollRestoration = useScrollRestoration(`PortfolioPage`)
   const {hero, reportage, analog, product, pricing} = data.portfolio;
   return (
-    <div className="scrollSnap">
+    <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
         <PortfolioHero data={hero} />
         <PortfolioPhotography

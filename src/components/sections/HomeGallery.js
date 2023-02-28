@@ -19,7 +19,7 @@ const HomeGallery = ({data}) => {
   }, [activeSlide])
 
   return (
-    <StyledSlider className="gallery sec" id="galeria">
+    <StyledSlider className="gallery sec" id="zobacz">
       <div className="max-width">
         <div className="slider-copy">
           <h2 ref={heading}>{activeHeading}</h2>

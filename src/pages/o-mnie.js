@@ -10,13 +10,14 @@ import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from '../components/Seo'
 
 const AboutPage = ({data}) => {
-  const {hero, slider, cooperation, slider2} = data.about;
   const scrollRestoration = useScrollRestoration(`AboutPage`)
+  const {hero, slider, cooperation, slider2} = data.about;
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
         <AboutHero data={hero} />
         <AboutSlider
+          id="zobacz"
           heading="Zobacz co możemy stworzyć"
           button={{text: 'Portfolio', link: '/portfolio'}}
           data={slider}

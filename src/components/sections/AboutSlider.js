@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 import Slider from "../organisms/Slider";
 
-const AboutHero = ({data, heading, button}) => {
+const AboutHero = ({data, heading, button, id}) => {
   return (
-    <StyledHero className="slider sec" id="zobacz">
+    <StyledHero className="slider sec" id={id || ''}>
       <Slider data={data} />
       <header className="max-width">
         <h2>{heading}</h2>

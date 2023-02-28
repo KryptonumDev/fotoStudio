@@ -13,7 +13,7 @@ const PortfolioHero = ({data}) => {
         <p>Kocham uwieczniać niepowtarzalne chwile i&nbsp;tworzyć z&nbsp;nich wspomnienia, które zostają na długie lata.</p>
         <Button link="/kontakt">Kontakt</Button>
       </div>
-      <ScrollDown href="#zobacz" />
+      <ScrollDown />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
     </StyledHero>
   );

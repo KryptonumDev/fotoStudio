@@ -10,7 +10,7 @@ const ContactHero = ({data}) => {
         <h1>Kontakt</h1>
         <p>Porozmawiajmy o Twoich pomysłach na sesję zdjęciową.</p>
       </div>
-      <ScrollDown href="#zobacz" />
+      <ScrollDown />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
     </StyledHero>
   );
