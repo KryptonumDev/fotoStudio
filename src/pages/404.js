@@ -2,8 +2,10 @@ import * as React from "react"
 import styled from "styled-components";
 import Button from '../components/atoms/Button';
 import { Seo } from "../components/Seo";
+import { inject } from '@vercel/analytics';
 
 const NotFoundPage = () => {
+  inject();
   return (
     <StyledNotFound className="NotFound">
       <div className="NotFound-content">

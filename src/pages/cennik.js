@@ -5,8 +5,10 @@ import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from "../components/Seo"
+import { inject } from '@vercel/analytics';
 
 const PricingPage = ({data}) => {
+  inject();
   const scrollRestoration = useScrollRestoration(`PricingPage`)
   const {hero} = data.pricing;
   return (

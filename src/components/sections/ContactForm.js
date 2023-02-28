@@ -75,7 +75,7 @@ const ContactForm = ({data}) => {
         </header>
         <form
           method="post"
-          action="http://localhost:443/api/send-email"
+          action="https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/"
           onSubmit={e => handleSubmit(e)}
         >
           <div className="form-wrapper">

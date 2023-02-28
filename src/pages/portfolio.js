@@ -7,8 +7,10 @@ import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from "../components/Seo"
+import { inject } from '@vercel/analytics';
 
 const PortfolioPage = ({data}) => {
+  inject();
   const scrollRestoration = useScrollRestoration(`PortfolioPage`)
   const {hero, reportage, analog, product, pricing} = data.portfolio;
   return (

@@ -8,8 +8,10 @@ import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from '../components/Seo'
+import { inject } from '@vercel/analytics';
 
 const AboutPage = ({data}) => {
+  inject();
   const scrollRestoration = useScrollRestoration(`AboutPage`)
   const {hero, slider, cooperation, slider2} = data.about;
   return (
