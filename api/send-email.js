@@ -19,7 +19,7 @@ app.post("/api/send-email", function (req, res) {
   !(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(data.email.toLowerCase()) && (isError = true);
   !(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(data.tel.replaceAll(' ', '')) && (isError = true);
   data.type.length === 0 && (isError = true);
-  data.message.length === 0 && (isError = true);
+  data.message.trim().length === 0 && (isError = true);
   data.legal === false && (isError = true);
 
   const message = {

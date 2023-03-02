@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const links = [
@@ -48,6 +49,15 @@ const PricingLinks = ({data}) => {
   const handleExpandClose = () => {
     component.current.classList.remove('active');
   }
+
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape'){
+        component.current.classList.remove('active');
+      }
+    });
+  }, [])
+
   return (
     <StyledLinks className="links sec" id="zobacz">
       <div className="max-width">

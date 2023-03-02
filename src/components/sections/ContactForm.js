@@ -23,6 +23,7 @@ const ContactForm = () => {
     error: '',
   })
   const [formSent, setFormSent] = useState(false);
+  const [formSending, setFormSending] = useState(false);
   
   const validateData = useCallback(() => {
     let errors = {
@@ -30,7 +31,7 @@ const ContactForm = () => {
       email: (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email.toLowerCase()) ? '' : 'Nieprawidłowy adres e-mail',
       tel: (/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(formData.tel.replaceAll(' ', '')) ? '' : 'Nieprawidłowy numer telefonu',
       type: formData.type.length === 0 ? 'Pole wymagane' : '',
-      message: formData.message.length === 0 ? 'Pole wymagane' : '',
+      message: formData.message.trim().length === 0 ? 'Pole wymagane' : '',
       legal: formData.legal === false ? 'Zgoda jest wymagana' : ''
     }
     setFormError(errors);
@@ -54,6 +55,7 @@ const ContactForm = () => {
     let isValidate = true;
     Object.keys(validate).forEach(key => validate[key] && (isValidate = false));
     if(isValidate){
+      setFormSending(true);
       const data = new FormData();
       for (const [name, value] of Object.entries(formData)){
         data.append(name, value);
@@ -63,6 +65,7 @@ const ContactForm = () => {
         body: data
       })
       .then(response => {
+        setFormSending(false);
         response = response.json();
         if(response.success){
           document.cookie = `formSent=true;max-age=86400;path=/`;
@@ -72,6 +75,7 @@ const ContactForm = () => {
         }
       })
       .catch(error => {
+        setFormSending(false);
         setFormError(prevState => ({...prevState, error: 'Błąd podczas wysyłania formularza, spróbuj ponownie później.'}))
       })
     }
@@ -204,7 +208,7 @@ const ContactForm = () => {
                 <p className="error">{formError.error}</p>
               </div>
             </div>
-            <Button>Wyślij</Button>
+            <Button disabled={formSending ? true : false}>{formSending ? 'Wysyłanie...' : 'Wyślij'}</Button>
           </form>
         )}
       </div>
@@ -296,7 +300,7 @@ const StyledForm = styled.section`
       }
     }
     button {
-      margin-top: ${34/16}rem;
+      margin-top: ${21/16}rem;
     }
   }
   @media only screen and (max-width: 1199px){
