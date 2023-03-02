@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
 import PricingHero from "../components/sections/PricingHero"
+import PricingLinks from "../components/sections/PricingLinks"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
@@ -15,6 +16,7 @@ const PricingPage = ({data}) => {
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
         <PricingHero data={hero} />
+        <PricingLinks />
         <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>

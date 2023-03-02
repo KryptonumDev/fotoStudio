@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 
 let didSubmit = false;
-const ContactForm = ({data}) => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,32 +21,17 @@ const ContactForm = ({data}) => {
     legal: '',
   })
   
-  const validateData = useCallback(async () => {
-    formData.name.trim().length === 0
-    ? setFormError(prevState => ({...prevState, name: 'Pole wymagane'}))
-    : setFormError(prevState => ({...prevState, name: ''}));
-
-    (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email.toLowerCase())
-    ? setFormError(prevState => ({...prevState, email: ''})) 
-    : setFormError(prevState => ({...prevState, email: 'Nieprawidłowy adres e-mail'}));
-
-    (/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(formData.tel.replaceAll(' ', ''))
-    ? setFormError(prevState => ({...prevState, tel: ''})) 
-    : setFormError(prevState => ({...prevState, tel: 'Nieprawidłowy numer telefonu'}));
-
-    formData.type.length === 0
-    ? setFormError(prevState => ({...prevState, type: 'Pole wymagane'}))
-    : setFormError(prevState => ({...prevState, type: ''}));
-
-    formData.message.length === 0
-    ? setFormError(prevState => ({...prevState, message: 'Pole wymagane'}))
-    : setFormError(prevState => ({...prevState, message: ''}));
-    
-    formData.legal === false
-    ? setFormError(prevState => ({...prevState, legal: 'Zgoda jest wymagana'}))
-    : setFormError(prevState => ({...prevState, legal: ''}));
-
-    return await formError;
+  const validateData = useCallback(() => {
+    let errors = {
+      name: formData.name.trim().length === 0 ? 'Pole wymagane' : '',
+      email: (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email.toLowerCase()) ? '' : 'Nieprawidłowy adres e-mail',
+      tel: (/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(formData.tel.replaceAll(' ', '')) ? '' : 'Nieprawidłowy numer telefonu',
+      type: formData.type.length === 0 ? 'Pole wymagane' : '',
+      message: formData.message.length === 0 ? 'Pole wymagane' : '',
+      legal: formData.legal === false ? 'Zgoda jest wymagana' : ''
+    }
+    setFormError(errors);
+    return errors;
   }, [formData]);
 
   useEffect(() => {
@@ -55,16 +40,32 @@ const ContactForm = ({data}) => {
     }
   }, [formData, validateData])
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     didSubmit = true;
-    // e.preventDefault();
-    console.log(await validateData());
-    console.log(formError);
-    // if(formError) {
-    //   e.preventDefault();
-    // } else {
-    //   sendEmail();
-    // }
+    e.preventDefault();
+    const validate = validateData();
+    let isValidate = true;
+    Object.keys(validate).forEach(key => validate[key] && (isValidate = false));
+    if(isValidate){
+      const data = new FormData();
+      for (const [name, value] of Object.entries(formData)){
+        data.append(name, value);
+      }
+      fetch("https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/", {
+        method: 'POST', 
+        body: data,
+        headers: {
+           'X-Requested-With' : 'XMLHttpRequest'
+        }
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+    }
   }
 
   return (

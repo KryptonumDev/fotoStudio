@@ -3,7 +3,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const ContactDetails = ({data}) => {
-  console.log(data);
   return (
     <StyledDetails className="details sec">
       <div className="max-width">
@@ -86,8 +85,8 @@ const StyledDetails = styled.section`
         font-size: ${34/16}rem;
         margin-bottom: 1rem;
       }
-      .contact-details {
-        font-size: 1.1rem;
+      .details-info p {
+        font-size: ${18/16}rem;
       }
       header {
         max-width: 100%;

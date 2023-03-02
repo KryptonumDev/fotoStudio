@@ -39,7 +39,7 @@ const StyledHero = styled.section`
     position: absolute;
     right: 0;
     top: 0;
-    width: 50%;
+    max-width: 100%;
     height: 100%;
     z-index: -1;
   }
