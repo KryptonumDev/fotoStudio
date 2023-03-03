@@ -95,7 +95,7 @@ const ContactForm = () => {
         ) : (
           <form
             method="post"
-            action="/api/send-email"
+            action="/api/send-email/"
             onSubmit={e => handleSubmit(e)}
           >
             <input
