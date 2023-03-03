@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default function handler(req, res){
-  res.setHeader('Access-Control-Allow-Origin', 'https://foto-studio-git-dev-adamchrapek.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://foto-studio-git-dev-adamchrapek.vercel.app/');
   if(req.method === `POST`){
     const data = {
       name: req.body.name || '',
