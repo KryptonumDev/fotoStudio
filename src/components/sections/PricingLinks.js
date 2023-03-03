@@ -105,12 +105,11 @@ const StyledLinks = styled.section`
   .max-width {
     height: auto;
   }
-  --margin: .3rem;
   .links-wrapper {
     display: grid;
+    gap: .3rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: calc(var(--margin) * -1);
     a {
       display: flex;
       align-items: center;
@@ -120,7 +119,6 @@ const StyledLinks = styled.section`
       font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
       font-family: var(--serif-font);
       height: clamp(200px, ${288/10.8}vh, 288px);
-      margin: var(--margin);
       border: 1px solid var(--color);
       &:hover {
         background-color: var(--color);
