@@ -8,7 +8,7 @@ import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from "../components/Seo"
 import { inject } from '@vercel/analytics';
 
-const PricingPage = ({data}) => {
+const PricingPage = ({data, location}) => {
   inject();
   const scrollRestoration = useScrollRestoration(`PricingPage`)
   const {hero} = data.pricing;
@@ -16,7 +16,7 @@ const PricingPage = ({data}) => {
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
         <PricingHero data={hero} />
-        <PricingLinks />
+        <PricingLinks location={location} />
         <TheyTrusted />
         <Footer data={data.footer} />
       </PageIndicator>

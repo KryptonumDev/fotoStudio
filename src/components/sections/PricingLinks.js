@@ -38,7 +38,7 @@ const links = [
   },
 ]
 
-const PricingLinks = ({data}) => {
+const PricingLinks = ({location}) => {  
   const component = useRef();
 
   const handleExpand = (e) => {
@@ -58,12 +58,19 @@ const PricingLinks = ({data}) => {
     component.current.classList.remove('active');
   }
 
+
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
       if(e.key === 'Escape'){
         component.current.classList.remove('active');
       }
     });
+
+    const params = new URLSearchParams(location.search);
+    const type = params.get("type");
+    if(type === 'slub'){
+      component.current.classList.add('active');
+    }
   }, [])
 
   return (
@@ -100,8 +107,9 @@ const StyledLinks = styled.section`
   }
   --margin: .3rem;
   .links-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin: calc(var(--margin) * -1);
     a {
       display: flex;
@@ -111,8 +119,6 @@ const StyledLinks = styled.section`
       text-align: center;
       font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
       font-family: var(--serif-font);
-      flex-shrink: 0;
-      width: calc(25% - 2*var(--margin));
       height: clamp(200px, ${288/10.8}vh, 288px);
       margin: var(--margin);
       border: 1px solid var(--color);
@@ -122,30 +128,21 @@ const StyledLinks = styled.section`
       }
     }
   }
-  @media only screen and (max-width: 1499px){
-    /* .links-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      margin: calc(var(--margin) * -1);
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 2%;
-        text-align: center;
-        font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
-        font-family: var(--serif-font);
-        flex-shrink: 0;
-        width: calc(50% - 2*var(--margin));
-        height: clamp(200px, ${288/10.8}vh, 130 px);
-        margin: var(--margin);
-        border: 1px solid var(--color);
-        &:hover {
-          background-color: var(--color);
-          color: var(--bg);
-        }
-      }
-    } */
+  @media only screen and (max-width: 899px){
+    .max-width {
+      width: 100%;
+      overflow-x: auto;
+      padding: 0 1rem;
+      scroll-snap-align: x mandatory;
+    }
+    .links-wrapper {
+      width: 180%;
+    }
+  }
+  @media only screen and (max-width: 549px){
+    .links-wrapper {
+      width: 280%;
+    }
   }
   .component {
     position: fixed;
