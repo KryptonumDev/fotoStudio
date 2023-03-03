@@ -23,7 +23,7 @@ const ContactForm = () => {
     error: '',
   })
   const [formSent, setFormSent] = useState(false);
-  const [formSending, setFormSending] = useState(false);
+  const [formIsSending, setFormIsSending] = useState(false);
   
   const validateData = useCallback(() => {
     let errors = {
@@ -55,7 +55,7 @@ const ContactForm = () => {
     let isValidate = true;
     Object.keys(validate).forEach(key => validate[key] && (isValidate = false));
     if(isValidate){
-      setFormSending(true);
+      setFormIsSending(true);
       const data = new FormData();
       for (const [name, value] of Object.entries(formData)){
         data.append(name, value);
@@ -64,18 +64,18 @@ const ContactForm = () => {
         method: 'POST', 
         body: data
       })
+      .then(response => response.json())
       .then(response => {
-        setFormSending(false);
-        response = response.json();
+        setFormIsSending(false);
         if(response.success){
-          document.cookie = `formSent=true;max-age=86400;path=/`;
+          document.cookie = `formSent=true;max-age=3600;path=/`;
           setFormSent(true);
         } else {
           setFormError(prevState => ({...prevState, error: 'Błąd podczas wysyłania formularza, spróbuj ponownie później.'}))
         }
       })
       .catch(error => {
-        setFormSending(false);
+        setFormIsSending(false);
         setFormError(prevState => ({...prevState, error: 'Błąd podczas wysyłania formularza, spróbuj ponownie później.'}))
       })
     }
@@ -95,13 +95,13 @@ const ContactForm = () => {
         ) : (
           <form
             method="post"
-            action="https://foto-studio-git-dev-adamchrapek.vercel.app/api/send-email/"
+            action="/api/send-email"
             onSubmit={e => handleSubmit(e)}
           >
             <input
               type="text"
               name="address"
-              autocomplete="off"
+              autoComplete="off"
               style={{opacity:0,position:'absolute',top:0,left:0,height:0,width:0,zIndex:-1}}
               tabIndex="-1"
               onChange={e => setFormData({
@@ -208,7 +208,7 @@ const ContactForm = () => {
                 <p className="error">{formError.error}</p>
               </div>
             </div>
-            <Button disabled={formSending ? true : false}>{formSending ? 'Wysyłanie...' : 'Wyślij'}</Button>
+            <Button disabled={formIsSending ? true : false}>{formIsSending ? 'Wysyłanie...' : 'Wyślij'}</Button>
           </form>
         )}
       </div>
