@@ -56,13 +56,12 @@ const ContactForm = () => {
     Object.keys(validate).forEach(key => validate[key] && (isValidate = false));
     if(isValidate){
       setFormIsSending(true);
-      const data = new FormData();
-      for (const [name, value] of Object.entries(formData)){
-        data.append(name, value);
-      }
       fetch(e.target.action, {
         method: 'POST', 
-        body: data
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData)
       })
       .then(response => response.json())
       .then(response => {

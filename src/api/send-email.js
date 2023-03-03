@@ -16,7 +16,7 @@ export default function handler(req, res){
     let isError = false;
 
     data.address.length !== 0 && (isError = true);
-    data.name.trim().length === 0 && (isError = 1);
+    data.name.trim().length === 0 && (isError = true);
     !(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(data.email.toLowerCase()) && (isError = true);
     !(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{3,6}$/im).test(data.tel.replaceAll(' ', '')) && (isError = true);
     data.type.length === 0 && (isError = true);
@@ -44,13 +44,13 @@ ${data.message}
 ${data.legal && 'Zaakceptowano politykę prywatności'}`,
   }
   
-    isError ? res.status(422).json({ success: false }) :
+    isError ? res.status(422).send(req.body) :
     sgMail
     .send(message)
     .then(() => {
       res.status(200).json({ success: true })
     })
-    .catch(() => {
+    .catch((error) => {
       res.status(422).json({ success: false })
     })
   } else {
