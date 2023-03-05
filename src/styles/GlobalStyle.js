@@ -107,12 +107,15 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: .6em;
       z-index: 2;
     }
-    p {
+    p, ul, ol {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
       @media only screen and (max-width: 459px){
         font-size: ${14/16}rem;
       }
       &:not(:last-of-type){
+        & + ol, & + ul {
+          margin-top: -.6em;
+        }
         margin-bottom: .6em;
       }
     }

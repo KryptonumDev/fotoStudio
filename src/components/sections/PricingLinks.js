@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import {ArrowLeft} from '../atoms/Icons';
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -35,7 +35,7 @@ const PricingLinks = ({location}) => {
     {
       id: 1,
       name: 'Ślub',
-      href: '/slub',
+      href: '?type=slub',
       heading: 'Ślub',
       price: '2000',
       image: {
@@ -44,7 +44,7 @@ const PricingLinks = ({location}) => {
       },
       copy:`<p>Oferta obejmuje:</p>
             <p>Fotografowanie przygotowań do ceremonii i wesela. Prezentację multimedialną z wybranych zdjęć.</p>
-            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe</span>
+            <p>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</p>
             <ul>
               <li>
                 Sesję ślubną w studio lub w plenerze.
@@ -64,7 +64,7 @@ const PricingLinks = ({location}) => {
     {
       id: 2,
       name: 'Chrzest',
-      href: '/slub',
+      href: '?type=chrzest',
       heading: 'Chrzest',
       price: '500',
       image: {
@@ -73,7 +73,7 @@ const PricingLinks = ({location}) => {
       },
       copy:`<p>Oferta obejmuje:</p>
             <p>zdjęcia z uroczystości chrztu wraz ze zdjęciami rodzinnymi przed i po ceremonii.</p>
-            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</span>
+            <p>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</p>
             <ul>
               <li>
                 zdjęcia z kontynuacji uroczystości w restauracji
@@ -87,7 +87,7 @@ const PricingLinks = ({location}) => {
     {
       id: 3,
       name: 'Komunia',
-      href: '/komunia',
+      href: '?type=komunia',
       heading: 'Komunia',
       price: '400',
       image: {
@@ -96,7 +96,7 @@ const PricingLinks = ({location}) => {
       },
       copy:`<p>Oferta obejmuje:</p>
             <p>Zdjęcia z uroczystości chrztu wraz ze zdjęciami rodzinnymi przed i po ceremonii.</p>
-            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</span>
+            <p>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</p>
             <ul>
               <li>fotografowanie przygotowań a także zdjęcia pozowane po ceremonii.<br><strong>Koszt: dodatkowe 200 zł</strong></li>
               <li>zdjęcia z kontynuacji uroczystości w restauracji.<br><strong>Koszt: dodatkowe 500 — 1000 zł.</strong></li>
@@ -112,7 +112,7 @@ const PricingLinks = ({location}) => {
     {
       id: 5,
       name: 'Biznesowa',
-      href: '/biznesowa',
+      href: '?type=biznesowa',
       heading: 'Sesja Biznesowa',
       price: '300',
       image: {
@@ -127,7 +127,7 @@ const PricingLinks = ({location}) => {
     {
       id: 6,
       name: 'Produktowa',
-      href: '/slub',
+      href: '?type=produktowa',
       heading: 'Sesja Produktowa',
       price: '',
       image: {
@@ -146,7 +146,7 @@ const PricingLinks = ({location}) => {
     {
       id: 8,
       name: 'Kontakt',
-      href: '/slub'
+      href: '/kontakt'
     },
   ]
 
@@ -155,10 +155,10 @@ const PricingLinks = ({location}) => {
   const [componentShowId, setComponentShowId] = useState();
 
   const handleExpand = (e) => {
-    e.preventDefault();
     setComponentShowId(e.target.getAttribute('data-key'));
     component.current.classList.add('active');
     const width = window.innerWidth;
+    window.history.replaceState(null, 'fd', '/kontakt');
     const height = window.innerHeight;
     // component.current.style.transform = `scale(${e.target.offsetWidth / width}, ${e.target.offsetHeight / height})`;
     if(e.clientX === 0 && e.clientY === 0){
@@ -173,18 +173,32 @@ const PricingLinks = ({location}) => {
   }
 
 
+  
   useEffect(() => {
-    document.addEventListener('keydown', (e) => {
+    const params = new URLSearchParams(location.search);
+    let type = params.get("type");
+    type = document.querySelector(`.links-wrapper a[href="/cennik/?type=${type}"]`);
+    type
+    ?
+    type.click()
+    :
+    component.current.classList.remove('active');
+
+    console.log('CLICK');
+  }, [location.search])
+  
+  useEffect(() => {
+    const handleEscape = (e) => {
       if(e.key === 'Escape'){
         component.current.classList.remove('active');
       }
-    });
-
-    const params = new URLSearchParams(location.search);
-    const type = params.get("type");
-    if(type === 'slub'){
-      component.current.classList.add('active');
     }
+    document.addEventListener('keydown', e => handleEscape(e));
+    const params = new URLSearchParams(location.search);
+    params.delete('type');
+    console.log('REPLACESTATE');
+    window.history.replaceState(null, '', '/');
+    return () => document.removeEventListener('keydown', e => handleEscape(e));
   }, [])
 
   return (
@@ -192,14 +206,14 @@ const PricingLinks = ({location}) => {
       <div className="max-width">
         <div className="links-wrapper">
           {componentDataArray.map((data, i) => (
-            <a
+            <Link
               key={i}
               data-key={i}
-              href={data.href}
+              to={data.href}
               onClick={e => handleExpand(e)}
             >
               <span>{data.name}</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -219,7 +233,7 @@ const PricingLinks = ({location}) => {
                   )}
                 </header>
                 <div dangerouslySetInnerHTML={{__html: item.copy}}></div>
-                <GatsbyImage image={item.image.gatsbyImageData} alt={item.image.alt} className="component-img" objectFit="contain" />
+                <GatsbyImage image={item.image.gatsbyImageData} alt={item.image.alt} className="component-img" />
               </div>
             )
           ))}
@@ -309,15 +323,15 @@ const StyledLinks = styled.section`
       transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
       transform: scale(1) !important;
     }
-    .component-wrapper {
-      border: 1px solid #fff;
-      width: 100%;
-      padding: ${34/16}rem;
-      padding-left: ${88/16}rem;
-      min-height: 100%;
-      margin: 0 auto;
-      position: relative;
-    }
+  }
+  .component-wrapper {
+    border: 1px solid #fff;
+    width: 100%;
+    padding: ${34/16}rem;
+    padding-left: ${88/16}rem;
+    min-height: 100%;
+    margin: 0 auto;
+    position: relative;
     button {
       z-index: 1;
       position: absolute;
@@ -331,47 +345,61 @@ const StyledLinks = styled.section`
         height: ${44/16}rem;
       }
     }
-    .component-item {
-      display: none;
-      &[data-key="${props => props.componentShowId}"] {
-        display: block;
+  }
+  .component-item {
+    display: none;
+    &[data-key="${props => props.componentShowId}"] {
+      display: block;
+    }
+    max-width: ${610/16}rem;
+    header {
+      font-size: ${42/16}rem;
+      margin-bottom: 1rem;
+      h3 {
+        font-size: 1em;
       }
-      max-width: ${610/16}rem;
-      header {
-        font-size: ${42/16}rem;
-        margin-bottom: 1rem;
-        h3 {
-          font-size: 1em;
-        }
-        h4 {
-          font-size: .4em;
-          font-family: var(--sans-serif-font);
-        }
+      h4 {
+        font-size: .4em;
+        font-family: var(--sans-serif-font);
       }
-      ul {
-        margin-bottom: 1rem;
+    }
+    ul {
+      margin-bottom: 1rem;
+    }
+  }
+  .component-img {
+    z-index: -1;
+    position: absolute;
+    left: -2vw;
+    right: -2vw;
+    margin-left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 800px;
+    height: calc(100% + 4vw);
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #000, rgba(0,0,0,0) 90%);
+      z-index: 1;
+    }
+  }
+  @media only screen and (max-width: 729px){
+    .component-wrapper {
+      padding: ${21/16}rem;
+      padding-top: ${34/16}rem;
+      button svg {
+        width: ${28/16}rem;
+        height: ${28/16}rem;
       }
-      .component-img {
-        z-index: -1;
-        position: absolute;
-        right: -2vw;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        max-height: calc(100% + 4vw);
-        img {
-          object-position: right;
-        }
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(90deg, #000, rgba(0,0,0,0) 90%);
-          z-index: 1;
-        }
+    }
+    .component-img {
+      &::before {
+        background: linear-gradient(90deg, #000, rgba(0,0,0,.5) 100%);
       }
     }
   }
