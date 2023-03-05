@@ -1,48 +1,162 @@
-import React, { useRef } from "react";
-import { useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import {ArrowLeft} from '../atoms/Icons';
+import { GatsbyImage } from "gatsby-plugin-image";
 
-const links = [
-  {
-    name: 'Ślub',
-    href: '/slub'
-  },
-  {
-    name: 'Chrzest',
-    href: '/slub'
-  },
-  {
-    name: 'Komunia',
-    href: '/slub'
-  },
-  {
-    name: 'Oferta stacjonarna',
-    href: '/slub'
-  },
-  {
-    name: 'Biznesowa',
-    href: '/slub'
-  },
-  {
-    name: 'Produktowa',
-    href: '/slub'
-  },
-  {
-    name: 'Analogowa',
-    href: '/slub'
-  },
-  {
-    name: 'Kontakt',
-    href: '/slub'
-  },
-]
+const PricingLinks = ({location}) => {
+  const {grid} = useStaticQuery(graphql`
+    query {
+      grid: datoCmsPricing {
+        slub {
+          gatsbyImageData(placeholder: NONE)
+          alt
+        }
+        komunia {
+          gatsbyImageData(placeholder: NONE)
+          alt
+        }
+        biznesowa {
+          gatsbyImageData
+          alt
+        }
+        chrzest {
+          gatsbyImageData(placeholder: NONE)
+          alt
+        }
+        produktowa {
+          gatsbyImageData(placeholder: NONE)
+          alt
+        }
+      }
+    }
+  `);
+  const componentDataArray = [
+    {
+      id: 1,
+      name: 'Ślub',
+      href: '/slub',
+      heading: 'Ślub',
+      price: '2000',
+      image: {
+        gatsbyImageData: grid.slub.gatsbyImageData,
+        alt: grid.slub.alt || ''
+      },
+      copy:`<p>Oferta obejmuje:</p>
+            <p>Fotografowanie przygotowań do ceremonii i wesela. Prezentację multimedialną z wybranych zdjęć.</p>
+            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe</span>
+            <ul>
+              <li>
+                Sesję ślubną w studio lub w plenerze.
+                <br>
+                <strong>Koszt: 1200 zł</strong>
+              </li>
+              <li>
+                Sesję narzeczeńską w wybranej lokalizacji.
+                <br>
+                <strong>Koszt: 650 zł</strong>
+                <strong>Koszt przy zakupie pakietu ślubnego: 500 zł</strong>
+              </li>
+            </ul>
+            <p>Zdjęcia są dostarczane na nośniku cyfrowym.</p>
+      `,
+    },
+    {
+      id: 2,
+      name: 'Chrzest',
+      href: '/slub',
+      heading: 'Chrzest',
+      price: '500',
+      image: {
+        gatsbyImageData: grid.chrzest.gatsbyImageData,
+        alt: grid.chrzest.alt || ''
+      },
+      copy:`<p>Oferta obejmuje:</p>
+            <p>zdjęcia z uroczystości chrztu wraz ze zdjęciami rodzinnymi przed i po ceremonii.</p>
+            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</span>
+            <ul>
+              <li>
+                zdjęcia z kontynuacji uroczystości w restauracji
+                <br>
+                <strong>Koszt: dodatkowe 500 - 1000 zł.</strong>
+              </li>
+            </ul>
+            <p>zdjęcia są dostarczane na nośniku cyfrowym oraz wydrukowane w formacie 15x21 cm</p>
+      `,
+    },
+    {
+      id: 3,
+      name: 'Komunia',
+      href: '/komunia',
+      heading: 'Komunia',
+      price: '400',
+      image: {
+        gatsbyImageData: grid.komunia.gatsbyImageData,
+        alt: grid.komunia.alt || ''
+      },
+      copy:`<p>Oferta obejmuje:</p>
+            <p>Zdjęcia z uroczystości chrztu wraz ze zdjęciami rodzinnymi przed i po ceremonii.</p>
+            <span>Istnieje możliwość poszerzenia oferty o wybrane usługi dodatkowe:</span>
+            <ul>
+              <li>fotografowanie przygotowań a także zdjęcia pozowane po ceremonii.<br><strong>Koszt: dodatkowe 200 zł</strong></li>
+              <li>zdjęcia z kontynuacji uroczystości w restauracji.<br><strong>Koszt: dodatkowe 500 — 1000 zł.</strong></li>
+            </ul>
+            <p>Zdjęcia są dostarczane na nośniku cyfrowym oraz wydrukowane w formacie 15x21 cm.</p>
+      `,
+    },
+    {
+      id: 4,
+      name: 'Oferta stacjonarna',
+      href: '/slub'
+    },
+    {
+      id: 5,
+      name: 'Biznesowa',
+      href: '/biznesowa',
+      heading: 'Sesja Biznesowa',
+      price: '300',
+      image: {
+        gatsbyImageData: grid.biznesowa.gatsbyImageData,
+        alt: grid.biznesowa.alt || ''
+      },
+      copy:`<p>Autentyczne fotografie, udostępniane na Instagramie i w innych serwisach społecznościowych, to niezwykle skuteczny sposób na zaprezentowanie swojej oferty i wyróżnienie się na tle konkurencji.</p>
+            <p>Ludzie natychmiast rozpoznają zdjęcia stockowe. W przypadku każdego produktu lub usługi, a zwłaszcza skoncentrowanych na człowieku, takich jak edukacja czy opieka zdrowotna, warto używać zdjęć prawdziwych ludzi w ich prawdziwym środowisku.</p>
+            <p>Wiem, jakie zdjęcia sprawdzą się na Twoim firmowym Facebooku, Instagramie czy LinkedInie. Porozmawiajmy i zaproponuję Ci, co mogę zrobić, aby Twoja firma prezentowała się profesjonalnie w świecie online.</p>
+      `,
+    },
+    {
+      id: 6,
+      name: 'Produktowa',
+      href: '/slub',
+      heading: 'Sesja Produktowa',
+      price: '',
+      image: {
+        gatsbyImageData: grid.produktowa.gatsbyImageData,
+        alt: grid.produktowa.alt || ''
+      },
+      copy:`<p>W ramach sesji produktowych wykonuję przede wszystkim zdjęcia, które zostaną umieszczone na opakowaniach, wykorzystane na portalach aukcyjnych lub do promocji produktów, działań marketingowych i reklamy.</p>
+            <p>Każda firma jest inna i ma unikatowe potrzeby. Dlatego cena sesji produktowej ustalana jest zawsze indywidualnie. Uzależniona jest od zakresu prac oraz liczby fotografowanych produktów.</p>
+      `,
+    },
+    {
+      id: 7,
+      name: 'Analogowa',
+      href: '/slub'
+    },
+    {
+      id: 8,
+      name: 'Kontakt',
+      href: '/slub'
+    },
+  ]
 
-const PricingLinks = ({location}) => {  
+
   const component = useRef();
+  const [componentShowId, setComponentShowId] = useState();
 
   const handleExpand = (e) => {
     e.preventDefault();
+    setComponentShowId(e.target.getAttribute('data-key'));
     component.current.classList.add('active');
     const width = window.innerWidth;
     const height = window.innerHeight;
@@ -74,25 +188,41 @@ const PricingLinks = ({location}) => {
   }, [])
 
   return (
-    <StyledLinks className="links sec" id="zobacz">
+    <StyledLinks className="links sec" id="zobacz" componentShowId={componentShowId}>
       <div className="max-width">
         <div className="links-wrapper">
-          {links.map((link, i) => (
+          {componentDataArray.map((data, i) => (
             <a
               key={i}
-              href={link.href}
+              data-key={i}
+              href={data.href}
               onClick={e => handleExpand(e)}
             >
-              <span>{link.name}</span>
+              <span>{data.name}</span>
             </a>
           ))}
         </div>
       </div>
+
       <div className="component" ref={component}>
         <div className="component-wrapper">
           <button onClick={handleExpandClose}>
             <ArrowLeft/>
           </button>
+          {componentDataArray.map((item, i) => (
+            item.heading && (
+              <div className="component-item" data-key={i} key={i}>
+                <header>
+                  <h3>{item.heading}</h3>
+                  {item?.price && (
+                    <h4>od {item.price} zł</h4>
+                  )}
+                </header>
+                <div dangerouslySetInnerHTML={{__html: item.copy}}></div>
+                <GatsbyImage image={item.image.gatsbyImageData} alt={item.image.alt} className="component-img" objectFit="contain" />
+              </div>
+            )
+          ))}
         </div>
       </div>
     </StyledLinks>
@@ -120,9 +250,12 @@ const StyledLinks = styled.section`
       font-family: var(--serif-font);
       height: clamp(200px, ${288/10.8}vh, 288px);
       border: 1px solid var(--color);
-      &:hover {
+      &:hover, &:focus {
         background-color: var(--color);
         color: var(--bg);
+      }
+      span {
+        pointer-events: none;
       }
     }
   }
@@ -151,21 +284,17 @@ const StyledLinks = styled.section`
     background-color: var(--bg);
     z-index: 10;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 2vw;
     transform: scale(0);
-    transition: transform .6s .2s cubic-bezier(0.7, 0, 0.84, 0);
+    transition: transform .6s cubic-bezier(0.7, 0, 0.84, 0);
     will-change: transform;
-    &.active {
-      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
-      transform: scale(1) !important;
-    }
     &::before {
       content: '';
-      width: 100%;
-      height: 100%;
       position: absolute;
       left: 0;
       top: 0;
+      bottom: 0;
+      right: 0;
       background-color: var(--color);
       z-index: 2;
       pointer-events: none;
@@ -176,16 +305,21 @@ const StyledLinks = styled.section`
       opacity: 0;
       transition: opacity .6s .4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    &.active {
+      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(1) !important;
+    }
     .component-wrapper {
       border: 1px solid #fff;
       width: 100%;
       padding: ${34/16}rem;
-      max-width: 1920px;
+      padding-left: ${88/16}rem;
       min-height: 100%;
       margin: 0 auto;
       position: relative;
     }
     button {
+      z-index: 1;
       position: absolute;
       left: -1rem;
       top: -1rem;
@@ -193,8 +327,51 @@ const StyledLinks = styled.section`
       padding: 1rem;
       border-radius: 50%;
       svg {
-        width: ${55/16}rem;
-        height: ${55/16}rem;
+        width: ${44/16}rem;
+        height: ${44/16}rem;
+      }
+    }
+    .component-item {
+      display: none;
+      &[data-key="${props => props.componentShowId}"] {
+        display: block;
+      }
+      max-width: ${610/16}rem;
+      header {
+        font-size: ${42/16}rem;
+        margin-bottom: 1rem;
+        h3 {
+          font-size: 1em;
+        }
+        h4 {
+          font-size: .4em;
+          font-family: var(--sans-serif-font);
+        }
+      }
+      ul {
+        margin-bottom: 1rem;
+      }
+      .component-img {
+        z-index: -1;
+        position: absolute;
+        right: -2vw;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        max-height: calc(100% + 4vw);
+        img {
+          object-position: right;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, #000, rgba(0,0,0,0) 90%);
+          z-index: 1;
+        }
       }
     }
   }

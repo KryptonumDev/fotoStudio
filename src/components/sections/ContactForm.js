@@ -81,7 +81,7 @@ const ContactForm = () => {
   }
 
   return (
-    <StyledForm className="form sec" id="zobacz">
+    <StyledForm className="form sec" id="zobacz" {...{formSent}}>
       <div className="max-width">
         <header>
           <h2 className="notVertical">Porozmawiajmy!</h2>
@@ -336,10 +336,12 @@ const StyledForm = styled.section`
       }
     }
   }
-  @media only screen and (max-width: 729px) and (max-height: 749px){
-    height: 180%;
-    padding-bottom: 30%;
-  }
+  ${props => !props.formSent && `
+    @media only screen and (max-width: 729px) and (max-height: 699px){
+      height: 180%;
+      padding-bottom: 30%;
+    }
+  `}
 `
  
 export default ContactForm;
