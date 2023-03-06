@@ -2,11 +2,11 @@ import React from "react";
 import { Link as gatsbyLink } from 'gatsby';
 import styled from "styled-components";
 
-const Button = ({link, children, disabled}) => {
+const Button = ({to, children, disabled}) => {
   return (
     <>
-    {link ? (
-      <StyledLink to={link}>
+    {to ? (
+      <StyledLink to={to}>
         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z"/></svg>
         <span>{children}</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="#fff"><path d="M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z"/></svg>

@@ -5,18 +5,19 @@ import styled from "styled-components";
 const PhotographyGallery = ({data}) => {
   useEffect(() => {
     const headings = document.querySelectorAll('.gallery h2');
-    const handleScroll = (e) => {
+    const handleScroll = () => {
       headings.forEach(e => {
         if(e.getBoundingClientRect().top <= window.innerHeight && e.getBoundingClientRect().bottom >= 0){
           e.style.transform = `translate(-50%, ${e.getBoundingClientRect().top / window.innerHeight * 100}%)`;
         }
       })
-      // console.log(e.target.scrollTop);
     }
-    document.querySelector('.scrollSnap').addEventListener('scroll', e => handleScroll(e));
+    document.querySelector('.scrollSnap').addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => document.querySelector('.scrollSnap').removeEventListener('scroll', handleScroll);
   }, [])
   return (
-    <StyledGallery className="gallery sec">
+    <StyledGallery className="gallery sec" id="zobacz">
       <div className="max-width">
         {data.map((gallery, i) => (
           <div className="gallery-wrapper" key={i}>
@@ -71,7 +72,7 @@ const StyledGallery = styled.section`
       left: 50%;
       transform: translate(-50%, 100%);
       top: 0;
-      font-size: ${300/19.2}vw;
+      font-size: ${320/19.2}vw;
       will-change: transform;
       transition: transform .05s;
       mix-blend-mode: hard-light;
@@ -82,6 +83,20 @@ const StyledGallery = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @media (max-width: 990px){
+    .max-width {
+      width: 100%;
+    }
+    .gallery-wrapper {
+      flex-direction: column;
+    }
+    .gallery-item:nth-child(1n) {
+      transform: translateX(-21px);
+    }
+    .gallery-item:nth-child(2n) {
+      transform: translateX(21px);
+    }
   }
 `
  

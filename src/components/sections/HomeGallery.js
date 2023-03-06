@@ -23,7 +23,7 @@ const HomeGallery = ({data}) => {
       <div className="max-width">
         <div className="slider-copy">
           <h2 ref={heading}>{activeHeading}</h2>
-          <Button link="/portfolio">Portfolio</Button>
+          <Button to="/portfolio">Portfolio</Button>
         </div>
       </div>
       <FullSlider data={data} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />

@@ -9,7 +9,7 @@ const AboutCooperation = ({data}) => {
       <div className="max-width">
         <header>
           <h2>Współpraca</h2>
-          <Button link="/kontakt">Kontakt</Button>
+          <Button to="/kontakt">Kontakt</Button>
           <p>Każdy klient to dla mnie wyjątkowy klient. Stawiam na najwyższą jakość i&nbsp;maksymalną transparentność - priorytetem jest dla mnie spełnienie Twoich oczekiwań dotyczących naszej współpracy.</p>
           <p>Oprócz usług zawartych w cenniku, <strong>mogę&nbsp;polecić specjalistów</strong>, np.&nbsp;wizażystkę lub charakteryzatora. Możesz też liczyć na profesjonalne podejście i&nbsp;miłą atmosferę.</p>
         </header>

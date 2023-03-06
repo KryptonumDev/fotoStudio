@@ -10,7 +10,7 @@ const HomeHero = ({data}) => {
       <div className="max-width">
         <div className="hero-copy">
           <h1>Stwórzmy coś pięknego</h1>
-          <Button link="/kontakt">Kontakt</Button>
+          <Button to="/kontakt">Kontakt</Button>
         </div>
       </div>
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt} className="hero-img" objectFit="contain" />

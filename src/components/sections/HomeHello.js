@@ -10,7 +10,7 @@ const HomeHello = ({data}) => {
         <header className="hello-header">
           <div>
             <h2>Cześć!</h2>
-            <Button link="o-mnie">O mnie</Button>
+            <Button to="o-mnie">O mnie</Button>
           </div>
           <div>
             <p>Świat w&nbsp;obiektywie to moja pasja od wielu lat. Każdy&nbsp;z&nbsp;nas ma w&nbsp;sobie piękno, które warto utrwalić. Szczególnie w&nbsp;ważnych dla nas momentach.</p>

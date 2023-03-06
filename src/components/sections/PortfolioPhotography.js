@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Slider from "../organisms/Slider";
 import Button from "../atoms/Button";
 
-const PortfolioPhotography = ({id, slider, heading, content}) => {
+const PortfolioPhotography = ({id, slider, heading, content, to}) => {
   return (
     <StyledPhotography className="photography sec" id={id || ''}>
       <div className="max-width">
@@ -12,7 +12,7 @@ const PortfolioPhotography = ({id, slider, heading, content}) => {
           {content.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}
-          <Button link="/fotografia-reportazowa">Zobacz więcej</Button>
+          <Button to={to}>Zobacz więcej</Button>
         </header>
       </div>
       <Slider data={slider} />
@@ -60,7 +60,9 @@ const StyledPhotography = styled.section`
     }
   }
   @media only screen and (max-width: 1299px) and (max-height: 889px){
-    height: 200%;
+    &.sec {
+      height: 200%;
+    }
     .slider {
       bottom: 25%;
     }

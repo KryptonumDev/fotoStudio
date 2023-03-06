@@ -11,7 +11,7 @@ const PortfolioHero = ({data}) => {
         <h1>Portfolio</h1>
         <p>Fotografia to mój sposób na życie, ale i&nbsp;pasja, która trwa niezmiennie od 40 lat.</p>
         <p>Kocham uwieczniać niepowtarzalne chwile i&nbsp;tworzyć z&nbsp;nich wspomnienia, które zostają na długie lata.</p>
-        <Button link="/kontakt">Kontakt</Button>
+        <Button to="/kontakt">Kontakt</Button>
       </div>
       <ScrollDown />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />

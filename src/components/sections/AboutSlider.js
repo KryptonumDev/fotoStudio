@@ -9,7 +9,7 @@ const AboutHero = ({data, heading, button, id}) => {
       <Slider data={data} />
       <header className="max-width">
         <h2>{heading}</h2>
-        <Button link={button.link}>{button.text}</Button>
+        <Button to={button.link}>{button.text}</Button>
       </header>
     </StyledHero>
   );

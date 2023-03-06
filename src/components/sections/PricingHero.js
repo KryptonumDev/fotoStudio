@@ -10,7 +10,7 @@ const PricingHero = ({data}) => {
       <div className="max-width">
         <h1>Cennik</h1>
         <p>Każdy klient jest wyjątkowy, dlatego o całkowitym koszcie sesji zdjęciowej decydują indywidualne potrzeby. Poniżej znajdziesz oferty, które pomogą Ci w dokonaniu odpowiedniego wyboru.</p>
-        <Button link="/kontakt">Kontakt</Button>
+        <Button to="/kontakt">Kontakt</Button>
       </div>
       <ScrollDown href="#zobacz" />
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />

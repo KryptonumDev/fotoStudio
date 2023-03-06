@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       <div className="NotFound-content">
         <div className="max-width">
           <h1>Strona której szukasz nie istnieje</h1>
-          <Button link="/">Główna</Button>
+          <Button to="/">Główna</Button>
         </div>
       </div>
       <div className="NotFound-marquee">

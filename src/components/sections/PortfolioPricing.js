@@ -11,7 +11,7 @@ const PortfolioPricing = ({data}) => {
           <h2>Cennik usług</h2>
           <p>Każda sesja fotograficzna wymaga innego podejścia, dlatego cena ostateczna zależy od wielu czynników. Oferuję indywidualne podejście do każdego klienta.</p>
           <p>Aby wspomóc ustalanie wspólnie z klientem ceny szacunkowowej stworzyłem cennik, który zawiera w sobie minimalne kwoty każdego rodzaju usługi.</p>
-          <Button link="/cennik">Cennik</Button>
+          <Button to="/cennik">Cennik</Button>
         </header>
       </div>
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="pricing-img" objectFit="contain" />
