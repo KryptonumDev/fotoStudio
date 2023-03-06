@@ -38,8 +38,8 @@ export const query = graphql`
 export default PricingPage;
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>Cennik - Adam Chrapek</title>
-  </>
+  <Seo
+    title="Cennik"
+  >
+  </Seo>
 )

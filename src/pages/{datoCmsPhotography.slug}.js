@@ -24,7 +24,7 @@ const PhotographyPage = ({data: {photography}}) => {
 }
 
 export const query = graphql`
-  query($slug: String) {
+  query($slug: String!) {
     photography: datoCmsPhotography(slug: {eq: $slug}){
       name
       slug
@@ -51,8 +51,8 @@ export const query = graphql`
 export default PhotographyPage;
 
 export const Head = ({data: {photography}}) => (
-  <>
-    <Seo />
-    <title>{photography.name} - Adam Chrapek</title>
-  </>
+  <Seo
+    title={photography.name}
+  >
+  </Seo>
 )

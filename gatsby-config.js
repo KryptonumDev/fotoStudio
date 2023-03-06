@@ -7,7 +7,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Foto Studio`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://adamchrapek.pl/`
   },
   plugins: [
     "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp",
@@ -16,6 +16,12 @@ module.exports = {
       options: {
         apiToken: process.env.API_DATOCMS,
         disableLiveReload: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://adamchrapek.pl`,
       },
     },
   ]

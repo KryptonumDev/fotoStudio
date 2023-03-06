@@ -19,6 +19,7 @@
     "@vercel/analytics": "^0.1.10",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.5.0",
+    "gatsby-plugin-canonical-urls": "^5.7.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-sharp": "^5.5.0",
     "gatsby-plugin-styled-components": "^6.5.0",

@@ -57,8 +57,8 @@ export default IndexPage
 
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>Foto Studio</title>
-  </>
+  <Seo
+    title="Strona główna"
+  >
+  </Seo>
 )

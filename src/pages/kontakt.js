@@ -59,8 +59,8 @@ export const query = graphql`
 export default ContactPage;
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>Kontakt - Adam Chrapek</title>
-  </>
+  <Seo
+    title="Kontakt"
+  >
+  </Seo>
 )

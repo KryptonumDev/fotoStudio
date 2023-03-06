@@ -74,6 +74,7 @@ const StyledGallery = styled.section`
       font-size: ${300/19.2}vw;
       will-change: transform;
       transition: transform .05s;
+      mix-blend-mode: hard-light;
     }
   }
   .gallery-left, .gallery-right {

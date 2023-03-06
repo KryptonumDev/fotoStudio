@@ -72,8 +72,8 @@ export const query = graphql`
 export default PortfolioPage;
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>Portfolio - Adam Chrapek</title>
-  </>
+  <Seo
+    title="Portfolio"
+  >
+  </Seo>
 )

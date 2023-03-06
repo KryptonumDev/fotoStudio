@@ -94,8 +94,8 @@ const StyledNotFound = styled.section`
 export default NotFoundPage
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>Strony nie znaleziono - Foto Studio</title>
-  </>
+  <Seo
+    title="Strony nie znaleziono"
+  >
+  </Seo>
 )

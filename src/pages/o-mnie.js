@@ -64,8 +64,8 @@ export const query = graphql`
 export default AboutPage
 
 export const Head = () => (
-  <>
-    <Seo />
-    <title>O mnie - Adam Chrapek</title>
-  </>
+  <Seo
+    title="O mnie"
+  >
+  </Seo>
 )
