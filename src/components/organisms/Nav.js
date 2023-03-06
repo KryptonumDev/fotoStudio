@@ -88,6 +88,10 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: space-between;
   }
+  pointer-events: none;
+  a, button {
+    pointer-events: auto;
+  }
   ul {
     list-style-type: none;
     a {

@@ -49,7 +49,9 @@ const PhotographyGallery = ({data}) => {
 }
 
 const StyledGallery = styled.section`
-  height: auto;
+  &.sec {
+    height: auto;
+  }
   padding: ${300/10.8}vh 0;
   .max-width {
     @media only screen and (min-width: 729px){
