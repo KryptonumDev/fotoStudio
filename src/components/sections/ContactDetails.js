@@ -1,8 +1,22 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 
 const ContactDetails = ({data}) => {
+  const { details } = useStaticQuery(graphql`
+    query {
+      details: datoCmsFooter {
+        email
+        address
+        addressMaps
+        phone1
+        phone2
+        instagram
+        facebook
+      }
+    }
+  `);
   return (
     <StyledDetails className="details sec">
       <div className="max-width">
@@ -12,12 +26,12 @@ const ContactDetails = ({data}) => {
           <p>Jego wypełnienie zajmuję chwilę. Odpowiem na Twoją wiadomość najszybciej jak tylko potrafię</p>
           <div className="details-info">
             <p>Adam Chrapek</p>
-            <p><a href={data.contact.addressMaps} target="_blank" rel="noreferrer">{data.contact.address}</a></p>
-            <p><a href={`mailto:${data.contact.email}`}>{data.contact.email}</a></p>
+            <p><a href={details.addressMaps} target="_blank" rel="noreferrer">{details.address}</a></p>
+            <p><a href={`mailto:${details.email}`}>{details.email}</a></p>
             <p>
-              <a href={`tel:+48${data.contact.phone1.replace(/\s/g,'')}`}>{data.contact.phone1}</a>
+              <a href={`tel:+48${details.phone1.replace(/\s/g,'')}`}>{details.phone1}</a>
               &nbsp;|&nbsp;
-              <a href={`tel:+48${data.contact.phone2.replace(/\s/g,'')}`}>{data.contact.phone2}</a>
+              <a href={`tel:+48${details.phone2.replace(/\s/g,'')}`}>{details.phone2}</a>
             </p>
             <p></p>
           </div>
