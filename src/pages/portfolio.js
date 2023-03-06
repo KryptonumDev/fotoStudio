@@ -35,7 +35,7 @@ const PortfolioPage = ({data}) => {
         />
         <PortfolioPricing data={pricing} />
         <TheyTrusted />
-        <Footer data={data.footer} />
+        <Footer />
       </PageIndicator>
     </div>
   )

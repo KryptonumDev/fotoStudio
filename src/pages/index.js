@@ -24,7 +24,7 @@ const IndexPage = ({data}) => {
         <Reviews />
         <HomeLab data={lab}/>
         <TheyTrusted />
-        <Footer data={data.footer} />
+        <Footer />
       </PageIndicator>
     </div>
   )

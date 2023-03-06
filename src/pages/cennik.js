@@ -18,7 +18,7 @@ const PricingPage = ({data, location}) => {
         <PricingHero data={hero} />
         <PricingLinks location={location} />
         <TheyTrusted />
-        <Footer data={data.footer} />
+        <Footer />
       </PageIndicator>
     </div>
   )

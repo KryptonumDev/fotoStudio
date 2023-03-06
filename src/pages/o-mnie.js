@@ -32,7 +32,7 @@ const AboutPage = ({data}) => {
           data={slider2}
         />
         <TheyTrusted />
-        <Footer data={data.footer} />
+        <Footer />
       </PageIndicator>
     </div>
   )

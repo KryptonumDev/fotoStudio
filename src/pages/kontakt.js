@@ -29,7 +29,7 @@ const ContactPage = ({data}) => {
         />
         <Reviews />
         <TheyTrusted />
-        <Footer data={data.footer} />
+        <Footer />
       </PageIndicator>
     </div>
   )
