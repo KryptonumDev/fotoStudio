@@ -377,6 +377,9 @@ const StyledLinks = styled.section`
     transform: translateY(-50%);
     max-width: 800px;
     height: calc(100% + 4vw);
+    img {
+      object-position: top;
+    }
     &::before {
       content: '';
       position: absolute;

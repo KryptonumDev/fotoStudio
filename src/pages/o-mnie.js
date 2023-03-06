@@ -58,15 +58,6 @@ export const query = graphql`
         alt
       }
     }
-    footer: datoCmsFooter {
-      email
-      address
-      addressMaps
-      phone1
-      phone2
-      instagram
-      facebook
-    }
   }
 `
 

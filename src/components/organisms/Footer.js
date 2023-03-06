@@ -1,31 +1,44 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { ArrowRight, FacebookIcon, InstagramIcon, Logo } from "../atoms/Icons";
 
-const Footer = ({data}) => {
+const Footer = () => {
+  const { footer } = useStaticQuery(graphql`
+    query {
+      footer: datoCmsFooter {
+        email
+        address
+        addressMaps
+        phone1
+        phone2
+        instagram
+        facebook
+      }
+    }
+  `);
   return (
     <StyledFooter className="footer">
       <div className="max-width">
         <div className="footer-info">
           <Logo className="footer-logo" />
           <div className="footer-inTouch">
-            <a href={`mailto:${data.email}`}>
-              <span>{data.email}</span>
+            <a href={`mailto:${footer.email}`}>
+              <span>{footer.email}</span>
               <ArrowRight fill="#fff" />
             </a>
-            <a href={data.addressMaps} target="_blank" rel="noreferrer"><span>{data.address}</span></a>
+            <a href={footer.addressMaps} target="_blank" rel="noreferrer"><span>{footer.address}</span></a>
             <p>
-              <a href={`tel:+48${data.phone1.replace(/\s/g,'')}`}><span>{data.phone1}</span></a>
+              <a href={`tel:+48${footer.phone1.replace(/\s/g,'')}`}><span>{footer.phone1}</span></a>
               &nbsp;|&nbsp;
-              <a href={`tel:+48${data.phone2.replace(/\s/g,'')}`}><span>{data.phone2}</span></a>
+              <a href={`tel:+48${footer.phone2.replace(/\s/g,'')}`}><span>{footer.phone2}</span></a>
             </p>
           </div>
           <div className="footer-social">
-            <a href={data.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a href={footer.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
               <FacebookIcon />
             </a>
-            <a href={data.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href={footer.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
               <InstagramIcon />
             </a>
           </div>
