@@ -14,6 +14,15 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://adamchrapek.pl',
+        sitemap: 'https://adamchrapek.pl/sitemap_index.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {
