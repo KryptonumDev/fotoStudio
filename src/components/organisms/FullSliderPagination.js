@@ -17,14 +17,14 @@ const HomeSliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
     } else if(e.key === "ArrowRight"){
       sliderButton('next');
     }
-  }, [sliderButton])
+  }, [sliderButton]);
   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting){
-        document.addEventListener('keydown', e => handleArrowKey(e))
+        document.addEventListener('keydown', handleArrowKey)
       } else {
-        document.removeEventListener('keydown', e => handleArrowKey(e))
+        document.removeEventListener('keydown', handleArrowKey)
       }
     }, {threshold: .5})
     observer.observe(document.querySelector(".slider"))

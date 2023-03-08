@@ -52,15 +52,15 @@ export const query = graphql`
         alt
       }
       reportage {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
       analog {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
       product {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
       pricing {

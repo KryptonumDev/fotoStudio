@@ -44,7 +44,7 @@ const AboutCooperationProcess = () => {
   }, [activeSlider])
 
   return (
-    <StyledCooperationProcess className="cooperation-process sec">
+    <StyledCooperationProcess className="cooperation-process sec slider">
       <header className="max-width">
         <h2>Przebieg współpracy</h2>
       </header>
@@ -60,7 +60,7 @@ const AboutCooperationProcess = () => {
             </div>
           ))}
         </div>
-        <SliderPagination activeSlide={activeSlider} setActiveSlide={setActiveSlider} sliderLength={steps.length} />
+      <SliderPagination activeSlide={activeSlider} setActiveSlide={setActiveSlider} sliderLength={steps.length} />
       </div>
     </StyledCooperationProcess>
   );

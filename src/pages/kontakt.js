@@ -49,7 +49,7 @@ export const query = graphql`
     }
     about: datoCmsAboutMe {
       slider {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
     }

@@ -1,8 +1,9 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
 import styled from "styled-components";
 import { ArrowLeft, ArrowRight } from "../atoms/Icons";
 
 const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
+  const pagination = useRef();
   const sliderButton = useCallback((direction) => {
     if(direction === 'prev'){
       setActiveSlide(prevState => prevState === 1 ? sliderLength : --prevState)
@@ -18,20 +19,20 @@ const SliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
       sliderButton('next');
     }
   }, [sliderButton])
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       if(entries[0].isIntersecting){
-        document.addEventListener('keydown', e => handleArrowKey(e))
+        document.addEventListener('keydown', handleArrowKey)
       } else {
-        document.removeEventListener('keydown', e => handleArrowKey(e))
+        document.removeEventListener('keydown', handleArrowKey)
       }
     }, {threshold: .5})
-    observer.observe(document.querySelector(".slider"))
+    observer.observe(pagination.current.closest('.slider'));
   }, [handleArrowKey])
 
   return (
-    <StyledSliderPagination className="slider-pagination">
+    <StyledSliderPagination className="slider-pagination" ref={pagination}>
       <button
         aria-label="Przejdź do poprzedniego slajdu"
         onClick={() => sliderButton('prev')}

@@ -46,7 +46,7 @@ export const query = graphql`
         alt
       }
       slider {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
       cooperation {
@@ -54,7 +54,7 @@ export const query = graphql`
         alt
       }
       slider2 {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: NONE, width: 400)
         alt
       }
     }
