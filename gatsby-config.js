@@ -10,7 +10,11 @@ module.exports = {
     siteUrl: `https://adamchrapek.pl/`
   },
   plugins: [
-    "gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-preact",
     {
       resolve: `gatsby-source-datocms`,
       options: {
