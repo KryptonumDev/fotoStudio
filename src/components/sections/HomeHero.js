@@ -13,7 +13,7 @@ const HomeHero = ({data}) => {
           <Button to="/kontakt">Kontakt</Button>
         </div>
       </div>
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt} className="hero-img" objectFit="contain" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt} className="hero-img" objectFit="contain" loading="eager" />
       <ScrollDown />
     </StyledHero>
   );

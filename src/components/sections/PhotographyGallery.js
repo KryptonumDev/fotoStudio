@@ -8,7 +8,6 @@ const PhotographyGallery = ({data}) => {
     const handleScroll = () => {
       headings.forEach(e => {
         if(e.getBoundingClientRect().top <= window.innerHeight && e.getBoundingClientRect().bottom >= 0){
-          console.log(e.getBoundingClientRect().top / window.innerHeight);
           e.style.transform = `translate(-50%, ${e.getBoundingClientRect().top / window.innerHeight * 100 * -1}%)`;
         }
       })

@@ -13,7 +13,7 @@ const PricingHero = ({data}) => {
         <Button to="/kontakt">Kontakt</Button>
       </div>
       <ScrollDown href="#zobacz" />
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" loading="eager" />
     </StyledHero>
   );
 }

@@ -122,12 +122,14 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+  .scrollSnap {
+    height: 100vh;
+    height: 100dvh;
+    overflow: auto;
+  }
   @media only screen and (min-height: 548px){
     .scrollSnap {
       scroll-snap-type: y mandatory;
-      height: 100vh;
-      height: 100dvh;
-      overflow: auto;
     }
     .sec {
       min-height: 100%;

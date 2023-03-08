@@ -10,7 +10,7 @@ const ScrollDown = () => {
     });
   }
   return (
-    <StyledArrow href="#zobacz" className="scrollDown" aria-hidden="true" onClick={e => handleScroll(e)}>
+    <StyledArrow href="#zobacz" className="scrollDown" onClick={e => handleScroll(e)}>
       <ArrowDown />
     </StyledArrow>
   );

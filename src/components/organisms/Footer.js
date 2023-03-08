@@ -57,12 +57,7 @@ const Footer = () => {
             </li>
             <li><Link to="/cennik">Cennik</Link></li>
             <li><Link to="/kontakt">Kontakt</Link></li>
-            <li>
-              <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
-              <ul>
-                <li><Link to="/sitemap">Mapa strony</Link></li>
-              </ul>
-            </li>
+            <li><Link to="/polityka-prywatnosci">Polityka prywatności</Link></li>
           </ul>
         </div>
       </div>

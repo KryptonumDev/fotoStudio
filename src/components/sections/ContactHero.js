@@ -11,7 +11,7 @@ const ContactHero = ({data}) => {
         <p>Porozmawiajmy o Twoich pomysłach na sesję zdjęciową.</p>
       </div>
       <ScrollDown />
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" loading="eager" />
     </StyledHero>
   );
 }

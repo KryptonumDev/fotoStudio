@@ -12,7 +12,7 @@ const AboutHero = ({data}) => {
         <p>Każda sesja zdjęciowa to szansa na uchwycenie niepowtarzalnego momentu i&nbsp;towarzyszącej mu wyjątkowej atmosfery. Nie mogę się doczekać naszej wspólnej sesji!</p>
       </div>
       <ScrollDown />
-      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" />
+      <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="hero-img" loading="eager" />
     </StyledHero>
   );
 }
