@@ -101,6 +101,7 @@ const ContactForm = () => {
               type="text"
               name="address"
               autoComplete="off"
+              aria-label="address"
               style={{opacity:0,position:'absolute',top:0,left:0,height:0,width:0,zIndex:-1}}
               tabIndex="-1"
               onChange={e => setFormData({

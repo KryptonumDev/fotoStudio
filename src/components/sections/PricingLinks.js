@@ -220,7 +220,7 @@ const PricingLinks = ({location}) => {
 
       <div className="component" ref={component}>
         <div className="component-wrapper">
-          <button onClick={handleExpandClose}>
+          <button onClick={handleExpandClose} aria-label="Zamknij">
             <ArrowLeft/>
           </button>
           {componentDataArray.map((item, i) => (
