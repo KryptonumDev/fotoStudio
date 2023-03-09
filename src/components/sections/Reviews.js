@@ -27,7 +27,7 @@ const Reviews = () => {
         <header className="reviews-header">
           <h2>Opinie</h2>
           <p>Każda klient ma inne oczekiwania, dlatego każda sesja jest inna.</p>
-          <p>Zobacz, co moi klienci powiedzieli o&nbsp;pracy ze mną.</p>
+          <p>Zobacz, co moi klienci powiedzieli o pracy ze mną.</p>
         </header>
         <div className="reviews-content">
           <div className="reviewsContent-snap">

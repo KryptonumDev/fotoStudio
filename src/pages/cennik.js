@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
-import PricingHero from "../components/sections/PricingHero"
+import SectionHero from "../components/sections/SectionHero"
 import PricingLinks from "../components/sections/PricingLinks"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
@@ -15,7 +15,12 @@ const PricingPage = ({data, location}) => {
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
-        <PricingHero data={hero} />
+        <SectionHero
+          heading="Cennik"
+          copy={['Każdy klient jest wyjątkowy, dlatego o całkowitym koszcie sesji zdjęciowej decydują indywidualne potrzeby. Poniżej znajdziesz oferty, które pomogą Ci w dokonaniu odpowiedniego wyboru.']}
+          button={{to: '/kontakt', text: 'Kontakt'}}
+          image={hero}
+        />
         <PricingLinks location={location} />
         <TheyTrusted />
         <Footer />

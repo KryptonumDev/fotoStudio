@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
-import ContactHero from "../components/sections/ContactHero"
+import SectionHero from "../components/sections/SectionHero"
 import ContactForm from "../components/sections/ContactForm"
 import ContactDetails from "../components/sections/ContactDetails"
 import Reviews from "../components/sections/Reviews"
@@ -19,7 +19,11 @@ const ContactPage = ({data}) => {
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
-        <ContactHero data={hero} />
+        <SectionHero
+          heading="Kontakt"
+          copy={['Porozmawiajmy o Twoich pomysłach na sesję zdjęciową']}
+          image={hero}
+        />
         <ContactForm />
         <ContactDetails data={{details, contact: data.footer}} />
         <AboutSlider

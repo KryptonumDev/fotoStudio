@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
-import AboutHero from "../components/sections/AboutHero"
+import SectionHero from "../components/sections/SectionHero"
 import AboutSlider from "../components/sections/AboutSlider"
 import AboutCooperation from "../components/sections/AboutCooperation"
 import AboutCooperationProcess from "../components/sections/AboutCooperationProcess"
@@ -17,7 +17,11 @@ const AboutPage = ({data}) => {
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
-        <AboutHero data={hero} />
+        <SectionHero
+          heading="Cześć, tu Adam"
+          copy={['Pasją do fotografowania zaraziłem się wiele lat temu. Na początku robiłem zdjęcia wszędzie, gdzie działo się coś ważnego. Dziś, choć w swojej pracy korzystam z nowoczesnego sprzętu i innowacyjnych rozwiązań, uważam, że to miłość do fotografowania tworzy dobre ujęcie.', 'Każda sesja zdjęciowa to szansa na uchwycenie niepowtarzalnego momentu i towarzyszącej mu wyjątkowej atmosfery. Nie mogę się doczekać naszej wspólnej sesji!']}
+          image={hero}
+        />
         <AboutSlider
           id="zobacz"
           heading="Zobacz co możemy stworzyć"

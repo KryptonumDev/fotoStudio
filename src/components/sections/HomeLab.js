@@ -8,15 +8,15 @@ const HomeLab = ({data}) => {
       <div className="max-width">
         <header className="lab-header">
             <h2>Pracownia</h2>
-            <p>Moja pracownia to nie tylko sesje zdjęciowe. To&nbsp;także szerokie portfolio usług związanych z&nbsp;fotografią, realizowanych w&nbsp;formie stacjonarnej.</p>
+            <p>Moja pracownia to nie tylko sesje zdjęciowe. To także szerokie portfolio usług związanych z fotografią, realizowanych w formie stacjonarnej.</p>
         </header>
         <div className="lab-copy">
           <h2>W moim studiu:</h2>
           <ol>
             <li>Zajmę się digitalizacją Twoich zdjęć, abyś mógł wspominać piękne momenty.</li>
-            <li>Przygotuję dla Ciebie zdjęcia do dokumentów w&nbsp;mniej niż 15 minut.</li>
+            <li>Przygotuję dla Ciebie zdjęcia do dokumentów w mniej niż 15 minut.</li>
             <li>Pomogę ci zareklamować Twoje produkty dzięki profesjonalnej sesji produktowej.</li>
-            <li>Podzielę się z&nbsp;Tobą moją wiedzą praktyczną i&nbsp;teoretyczną w zakresie fotografii.</li>
+            <li>Podzielę się z Tobą moją wiedzą praktyczną i teoretyczną w zakresie fotografii.</li>
           </ol>
         </div>
       </div>

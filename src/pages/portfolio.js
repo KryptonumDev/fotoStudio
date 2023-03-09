@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
-import PortfolioHero from "../components/sections/PortfolioHero"
+import SectionHero from "../components/sections/SectionHero"
 import PortfolioPhotography from "../components/sections/PortfolioPhotography"
 import PortfolioPricing from "../components/sections/PortfolioPricing"
 import TheyTrusted from "../components/sections/TheyTrusted"
@@ -16,7 +16,12 @@ const PortfolioPage = ({data}) => {
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
-        <PortfolioHero data={hero} />
+        <SectionHero
+          heading="Portfolio"
+          copy={['Fotografia to mój sposób na życie, ale i pasja, która trwa niezmiennie od 40 lat.', 'Kocham uwieczniać niepowtarzalne chwile i tworzyć z nich wspomnienia, które zostają na długie lata.']}
+          button={{to: '/kontakt', text: 'Kontakt'}}
+          image={hero}
+        />
         <PortfolioPhotography
           id="zobacz"
           slider={reportage}

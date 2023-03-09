@@ -13,9 +13,9 @@ const HomeHello = ({data}) => {
             <Button to="o-mnie">O mnie</Button>
           </div>
           <div>
-            <p>Świat w&nbsp;obiektywie to moja pasja od wielu lat. Każdy&nbsp;z&nbsp;nas ma w&nbsp;sobie piękno, które warto utrwalić. Szczególnie w&nbsp;ważnych dla nas momentach.</p>
-            <p>Jestem ojcem dwóch dorosłych synów, mężem i&nbsp;fotografem z&nbsp;wieloletnim doświadczeniem.</p>
-            <p>Korzystam z&nbsp;nowoczesnego sprzętu i&nbsp;innowacyjnych rozwiązań, uważam jednak że to miłość do fotografowania tworzy dobre ujęcie.</p>
+            <p>Świat w obiektywie to moja pasja od wielu lat. Każdy z nas ma w sobie piękno, które warto utrwalić. Szczególnie w ważnych dla nas momentach.</p>
+            <p>Jestem ojcem dwóch dorosłych synów, mężem i fotografem z wieloletnim doświadczeniem.</p>
+            <p>Korzystam z nowoczesnego sprzętu i innowacyjnych rozwiązań, uważam jednak że to miłość do fotografowania tworzy dobre ujęcie.</p>
           </div>
         </header>
       </div>

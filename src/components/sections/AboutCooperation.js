@@ -10,8 +10,8 @@ const AboutCooperation = ({data}) => {
         <header>
           <h2>Współpraca</h2>
           <Button to="/kontakt">Kontakt</Button>
-          <p>Każdy klient to dla mnie wyjątkowy klient. Stawiam na najwyższą jakość i&nbsp;maksymalną transparentność - priorytetem jest dla mnie spełnienie Twoich oczekiwań dotyczących naszej współpracy.</p>
-          <p>Oprócz usług zawartych w cenniku, <strong>mogę&nbsp;polecić specjalistów</strong>, np.&nbsp;wizażystkę lub charakteryzatora. Możesz też liczyć na profesjonalne podejście i&nbsp;miłą atmosferę.</p>
+          <p>Każdy klient to dla mnie wyjątkowy klient. Stawiam na najwyższą jakość i maksymalną transparentność - priorytetem jest dla mnie spełnienie Twoich oczekiwań dotyczących naszej współpracy.</p>
+          <p>Oprócz usług zawartych w cenniku, <strong>mogę polecić specjalistów</strong>, np. wizażystkę lub charakteryzatora. Możesz też liczyć na profesjonalne podejście i miłą atmosferę.</p>
         </header>
       </div>
       <GatsbyImage image={data.gatsbyImageData} alt={data.alt || ""} className="cooperation-img" />
