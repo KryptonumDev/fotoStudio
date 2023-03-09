@@ -150,56 +150,39 @@ const PricingLinks = ({location}) => {
     },
   ]
 
-
   const component = useRef();
+  const componentClose = useRef();
   const [componentShowId, setComponentShowId] = useState();
-
-  const handleExpand = (e) => {
-    setComponentShowId(e.target.getAttribute('data-key'));
-    component.current.classList.add('active');
-    const width = window.innerWidth;
-    window.history.replaceState(null, 'fd', '/kontakt');
-    const height = window.innerHeight;
-    // component.current.style.transform = `scale(${e.target.offsetWidth / width}, ${e.target.offsetHeight / height})`;
-    if(e.clientX === 0 && e.clientY === 0){
-      const target = e.target.getBoundingClientRect();
-      component.current.style.transformOrigin = `${(target.left + target.width/2) / width * 100}% ${(target.top + target.height/2) / height * 100}%`;
-    } else {
-      component.current.style.transformOrigin = `${e.clientX / width * 100}% ${e.clientY / height * 100}%`;
-    }
-  }
-  const handleExpandClose = () => {
-    component.current.classList.remove('active');
-  }
-
-
   
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    let type = params.get("type");
-    type = document.querySelector(`.links-wrapper a[href="/cennik/?type=${type}"]`);
-    type
-    ?
-    type.click()
-    :
-    component.current.classList.remove('active');
-
-    console.log('CLICK');
-  }, [location.search])
-  
-  useEffect(() => {
+    if(params.get("type")){
+      document.getElementById('zobacz')?.scrollIntoView();
+    }
     const handleEscape = (e) => {
       if(e.key === 'Escape'){
-        component.current.classList.remove('active');
+        componentClose.current.click();
       }
     }
     document.addEventListener('keydown', e => handleEscape(e));
-    const params = new URLSearchParams(location.search);
-    params.delete('type');
-    console.log('REPLACESTATE');
-    window.history.replaceState(null, '', '/');
     return () => document.removeEventListener('keydown', e => handleEscape(e));
   }, [])
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const type = document.querySelector(`.links-wrapper a[href="/cennik/?type=${params.get("type")}"]`);
+    if(type){
+      setComponentShowId(type.getAttribute('data-key'));
+      component.current.classList.add('active');
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      // component.current.style.transform = `scale(${e.target.offsetWidth / width}, ${e.target.offsetHeight / height})`;
+      const target = type.getBoundingClientRect();
+      component.current.style.transformOrigin = `${(target.left + target.width/2) / width * 100}% ${(target.top + target.height/2) / height * 100}%`;
+    } else {
+      component.current.classList.remove('active');
+    }
+  }, [location.search])
 
   return (
     <StyledLinks className="links sec" id="zobacz" componentShowId={componentShowId}>
@@ -210,7 +193,6 @@ const PricingLinks = ({location}) => {
               key={i}
               data-key={i}
               to={data.href}
-              onClick={e => handleExpand(e)}
             >
               <span>{data.name}</span>
             </Link>
@@ -220,9 +202,9 @@ const PricingLinks = ({location}) => {
 
       <div className="component" ref={component}>
         <div className="component-wrapper">
-          <button onClick={handleExpandClose} aria-label="Zamknij">
+          <Link to="." aria-label="Zamknij" ref={componentClose}>
             <ArrowLeft/>
-          </button>
+          </Link>
           {componentDataArray.map((item, i) => (
             item.heading && (
               <div className="component-item" data-key={i} key={i}>
@@ -332,7 +314,7 @@ const StyledLinks = styled.section`
     min-height: 100%;
     margin: 0 auto;
     position: relative;
-    button {
+    a {
       z-index: 1;
       position: absolute;
       left: -1rem;
@@ -395,7 +377,7 @@ const StyledLinks = styled.section`
     .component-wrapper {
       padding: ${21/16}rem;
       padding-top: ${34/16}rem;
-      button svg {
+      a svg {
         width: ${28/16}rem;
         height: ${28/16}rem;
       }
