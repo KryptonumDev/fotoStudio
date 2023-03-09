@@ -192,6 +192,7 @@ const StyledFooter = styled.footer`
     }
   }
   @media only screen and (max-width: 619px){
+    padding: ${216/10.8}vh 0;
     & > .max-width {
       display: block;
       .footer-info, .footer-links {
