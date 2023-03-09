@@ -77,6 +77,11 @@ const StyledHero = styled.section`
       }
     }
   }
+  @media (max-width: 399px){
+    header p {
+      font-size: ${14/16}rem;
+    }
+  }
 `
  
 export default SectionHero;
