@@ -114,9 +114,9 @@ const GlobalStyle = createGlobalStyle`
       @media only screen and (max-width: 459px){
         font-size: ${14/16}rem;
       }
-      &:not(:last-of-type){
+      &:not(:last-child){
         & + ol, & + ul {
-          margin-top: -.6em;
+          margin-top: -.3em;
         }
         margin-bottom: .6em;
       }

@@ -1,14 +1,15 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
 import SectionHero from "../components/sections/SectionHero"
+import PrivacyPolicyContent from "../components/sections/PrivacyPolicyContent"
 import Footer from "../components/organisms/Footer"
 import PageIndicator from "../components/organisms/PageIndicator"
 import { Seo } from "../components/Seo"
 import { inject } from '@vercel/analytics';
 
-const PrivacyPage = ({data}) => {
+const PrivacyPolicyPage = ({data}) => {
   inject();
-  const scrollRestoration = useScrollRestoration(`PrivacyPage`)
+  const scrollRestoration = useScrollRestoration(`PrivacyPolicyPage`)
   const {details} = data.privacyPolicy;
   return (
     <div className="scrollSnap" style={{scrollSnapType:"none"}} {...scrollRestoration}>
@@ -17,6 +18,7 @@ const PrivacyPage = ({data}) => {
           heading="Polityka Prywatności"
           image={details}
         />
+        <PrivacyPolicyContent />
         <Footer />
       </PageIndicator>
     </div>
@@ -35,7 +37,7 @@ export const query = graphql`
 `
 
  
-export default PrivacyPage;
+export default PrivacyPolicyPage;
 
 export const Head = () => (
   <Seo
