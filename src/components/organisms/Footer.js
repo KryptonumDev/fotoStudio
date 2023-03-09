@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 import { ArrowRight, FacebookIcon, InstagramIcon, Logo, KryptonumLogo } from "../atoms/Icons";
+import { useEffect } from "react";
 
 const Footer = () => {
   const { footer } = useStaticQuery(graphql`
@@ -17,6 +18,21 @@ const Footer = () => {
       }
     }
   `);
+
+  useEffect(() => {
+    const footer = document.querySelector('.footer');
+    const scrollSnap = document.querySelector('.scrollSnap');
+    const handleScroll = () => {
+      let target = footer.getBoundingClientRect();
+      if(target.top < target.height / 4 * -1){
+        footer.style.scrollSnapAlign = 'end';
+      } else {
+        footer.style = 'null';
+      }
+    }
+    scrollSnap.addEventListener('scroll', handleScroll);
+  },[])
+
   return (
     <StyledFooter className="footer">
       <div className="max-width">
@@ -192,8 +208,6 @@ const StyledFooter = styled.footer`
     }
   }
   @media only screen and (max-width: 619px){
-    height: 100%;
-    overflow-y: auto;
     padding: ${216/10.8}vh 0;
     & > .max-width {
       height: auto;
