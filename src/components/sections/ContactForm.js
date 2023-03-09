@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useCallback} from "react"
 import styled from "styled-components";
 import Button from "../atoms/Button";
+import { SentSuccessful } from "../atoms/Icons";
 
 let didSubmit = false;
 const ContactForm = () => {
@@ -83,133 +84,138 @@ const ContactForm = () => {
   return (
     <StyledForm className="form sec" id="zobacz" {...{formSent}}>
       <div className="max-width">
-        <header>
-          <h2 className="notVertical">Porozmawiajmy!</h2>
-        </header>
         {formSent ? (
           <div className="sent">
-            <h3>Wysłano formularz!</h3>
-            <p>Dziękujemy!</p>
+            <header>
+              <h3>Dziekuję za kontakt!</h3>
+              <p>Twoja wiadomość dotarła do mnie pomyślnie. Odpowiem na nią tak szybko jak to możliwe.</p>
+            </header>
+            <SentSuccessful />
           </div>
         ) : (
-          <form
-            method="post"
-            action="/api/send-email"
-            onSubmit={e => handleSubmit(e)}
-          >
-            <input
-              type="text"
-              name="address"
-              autoComplete="off"
-              aria-label="address"
-              style={{opacity:0,position:'absolute',top:0,left:0,height:0,width:0,zIndex:-1}}
-              tabIndex="-1"
-              onChange={e => setFormData({
-                ...formData,
-                [e.target.name]: e.target.value
-              })}
-            />
-            <div className="form-wrapper">
-              <div className="form-item" aria-invalid={formError.name ? true : false}>
-                <label>
-                  <span>Imię i nazwisko</span>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Adam Chrapek"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value
-                    })}
-                  />
-                </label>
-                <p className="error">{formError.name}</p>
+          <>
+            <header>
+              <h2 className="notVertical">Porozmawiajmy!</h2>
+            </header>
+            <form
+              method="post"
+              action="/api/send-email"
+              onSubmit={e => handleSubmit(e)}
+            >
+              <input
+                type="text"
+                name="address"
+                autoComplete="off"
+                aria-label="address"
+                style={{opacity:0,position:'absolute',top:0,left:0,height:0,width:0,zIndex:-1}}
+                tabIndex="-1"
+                onChange={e => setFormData({
+                  ...formData,
+                  [e.target.name]: e.target.value
+                })}
+              />
+              <div className="form-wrapper">
+                <div className="form-item" aria-invalid={formError.name ? true : false}>
+                  <label>
+                    <span>Imię i nazwisko</span>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Adam Chrapek"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]: e.target.value
+                      })}
+                    />
+                  </label>
+                  <p className="error">{formError.name}</p>
+                </div>
+                <div className="form-item" aria-invalid={formError.email ? true : false}>
+                  <label>
+                    <span>Adres e-mail</span>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="adamchrapek@gmail.com"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]: e.target.value
+                      })}
+                    />
+                  </label>
+                  <p className="error">{formError.email}</p>
+                </div>
+                <div className="form-item" aria-invalid={formError.tel ? true : false}>
+                  <label>
+                    <span>Numer telefonu</span>
+                    <input
+                      type="tel"
+                      name="tel"
+                      placeholder="+48 --- --- ---"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]: e.target.value
+                      })}
+                    />
+                  </label>
+                  <p className="error">{formError.tel}</p>
+                </div>
+                <div className="form-item" aria-invalid={formError.type ? true : false}>
+                  <label>
+                    <span>Rodzaj sesji</span>
+                    <select
+                      name="type"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]: e.target.value
+                      })}
+                      defaultValue=""
+                    >
+                      <option value="" disabled >Rodzaj sesji...</option>
+                      <option value="Portretowa">Portretowa</option>
+                      <option value="Weselna">Weselna</option>
+                      <option value="Reportażowa">Reportażowa</option>
+                      <option value="Produktowa">Produktowa</option>
+                      <option value="Analogowa">Analogowa</option>
+                    </select>
+                  </label>
+                  <p className="error">{formError.type}</p>
+                </div>
+                <div className="form-item" aria-invalid={formError.message ? true : false}>
+                  <label>
+                    <span>Wiadomość</span>
+                    <textarea
+                      name="message"
+                      placeholder="Co razem sfotografujemy?"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]: e.target.value
+                      })}
+                    ></textarea>
+                  </label>
+                  <p className="error">{formError.message}</p>
+                </div>
+                <div className="form-item" aria-invalid={formError.legal ? true : false}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="legal"
+                      onChange={e => setFormData({
+                        ...formData,
+                        [e.target.name]:  e.target.checked
+                      })}
+                    />
+                    <span>Wysyłając wiadomość, zgadzam się na przetwarzanie moich danych zgodnie z <a href="/polityka-prywatnosci" target="_blank" rel="nooopener">Polityką prywatności</a></span>
+                  </label>
+                  <p className="error">{formError.legal}</p>
+                </div>
+                <div className="form-item">
+                  <p className="error">{formError.error}</p>
+                </div>
               </div>
-              <div className="form-item" aria-invalid={formError.email ? true : false}>
-                <label>
-                  <span>Adres e-mail</span>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="adamchrapek@gmail.com"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value
-                    })}
-                  />
-                </label>
-                <p className="error">{formError.email}</p>
-              </div>
-              <div className="form-item" aria-invalid={formError.tel ? true : false}>
-                <label>
-                  <span>Numer telefonu</span>
-                  <input
-                    type="tel"
-                    name="tel"
-                    placeholder="+48 --- --- ---"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value
-                    })}
-                  />
-                </label>
-                <p className="error">{formError.tel}</p>
-              </div>
-              <div className="form-item" aria-invalid={formError.type ? true : false}>
-                <label>
-                  <span>Rodzaj sesji</span>
-                  <select
-                    name="type"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value
-                    })}
-                    defaultValue=""
-                  >
-                    <option value="" disabled >Rodzaj sesji...</option>
-                    <option value="Portretowa">Portretowa</option>
-                    <option value="Weselna">Weselna</option>
-                    <option value="Reportażowa">Reportażowa</option>
-                    <option value="Produktowa">Produktowa</option>
-                    <option value="Analogowa">Analogowa</option>
-                  </select>
-                </label>
-                <p className="error">{formError.type}</p>
-              </div>
-              <div className="form-item" aria-invalid={formError.message ? true : false}>
-                <label>
-                  <span>Wiadomość</span>
-                  <textarea
-                    name="message"
-                    placeholder="Co razem sfotografujemy?"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]: e.target.value
-                    })}
-                  ></textarea>
-                </label>
-                <p className="error">{formError.message}</p>
-              </div>
-              <div className="form-item" aria-invalid={formError.legal ? true : false}>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="legal"
-                    onChange={e => setFormData({
-                      ...formData,
-                      [e.target.name]:  e.target.checked
-                    })}
-                  />
-                  <span>Wysyłając wiadomość, zgadzam się na przetwarzanie moich danych zgodnie z <a href="/polityka-prywatnosci" target="_blank" rel="nooopener">Polityką prywatności</a></span>
-                </label>
-                <p className="error">{formError.legal}</p>
-              </div>
-              <div className="form-item">
-                <p className="error">{formError.error}</p>
-              </div>
-            </div>
-            <Button disabled={formIsSending ? true : false}>{formIsSending ? 'Wysyłanie...' : 'Wyślij'}</Button>
-          </form>
+              <Button disabled={formIsSending ? true : false}>{formIsSending ? 'Wysyłanie...' : 'Wyślij'}</Button>
+            </form>
+          </>
         )}
       </div>
     </StyledForm>
@@ -303,17 +309,23 @@ const StyledForm = styled.section`
       margin-top: ${21/16}rem;
     }
   }
-  @media only screen and (max-width: 1199px){
-    .max-width {
-      display: block;
-    }
-    form, header {
-      width: 100%;
-    }
+  .sent {
+    width: 100%;
+    text-align: center;
     header {
-      h2 {
-        margin-bottom: ${21/16}rem;
+      max-width: 610px;
+      margin: 0 auto;
+      h3 {
+        font-size: ${34/16}rem;
       }
+      p {
+        font-size: 1rem;
+        margin: 1em 0 2em;
+      }
+    }
+    svg {
+      width: 90%;
+      max-width: 377px;
     }
   }
   @media only screen and (max-width: 1199px){

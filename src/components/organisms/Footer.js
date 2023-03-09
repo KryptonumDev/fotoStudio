@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import { ArrowRight, FacebookIcon, InstagramIcon, Logo } from "../atoms/Icons";
+import { ArrowRight, FacebookIcon, InstagramIcon, KryptonumLogo, Logo } from "../atoms/Icons";
 
 const Footer = () => {
   const { footer } = useStaticQuery(graphql`
@@ -60,6 +60,15 @@ const Footer = () => {
             <li><Link to="/polityka-prywatnosci">Polityka prywatności</Link></li>
           </ul>
         </div>
+        <div className="footer-copy">
+          <p>Wszelkie prawa zastrzeżone. © {(new Date().getFullYear())} Foto Studio Adam Chrapek.</p>
+          <p>
+            <span>Projekt i realizacja:</span>
+            <a href="https://kryptonum.eu/" target="_blank" rel="noreferrer" aria-label="Kryptonum">
+              <KryptonumLogo />
+            </a>
+          </p>
+        </div>
       </div>
     </StyledFooter>
   );
@@ -74,7 +83,6 @@ const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: ${108/10.8}vh;
     & > svg{
       width: 147px;
       height: auto;
@@ -106,6 +114,7 @@ const StyledFooter = styled.footer`
     }
   }
   .footer-links {
+    margin: ${108/10.8}vh 0;
     & > ul {
       text-align: center;
       display: flex;
@@ -130,10 +139,30 @@ const StyledFooter = styled.footer`
       
     }
   }
+  .footer-copy {
+    width: 100%;
+    @media (min-width: 800px){
+      display: flex;justify-content: space-between;
+    }
+    p {
+      &:not(:last-child){
+        margin-bottom: .4em;
+      }
+      font-size: ${15/16}rem;
+      a {
+        margin-left: 1em;
+      }
+      span, a, svg {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
   @media only screen and (max-width: 799px){
     & > .max-width {
       display: flex;
-      & > * {
+      flex-wrap: wrap;
+      .footer-info, .footer-links {
         width: 50%;
       }
     }
@@ -165,7 +194,7 @@ const StyledFooter = styled.footer`
   @media only screen and (max-width: 619px){
     & > .max-width {
       display: block;
-      & > * {
+      .footer-info, .footer-links {
         width: 100%;
       }
     }
