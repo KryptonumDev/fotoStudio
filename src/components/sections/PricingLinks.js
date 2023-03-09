@@ -155,13 +155,9 @@ const PricingLinks = ({location}) => {
   const [componentShowId, setComponentShowId] = useState();
   
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    if(params.get("type")){
-      document.getElementById('zobacz')?.scrollIntoView();
-    }
     const handleEscape = (e) => {
       if(e.key === 'Escape'){
-        componentClose.current.click();
+        componentClose.current?.click();
       }
     }
     document.addEventListener('keydown', e => handleEscape(e));
@@ -169,15 +165,18 @@ const PricingLinks = ({location}) => {
   }, [])
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const type = document.querySelector(`.links-wrapper a[href="/cennik/?type=${params.get("type")}"]`);
+    const type = new URLSearchParams(location.search).get('type');
     if(type){
-      setComponentShowId(type.getAttribute('data-key'));
+      document.getElementById('zobacz')?.scrollIntoView();
+    }
+    const element = document.querySelector(`.links-wrapper a[href="/cennik/?type=${type}"]`);
+    if(element){
+      setComponentShowId(element.getAttribute('data-key'));
       component.current.classList.add('active');
       const width = window.innerWidth;
       const height = window.innerHeight;
       // component.current.style.transform = `scale(${e.target.offsetWidth / width}, ${e.target.offsetHeight / height})`;
-      const target = type.getBoundingClientRect();
+      const target = element.getBoundingClientRect();
       component.current.style.transformOrigin = `${(target.left + target.width/2) / width * 100}% ${(target.top + target.height/2) / height * 100}%`;
     } else {
       component.current.classList.remove('active');

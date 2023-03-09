@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import { ArrowRight, FacebookIcon, InstagramIcon, KryptonumLogo, Logo } from "../atoms/Icons";
+import { ArrowRight, FacebookIcon, InstagramIcon, Logo, KryptonumLogo } from "../atoms/Icons";
 
 const Footer = () => {
   const { footer } = useStaticQuery(graphql`
