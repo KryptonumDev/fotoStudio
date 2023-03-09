@@ -86,11 +86,11 @@ const ContactForm = () => {
       <div className="max-width">
         {formSent ? (
           <div className="sent">
+          <SentSuccessful />
             <header>
               <h3>Dziekuję za kontakt!</h3>
               <p>Twoja wiadomość dotarła do mnie pomyślnie. Odpowiem na nią tak szybko jak to możliwe.</p>
             </header>
-            <SentSuccessful />
           </div>
         ) : (
           <>
@@ -317,15 +317,15 @@ const StyledForm = styled.section`
       margin: 0 auto;
       h3 {
         font-size: ${34/16}rem;
+        margin: 2rem 0 1rem;
       }
       p {
-        font-size: 1rem;
-        margin: 1em 0 2em;
+        font-size: ${18/16}rem;
       }
     }
     svg {
-      width: 90%;
-      max-width: 377px;
+      width: 60%;
+      max-width: 233px;
     }
   }
   @media only screen and (max-width: 1199px){
