@@ -63,20 +63,19 @@ const StyledCooperation = styled.section`
       padding-bottom: 22px;
     }
     .cooperation-img {
-      margin-left: -50%;
       width: 100%;
+      img {
+        object-position: 60%;
+      }
       &::before {
-      content: '';
+        content: '';
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
         z-index: 1;
-        background: linear-gradient(rgba(0,0,0,0) 25%, #000);
-      }
-      img {
-        object-position: 90%;
+        background: linear-gradient(rgba(0,0,0,0) 30%, #000 80%);
       }
     }
   }
