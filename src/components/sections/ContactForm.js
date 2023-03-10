@@ -47,8 +47,23 @@ const ContactForm = () => {
 
   useEffect(() => {
     document.cookie.indexOf('formSent=true') !== -1 && setFormSent(true);
+
+
+    const form = document.querySelector('.form');
+    const scrollSnap = document.querySelector('.scrollSnap');
+    const handleScroll = () => {
+      let target = form.getBoundingClientRect();
+      if(target.height > window.innerHeight){
+        if(target.bottom <= window.innerHeight * 1.1){
+          form.style.scrollSnapAlign = 'end';
+        } else {
+          form.style = 'null';
+        }
+      }
+    }
+    scrollSnap.addEventListener('scroll', handleScroll);
   }, [])
-  
+
   const handleSubmit = (e) => {
     didSubmit = true;
     e.preventDefault();
@@ -351,8 +366,7 @@ const StyledForm = styled.section`
   }
   ${props => !props.formSent && `
     @media only screen and (max-width: 729px) and (max-height: 699px){
-      height: 180%;
-      padding-bottom: 30%;
+      height: 130%;
     }
   `}
 `

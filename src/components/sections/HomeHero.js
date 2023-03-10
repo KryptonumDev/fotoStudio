@@ -44,20 +44,16 @@ const StyledHero = styled.section`
   }
   .hero-img {
     position: absolute;
-    right: 50%;
+    left: 50%;
     top: 50%;
-    transform: translate(75%, -50%);
+    transform: translate(-50%,-50%);
     z-index: -1;
-    max-width: 1131px;
-    margin: 42px ${80/19.2}vw auto auto;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
+    max-width: 3840px;
+    max-height: 2160px;
     img {
-      object-position: top;
-    }
-    @media only screen and (min-width: 1780px){
-      right: 50%;
-      transform: translate(100%, -50%);
+      object-position: 50% 30%;
     }
   }
   @media only screen and (max-width: 767px) {
