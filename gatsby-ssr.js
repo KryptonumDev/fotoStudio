@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "./src/components/sections/Layout"
 
-export const onRenderBody = ({ setHtmlAttributes }) => {
+export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
   setHtmlAttributes({ lang: "pl" })
   setHeadComponents([
     <link
