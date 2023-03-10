@@ -65,7 +65,7 @@ const HomeSliderPagination = ({sliderLength, activeSlide, setActiveSlide}) => {
 
 const StyledSliderPagination = styled.div`
   position: absolute;
-  right: ${95/19.2}vw;
+  right: 0;
   bottom: ${70/10.8}vh;
   display: flex;
   align-items: center;
@@ -95,6 +95,9 @@ const StyledSliderPagination = styled.div`
       margin: auto;
       display: block;
     }
+  }
+  > button:last-child {
+    margin-right: 0;
   }
   .sliderPagination-mobile {
     display: none;

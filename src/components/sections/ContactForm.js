@@ -244,7 +244,7 @@ const StyledForm = styled.section`
     height: auto;
     display: flex;
     align-items: center;
-    @media only screen and (min-width: 729px){
+    @media only screen and (min-width: 729px) and (max-width: 1824px){
       max-width: calc(100% - ${336/19.2}vw);
     }
   }

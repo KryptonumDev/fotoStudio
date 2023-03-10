@@ -53,8 +53,9 @@ const StyledHero = styled.section`
     height: 100%;
     max-width: 3840px;
     max-height: 2160px;
-    img {
-      object-position: 50% 30%;
+    @media (max-width: 799px){
+      width: 150%;
+      left: 55%;
     }
   }
   @media only screen and (max-width: 767px) {

@@ -49,7 +49,7 @@ const StyledReviews = styled.section`
   & > .max-width {
     display: flex;
     justify-content: space-between;
-    @media only screen and (min-width: 729px){
+    @media only screen and (min-width: 729px) and (max-width: 1824px){
       max-width: calc(100% - ${336/19.2}vw);
     }
   }

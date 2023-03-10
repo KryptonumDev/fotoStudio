@@ -28,7 +28,9 @@ const FullSlider = ({data, activeSlide, setActiveSlide}) => {
           <GatsbyImage image={slide.gatsbyImageData} alt={slide.alt || ""} className="slider-item" key={i} objectFit="contain" />
         ))}
       </div>
-      <FullSliderPagination sliderLength={sliderLength} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+      <div className="max-width">
+        <FullSliderPagination sliderLength={sliderLength} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+      </div>
     </StyledSlider>
   );
 }
@@ -59,14 +61,16 @@ const StyledSlider = styled.div`
     width: 100%;
     flex-shrink: 0;
     img {
-      max-width: 1920px;
       margin: 0 auto;
-      padding-left: 20%;
       @media only screen and (max-width: 729px){
         object-fit: cover !important;
-        padding-left: 0%;
+        object-position: 70%;
       }
     }
+  }
+  .max-width {
+    height: auto;
+    position: relative;
   }
 `
  

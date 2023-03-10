@@ -30,7 +30,7 @@ const StyledLab = styled.section`
   display: flex;
   align-items: center;
   .max-width {
-    @media only screen and (min-width: 729px){
+    @media only screen and (min-width: 729px) and (max-width: 1824px){
       max-width: calc(100% - ${336/19.2}vw);
     }
     height: auto;
@@ -72,7 +72,7 @@ const StyledLab = styled.section`
     right: 0;
     top: 0;
     height: 100%;
-    width: 50%;
+    width: 55%;
     &::before {
       content: '';
       position: absolute;
