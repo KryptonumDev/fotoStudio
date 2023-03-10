@@ -6,6 +6,7 @@ const PhotographyGallery = ({data}) => {
   useEffect(() => {
     const headings = document.querySelectorAll('.gallery h2');
     const handleScroll = () => {
+      console.log('he');
       headings.forEach(e => {
         if(e.getBoundingClientRect().top <= window.innerHeight && e.getBoundingClientRect().bottom >= 0){
           e.style.transform = `translate(-50%, ${e.getBoundingClientRect().top / window.innerHeight * 100 * -1}%)`;
@@ -53,7 +54,7 @@ const StyledGallery = styled.section`
   &.sec {
     height: auto;
   }
-  padding: ${400/10.8}vh 0;
+  padding-top: ${400/10.8}vh;
   .max-width {
     @media only screen and (min-width: 729px){
       max-width: calc(100% - ${336/19.2}vw);

@@ -35,6 +35,7 @@ const StyledHero = styled.section`
       font-size: ${64/16}rem;
       font-size: clamp(${36/16}rem, ${64/10.8}vh, ${64/16}rem);
       letter-spacing: 0.03rem;
+      line-height: 1;
     }
     a {
       position: absolute;
@@ -58,9 +59,6 @@ const StyledHero = styled.section`
   }
   @media only screen and (max-width: 767px) {
     .hero-copy{
-      h1 {
-        margin-left: -11px;
-      }
       a {
         position: absolute;
         left: 50%;

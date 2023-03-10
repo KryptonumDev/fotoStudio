@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Slider from "../organisms/Slider";
 import Button from "../atoms/Button";
 
-const PortfolioPhotography = ({id, slider, heading, content, to}) => {
+const PortfolioPhotography = ({id, slider, heading, content, button}) => {
   return (
     <StyledPhotography className="photography sec" id={id || ''}>
       <div className="max-width">
@@ -12,7 +12,7 @@ const PortfolioPhotography = ({id, slider, heading, content, to}) => {
           {content.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}
-          <Button to={to}>Zobacz więcej</Button>
+          <Button to={button.to}>{button.text}</Button>
         </header>
       </div>
       <Slider data={slider} />

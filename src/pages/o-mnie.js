@@ -24,7 +24,7 @@ const AboutPage = ({data}) => {
         />
         <AboutSlider
           id="zobacz"
-          heading="Zobacz co możemy stworzyć"
+          heading="Zobacz, co możemy stworzyć"
           button={{text: 'Portfolio', link: '/portfolio'}}
           data={slider}
         />

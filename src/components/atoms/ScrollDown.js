@@ -18,11 +18,15 @@ const ScrollDown = () => {
 
 const StyledArrow = styled.a`
   position: absolute;
-  left: 21px;
+  left: 17px;
+  @media (min-width: 1824px){
+    left: calc((100vw - 1780px) / 2);
+  }
   bottom: 21px;
+  padding: 5px;
   svg {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
   }
 `
  

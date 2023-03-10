@@ -88,7 +88,6 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: space-between;
   }
-  pointer-events: none;
   a, button {
     pointer-events: auto;
   }
@@ -103,27 +102,21 @@ const StyledNav = styled.nav`
       font-weight: 600;
       letter-spacing: -0.023rem;
       position: relative;
-      &:hover svg {
-        &:first-child {
-          transform: translate(-11px, 5.5px);
-        }
-        &:last-child {
-          transform: translate(11px, -5.5px);
-        }
+      &:hover svg,
+      &[aria-current="page"] svg {
         opacity: 1;
       }
       svg {
         position: absolute;
         opacity: 0;
         pointer-events: none;
-        transition: opacity .3s, transform .3s;
         &:first-child {
-          bottom: 0;
-          left: 0;
+          bottom: -3px;
+          left: -8px;
         }
         &:last-child {
-          right: 0;
-          top: 0;
+          right: -8px;
+          top: -3px;
         }
       }
     }
@@ -150,6 +143,7 @@ const StyledNav = styled.nav`
     }
   }
   @media only screen and (min-width: 768px){
+    pointer-events: none;
     ul {
       display: flex;
       margin: 0 -44px;
@@ -198,6 +192,7 @@ const StyledNav = styled.nav`
       }
       a {
         font-size: ${24/16}rem;
+        margin: 0 5%;
       }
     }
     #navToggle.active {
