@@ -50,9 +50,6 @@ const StyledHello = styled.section`
     z-index: -1;
     width: 50%;
     height: 100%;
-    img {
-      object-position: top;
-    }
   }
   @media only screen and (max-width: 1299px){
     .hello-header {
@@ -69,8 +66,6 @@ const StyledHello = styled.section`
       }
     }
     .hello-img {
-      height: 100%;
-      right: -200px;
       &::before {
         content: '';
         position: absolute;
@@ -78,7 +73,7 @@ const StyledHello = styled.section`
         top: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(90deg, #000 20%, rgba(0,0,0,0) 60%);
+        background: linear-gradient(90deg, #000, rgba(0,0,0,0) 30%);
         z-index: 1;
       }
     }
@@ -98,7 +93,10 @@ const StyledHello = styled.section`
       }
     }
     .hello-img {
-      right: 0;
+      width: 100%;
+      img {
+        object-position: 70%;
+      }
       &::before {
         background: linear-gradient(rgba(0,0,0,0) 30%, #000 80%);
       }
