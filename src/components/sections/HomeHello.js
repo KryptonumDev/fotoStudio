@@ -48,8 +48,8 @@ const StyledHello = styled.section`
     right: 0;
     transform: translateY(-50%);
     z-index: -1;
-    max-width: 840px;
-    max-height: 100%;
+    width: 50%;
+    height: 100%;
     img {
       object-position: top;
     }

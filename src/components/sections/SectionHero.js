@@ -48,8 +48,10 @@ const StyledHero = styled.section`
     width: 100%;
     height: 100%;
     z-index: -1;
-    max-width: 2560px;
     transform: translateY(-50%);
+    img {
+      object-position: 70%;
+    }
     &::before {
       content: '';
       width: 100%;
@@ -58,7 +60,7 @@ const StyledHero = styled.section`
       left: 0;
       top: 0;
       z-index: 1;
-      background: linear-gradient(90deg,#000,rgba(0,0,0,0));
+      background: linear-gradient(90deg,#000,rgba(0,0,0,0) 60%);
     }
   }
   @media only screen and (max-width: 599px){
@@ -74,6 +76,18 @@ const StyledHero = styled.section`
         &:not(:last-child){
           margin-bottom: .6rem;
         }
+      }
+    }
+    .hero-img {
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background: linear-gradient(90deg,#000,rgba(0,0,0,0));
       }
     }
   }

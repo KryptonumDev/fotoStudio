@@ -42,21 +42,8 @@ const StyledCooperation = styled.section`
     top: 50%;
     transform: translateY(-50%);
     z-index: -1;
-    width: 60%;
+    width: 50%;
     height: 100%;
-    &::before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: linear-gradient(90deg, #000, rgba(0,0,0,0) 50%);
-      z-index: 1;
-    }
-    img {
-      object-position: top;
-    }
   }
   @media only screen and (max-width: 729px){
     align-items: flex-end;
@@ -79,6 +66,13 @@ const StyledCooperation = styled.section`
       margin-left: -50%;
       width: 100%;
       &::before {
+      content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
         background: linear-gradient(rgba(0,0,0,0) 25%, #000);
       }
       img {
