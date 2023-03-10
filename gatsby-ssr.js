@@ -6,24 +6,27 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="/resources/fonts/DMSerifDisplay-Regular.woff2"
+      href="/fonts/DMSerifDisplay-Regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
+      key="interFont"
     />,
     <link
       rel="preload"
-      href="/resources/fonts/Montserrat-Regular.woff2"
+      href="/fonts/Montserrat-Regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
+      key="interFont"
     />,
     <link
       rel="preload"
-      href="/resources/fonts/Montserrat-SemiBold.woff2"
+      href="/fonts/Montserrat-SemiBold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
+      key="interFont"
     />,
   ])
 }
