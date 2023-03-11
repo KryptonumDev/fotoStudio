@@ -107,6 +107,11 @@ const StyledCooperationProcess = styled.section`
       & > * {
         width: calc(100% / 3);
       }
+      svg {
+        width: 233px;
+        height: 233px;
+        margin: 0 3%;
+      }
     }
     h3 {
       font-size: clamp(${34/16}rem, ${48/19.2}vw, ${48/16}rem);
@@ -115,27 +120,23 @@ const StyledCooperationProcess = styled.section`
     p {
       font-size: clamp(1rem, ${24/19.2}vw, ${24/16}rem);
     }
-    .max-width > svg {
-      width: 233px;
-      height: 233px;
-      margin: 0 3%;
-    }
   }
   @media only screen and (max-width: 999px){
     .cooperationProcessSlider-item {
+      text-align: center;
       .max-width {
         display: block;
         max-width: 475px;
         & > * {
           width: 100%;
         }
+        svg {
+          padding: 8% 0;
+          margin: 0;
+        }
       }
       h3 {
-        text-align: left;
-      }
-      svg {
-        padding: 8%;
-        margin: 0;
+        text-align: center;
       }
     }
   }
@@ -146,15 +147,22 @@ const StyledCooperationProcess = styled.section`
       transform: translate(0,-50%);
     }
     .cooperationProcessSlider-item {
-      .max-width {
-        padding-right: 10%;
-      }
+      padding-right: 10%;
+      text-align: left;
       h3 {
         font-size: ${28/16}rem;
+        text-align: left;
       }
       p {
         font-size: ${14/16}rem;
       }
+      .max-width svg {
+        padding: 8% 0;
+      }
+    }
+    .slider-pagination {
+      left: 22px;
+      transform: translateX(0);
     }
   }
 `
