@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
 import PhotographyHero from "../components/sections/PhotographyHero"
+import SectionHero from "../components/sections/SectionHero"
 import PhotographyGallery from "../components/sections/PhotographyGallery"
 import TheyTrusted from "../components/sections/TheyTrusted"
 import Footer from "../components/organisms/Footer"
@@ -14,7 +15,11 @@ const PhotographyPage = ({data: {photography}}) => {
   return (
     <div className="scrollSnap" style={{scrollSnapType:"none"}} {...scrollRestoration}>
       <PageIndicator>
-        <PhotographyHero data={photography} />
+        <SectionHero
+          heading={photography.name}
+          copy={[photography.heroCopy]}
+          image={photography.hero}
+        />
         <PhotographyGallery data={photography.gallery} />
         <TheyTrusted />
         <Footer />

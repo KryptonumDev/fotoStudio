@@ -10,13 +10,13 @@ import { inject } from '@vercel/analytics';
 const PrivacyPolicyPage = ({data}) => {
   inject();
   const scrollRestoration = useScrollRestoration(`PrivacyPolicyPage`)
-  const {details} = data.privacyPolicy;
+  const {hero} = data.privacyPolicy;
   return (
     <div className="scrollSnap" style={{scrollSnapType:"none"}} {...scrollRestoration}>
       <PageIndicator>
         <SectionHero
           heading="Polityka Prywatności"
-          image={details}
+          image={hero}
         />
         <PrivacyPolicyContent />
         <Footer />
@@ -27,8 +27,8 @@ const PrivacyPolicyPage = ({data}) => {
 
 export const query = graphql`
   query {
-    privacyPolicy: datoCmsContact {
-      details {
+    privacyPolicy: datoCmsPolitykaPrywatnosci {
+      hero {
         gatsbyImageData(placeholder: NONE)
         alt
       }
@@ -36,7 +36,6 @@ export const query = graphql`
   }
 `
 
- 
 export default PrivacyPolicyPage;
 
 export const Head = () => (

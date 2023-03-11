@@ -12,7 +12,6 @@ const Footer = () => {
         address
         addressMaps
         phone1
-        phone2
         instagram
         facebook
       }
@@ -171,7 +170,7 @@ const StyledFooter = styled.footer`
       ul {
         text-align: left;
         li:not(:last-child) a {
-          display: block;
+          display: inline-block;
           margin-bottom: 13px;
         }
       }

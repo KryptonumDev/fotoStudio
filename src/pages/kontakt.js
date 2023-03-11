@@ -14,8 +14,7 @@ import { inject } from '@vercel/analytics';
 const ContactPage = ({data}) => {
   inject();
   const scrollRestoration = useScrollRestoration(`ContactPage`)
-  const {hero, details} = data.contact;
-  const { slider } = data.about;
+  const {hero, details, slider} = data.contact;
   return (
     <div className="scrollSnap" {...scrollRestoration}>
       <PageIndicator>
@@ -50,8 +49,6 @@ export const query = graphql`
         gatsbyImageData(placeholder: NONE)
         alt
       }
-    }
-    about: datoCmsAboutMe {
       slider {
         gatsbyImageData(placeholder: NONE, width: 400)
         alt
