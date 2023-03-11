@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, useScrollRestoration } from "gatsby"
-import PhotographyHero from "../components/sections/PhotographyHero"
 import SectionHero from "../components/sections/SectionHero"
 import PhotographyGallery from "../components/sections/PhotographyGallery"
 import TheyTrusted from "../components/sections/TheyTrusted"

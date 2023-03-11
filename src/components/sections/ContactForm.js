@@ -99,7 +99,7 @@ const ContactForm = () => {
   return (
     <StyledForm className="form sec" id="zobacz" {...{formSent}}>
       <div className="max-width">
-        {!formSent ? (
+        {formSent ? (
           <div className="sent">
           <SentSuccessful />
             <header>

@@ -50,7 +50,7 @@ const StyledHero = styled.section`
     z-index: -1;
     transform: translateY(-50%);
     img {
-      object-position: 70%;
+      object-position: 60%;
     }
     &::before {
       content: '';
