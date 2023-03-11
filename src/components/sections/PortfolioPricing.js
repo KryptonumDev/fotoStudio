@@ -36,8 +36,8 @@ const StyledPricing = styled.section`
   }
   position: relative;
   .pricing-img {
-    width: auto;
-    height: 80%;
+    width: 50%;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 50%;
