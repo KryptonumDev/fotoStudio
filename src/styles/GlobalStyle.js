@@ -92,6 +92,33 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+  .footer-links, .footer-inTouch, .details-info {
+    a {
+      border-bottom: 1px solid rgba(255,255,255,.2);
+      position: relative;
+      &:hover::before, &:hover::after {
+        opacity: 1;
+      }
+      &::before, &::after {
+        content: '';
+        width: 11px;
+        height: 11px;
+        position: absolute;      
+        opacity: 0;
+        pointer-events: none;
+      }
+      &::before {
+        left: -8px;
+        bottom: -5px;
+        background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 41 40' fill='%23fff'%3E%3Cpath d='M41 34.39 35.354 40H0V5.61L5.646 0v34.39H41Z'/%3E%3C/svg%3E");
+      }
+      &::after {
+        right: -8px;
+        top: -5px;
+        background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 41 40' fill='%23fff'%3E%3Cpath d='M0 5.61 5.646 0H41v34.39L35.354 40V5.61H0Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
   .sec {
     overflow: hidden;
     min-height: 815px;

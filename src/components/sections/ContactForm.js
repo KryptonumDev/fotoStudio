@@ -83,7 +83,7 @@ const ContactForm = () => {
       .then(response => {
         setFormIsSending(false);
         if(response.success){
-          document.cookie = `formSent=true;max-age=3600;path=/`;
+          document.cookie = `formSent=true;max-age=60;path=/`;
           setFormSent(true);
         } else {
           setFormError(prevState => ({...prevState, error: 'Błąd podczas wysyłania formularza, spróbuj ponownie później.'}))
@@ -99,12 +99,13 @@ const ContactForm = () => {
   return (
     <StyledForm className="form sec" id="zobacz" {...{formSent}}>
       <div className="max-width">
-        {formSent ? (
+        {!formSent ? (
           <div className="sent">
           <SentSuccessful />
             <header>
               <h3>Dziekuję za kontakt!</h3>
-              <p>Twoja wiadomość dotarła do mnie pomyślnie. Odpowiem na nią tak szybko jak to możliwe.</p>
+              <p>Twoja wiadomość dotarła do mnie pomyślnie. Odpowiem na nią tak szybko, jak to możliwe.</p>
+              <Button to="/portfolio">Portfolio</Button>
             </header>
           </div>
         ) : (
@@ -336,9 +337,10 @@ const StyledForm = styled.section`
       }
       p {
         font-size: ${18/16}rem;
+        margin-bottom: 1em;
       }
     }
-    svg {
+    > svg {
       width: 60%;
       max-width: 233px;
     }
@@ -357,16 +359,15 @@ const StyledForm = styled.section`
     }
   }
   @media only screen and (max-width: 599px){
-    .form-item {
-      width: 100%;
-      &:nth-child(3), &:nth-child(4) {
-        width: 50%;
+    form .form-item {
+      &:nth-child(1), &:nth-child(2) {
+        width: 100%;
       }
     }
   }
   ${props => !props.formSent && `
     @media only screen and (max-width: 729px) and (max-height: 699px){
-      height: 130%;
+      height: 150%;
     }
   `}
 `

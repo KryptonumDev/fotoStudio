@@ -22,8 +22,8 @@ const PrivacyPolicyContent = () => {
               <li>Korzystając z dostępnych w tym zakresie narzędzi, dostosowujemy w sposób automatyczny zawartość strony do Twoich indywidualnych zainteresowań, potrzeb, preferencji i działań podejmowanych w ramach naszej strony w przeszłości.</li>
               <li>Wykorzystujemy narzędzia funkcjonujące w oparciu o pliki cookies, zarówno własne, jak i pliki cookies podmiotów trzecich. W ramach tych narzędzi nie mamy dostępu do informacji, które pozwalałaby nam na Twoją identyfikację. Są to różnego rodzaju narzędzia analityczne, marketingowe, społecznościowe i komunikacyjne. Część z tych narzędzi wiąże się z zaimplementowaniem specjalnych skryptów śledzących.</li>
               <li>Dajemy Ci możliwość zarządzania ustawieniami plików cookies bezpośrednio z poziomu naszej strony. Możesz w ten sposób włączać i wyłączać poszczególne narzędzia oraz odpowiadające im pliki cookies.</li>
-              <li>Możesz również zarządzać ustawieniami plików cookies z poziomu przeglądarki internetowej lub instalując specjalne dodatki pozwalające na kontrolę nad plikami cookies, takie jak np. Ghostery (https://www.ghostery.com).</li>
-              <li>Możesz również zarządzać ustawieniami reklamy behawioralnej, przechodząc do strony http://www.youronlinechoices.com/.</li>
+              <li>Możesz również zarządzać ustawieniami plików cookies z poziomu przeglądarki internetowej lub instalując specjalne dodatki pozwalające na kontrolę nad plikami cookies, takie jak np. <a href="https://www.ghostery.com" target="_blank" rel="noreferrer">Ghostery</a>.</li>
+              <li>Możesz również zarządzać ustawieniami reklamy behawioralnej, przechodząc do strony <a href="https://www.youronlinechoices.com/" target="_blank" rel="noreferrer">YourOnlineChoices</a>.</li>
               <li>W ramach zawartości strony mogą znajdować się linki do witryn zewnętrznych zarządzanych przez podmioty trzecie. Nie ponosimy odpowiedzialności za zasady przetwarzania danych osobowych i wykorzystywania plików cookies przez operatorów witryn zewnętrznych. Szczegółów w tym zakresie możesz szukać w politykach prywatności witryn zewnętrznych.</li>
               <li>Strona przechowywana jest na serwerze zewnętrznym, który, tak jak każdy serwer, generuje logi. W logach przechowywane są informacje takie jak adres IP, data i czas serwera, informacje o przeglądarce internetowej i systemie operacyjnym. Logi służą wyłącznie celom operacyjnym i technicznym.</li>
             </ul>
@@ -77,7 +77,7 @@ const PrivacyPolicyContent = () => {
           <div className="column">
             <p>Cookies to niewielkie informacje tekstowe, przechowywane na Twoim urządzeniu końcowym (np. komputerze, tablecie, smartfonie), które mogą być odczytywane przez nasz system teleinformatyczny (cookies własne) lub system teleinformatyczny podmiotów trzecich (cookies podmiotów trzecich).</p>
             <p>Niektóre używane przez nas cookies są usuwane po zakończeniu sesji przeglądarki internetowej, tzn. po jej zamknięciu (tzw. cookies sesyjne). Inne cookies są zachowywane na Twoim urządzeniu końcowym i umożliwiają nam rozpoznanie Twojej przeglądarki przy kolejnym wejściu na stronę (trwałe cookies).</p>
-            <p>Jeżeli chcesz dowiedzieć się więcej o plikach cookies jako takich, możesz zapoznać się np. z tym materiałem: <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="noreferrer">https://pl.wikipedia.org/wiki/HTTP_cookie</a>.</p>
+            <p>Jeżeli chcesz dowiedzieć się więcej o plikach cookies jako takich, możesz zapoznać się np. z tym materiałem <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="noreferrer">HTTP cookie</a>.</p>
             <p>Poniżej znajdziesz natomiast szczegółowe informacje na temat plików cookies funkcjonujących w ramach naszej strony.</p>
             <p>Podczas pierwszej wizyty na stronie wyświetlana jest Ci informacja na temat stosowania plików cookies wraz z pytaniem o zgodę na wykorzystywanie tych plików.</p>
           </div>
@@ -102,6 +102,13 @@ const StyledPrivacy = styled.section`
   &.sec {
     height: auto;
     overflow: unset;
+  }
+  a {
+    font-weight: 600;
+    font-style: italic;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .max-width {
     @media only screen and (min-width: 729px) and (max-width: 1824px){

@@ -39,16 +39,9 @@ const Footer = () => {
         <div className="footer-info">
           <Logo className="footer-logo" />
           <div className="footer-inTouch">
-            <a href={`mailto:${footer.email}`}>
-              <span>{footer.email}</span>
-              <ArrowRight fill="#fff" />
-            </a>
-            <a href={footer.addressMaps} target="_blank" rel="noreferrer"><span>{footer.address}</span></a>
-            <p>
-              <a href={`tel:+48${footer.phone1.replace(/\s/g,'')}`}><span>{footer.phone1}</span></a>
-              &nbsp;|&nbsp;
-              <a href={`tel:+48${footer.phone2.replace(/\s/g,'')}`}><span>{footer.phone2}</span></a>
-            </p>
+            <p><a href={`mailto:${footer.email}`}>{footer.email}</a></p>
+            <p><a href={footer.addressMaps} target="_blank" rel="noreferrer">{footer.address}</a></p>
+            <p><a href={`tel:+48${footer.phone1.replace(/\s/g,'')}`}><span>{footer.phone1}</span></a></p>
           </div>
           <div className="footer-social">
             <a href={footer.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
@@ -104,23 +97,12 @@ const StyledFooter = styled.footer`
       height: auto;
     }
     .footer-inTouch {
-      & > a {
+      & > p {
         &:first-child {
           font-family: "DM Serif Display", serif;
         }
-        display: block;
         margin-bottom: 8px;
-        span, svg {
-          vertical-align: middle;
-        }
-        svg {
-          width: 30px;
-          height: 30px;
-        }
       }
-    }
-    a span {
-      text-decoration: underline;
     }
     .footer-social {
       display: flex;
@@ -135,12 +117,6 @@ const StyledFooter = styled.footer`
       text-align: center;
       display: flex;
       justify-content: space-between;
-      & > li:last-child {
-        text-align: left;
-        a {
-          font-size: ${12/16}rem;
-        }
-      }
       & > li ul li {
         margin-top: 13px;
       }

@@ -11,7 +11,6 @@ const ContactDetails = ({data}) => {
         address
         addressMaps
         phone1
-        phone2
         instagram
         facebook
       }
@@ -28,12 +27,7 @@ const ContactDetails = ({data}) => {
             <p>Adam Chrapek</p>
             <p><a href={details.addressMaps} target="_blank" rel="noreferrer">{details.address}</a></p>
             <p><a href={`mailto:${details.email}`}>{details.email}</a></p>
-            <p>
-              <a href={`tel:+48${details.phone1.replace(/\s/g,'')}`}>{details.phone1}</a>
-              &nbsp;|&nbsp;
-              <a href={`tel:+48${details.phone2.replace(/\s/g,'')}`}>{details.phone2}</a>
-            </p>
-            <p></p>
+            <p><a href={`tel:+48${details.phone1.replace(/\s/g,'')}`}>{details.phone1}</a></p>
           </div>
         </header>
       </div>
@@ -60,13 +54,20 @@ const StyledDetails = styled.section`
     }
     a {
       margin-top: min(${34/10.8}vh, ${34/16}rem);
+      user-select: all;
     }
   }
   .details-info {
     margin-top: 2em;
-    font-family: var(--serif-font);
     p {
-      margin-bottom: .4em;
+      &:first-child {
+        font-size: 1.4em;
+      }
+      font-size: 1.2em;
+      font-family: var(--serif-font);
+      &:not(:last-child){
+        margin-bottom: .4em;
+      }
     }
   }
   .hero-img {
@@ -98,9 +99,6 @@ const StyledDetails = styled.section`
       h2 {
         font-size: ${34/16}rem;
         margin-bottom: 1rem;
-      }
-      .details-info p {
-        font-size: ${18/16}rem;
       }
       header {
         max-width: 100%;
