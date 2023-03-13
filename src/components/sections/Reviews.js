@@ -7,16 +7,32 @@ const reviews = [
     author: "Bartosz Janicki"
   },
   {
-    content: "Niezwykle dyskretny a zarazem pełny empatii fotograf ;) zarazem z dużym doświadczeniem i warsztatem. Polecam gorąco na sesje portretowe, plenerowe oraz okolicznościowe.",
+    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
+    author: "Sandra Hachuła"
+  },
+  {
+    content: "Profesjonalne, fotograficzne oko z wrażliwością na szczegóły! Polecam! 💛",
+    author: "Samanta Zwolennik"
+  },
+  {
+    content: "Miła współpraca, zdjęcia wyszły przepiękne!Polecam gorąco ❤️!!!!",
+    author: "Marta Adrzejewska"
+  },
+  {
+    content: "Jeśli chcesz mieć piękne pamiątki w postaci zdjęć, a przy tym liczy się dla Ciebie atmosfera podczas sesji, to wybór jest oczywisty - Pan Adam Chrapek. Każda sesja przebiegła miło i przyjemnie, a do zdjęć ciągle  wracamy i oglądamy z uśmiechem.",
+    author: "Piotr Romański"
+  },
+  {
+    content: "Niezwykle dyskretny a zarazem pełny empatii fotograf;) zarazem z dużym doświadczeniem i warsztatem. Polecam gorąco na sesje portretowe, plenerowe oraz okolicznościowe.",
     author: "Anna Chrapek-Budacz"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie! Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
-    author: "Sandra Hachuła"
+    content: "Bardzo sympatyczny Pan fotograf",
+    author: "Marcin Rynecki"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
-    author: "Sandra Hachuła"
+    content: "Szybka i fachowa obsługa 🤘",
+    author: "Bartek Pogocki"
   },
 ]
 
