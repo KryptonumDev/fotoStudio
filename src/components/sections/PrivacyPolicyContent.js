@@ -21,7 +21,6 @@ const PrivacyPolicyContent = () => {
               <li>Śledzimy i analizujemy Twoje zachowania podejmowane w ramach naszej strony internetowej w celach statystycznych oraz optymalizacji naszej strony.</li>
               <li>Korzystając z dostępnych w tym zakresie narzędzi, dostosowujemy w sposób automatyczny zawartość strony do Twoich indywidualnych zainteresowań, potrzeb, preferencji i działań podejmowanych w ramach naszej strony w przeszłości.</li>
               <li>Wykorzystujemy narzędzia funkcjonujące w oparciu o pliki cookies, zarówno własne, jak i pliki cookies podmiotów trzecich. W ramach tych narzędzi nie mamy dostępu do informacji, które pozwalałaby nam na Twoją identyfikację. Są to różnego rodzaju narzędzia analityczne, marketingowe, społecznościowe i komunikacyjne. Część z tych narzędzi wiąże się z zaimplementowaniem specjalnych skryptów śledzących.</li>
-              <li>Dajemy Ci możliwość zarządzania ustawieniami plików cookies bezpośrednio z poziomu naszej strony. Możesz w ten sposób włączać i wyłączać poszczególne narzędzia oraz odpowiadające im pliki cookies.</li>
               <li>Możesz również zarządzać ustawieniami plików cookies z poziomu przeglądarki internetowej lub instalując specjalne dodatki pozwalające na kontrolę nad plikami cookies, takie jak np. <a href="https://www.ghostery.com" target="_blank" rel="noreferrer">Ghostery</a>.</li>
               <li>Możesz również zarządzać ustawieniami reklamy behawioralnej, przechodząc do strony <a href="https://www.youronlinechoices.com/" target="_blank" rel="noreferrer">YourOnlineChoices</a>.</li>
               <li>W ramach zawartości strony mogą znajdować się linki do witryn zewnętrznych zarządzanych przez podmioty trzecie. Nie ponosimy odpowiedzialności za zasady przetwarzania danych osobowych i wykorzystywania plików cookies przez operatorów witryn zewnętrznych. Szczegółów w tym zakresie możesz szukać w politykach prywatności witryn zewnętrznych.</li>
@@ -45,14 +44,13 @@ const PrivacyPolicyContent = () => {
               <li>prawo do przenoszenia danych (masz prawo otrzymać od nas w ustrukturyzowanym, powszechnie używanym formacie nadającym się do odczytu maszynowego dane osobowe, które dostarczyłeś nam na podstawie umowy lub Twojej zgody; możesz nam zlecić przesłanie tych danych bezpośrednio innemu podmiotowi),</li>
               <li>prawo wniesienia skargi do organu nadzorczego (jeżeli stwierdzisz, że przetwarzamy dane niezgodnie z prawem, możesz złożyć w tej sprawie skargę do Prezesa Urzędu Ochrony Danych Osobowych lub innego właściwego organu nadzorczego).</li>
             </ul>
-            <p>Zasady związane z realizacją wskazanych powyżej uprawnień zostały opisane szczegółowo w art. 16 - 21 RODO. Zachęcamy do zapoznania się z tymi przepisami. Ze swojej strony uważamy za potrzebne wyjaśnić Ci, że wskazane powyżej uprawnienia nie są bezwzględne i nie będą przysługiwać Ci w stosunku do wszystkich czynności przetwarzania Twoich danych osobowych. Podkreślamy, że jedno z uprawnień wskazanych powyżej przysługuje Ci zawsze - jeżeli uznasz, że przy przetwarzaniu Twoich danych osobowych dopuściliśmy się naruszenia przepisów o ochronie danych osobowych, masz możliwość wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych). Zawsze możesz również zwrócić się do nas z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy. Wystarczy, że wyślesz wiadomość na adres kontakt@adamchrapek.pl Dołożyliśmy jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.</p>
+            <p>Zasady związane z realizacją wskazanych powyżej uprawnień zostały opisane szczegółowo w art. 16 - 21 RODO. Zachęcamy do zapoznania się z tymi przepisami. Ze swojej strony uważamy za potrzebne wyjaśnić Ci, że wskazane powyżej uprawnienia nie są bezwzględne i nie będą przysługiwać Ci w stosunku do wszystkich czynności przetwarzania Twoich danych osobowych. Podkreślamy, że jedno z uprawnień wskazanych powyżej przysługuje Ci zawsze - jeżeli uznasz, że przy przetwarzaniu Twoich danych osobowych dopuściliśmy się naruszenia przepisów o ochronie danych osobowych, masz możliwość wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych). Zawsze możesz również zwrócić się do nas z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy. Wystarczy, że wyślesz wiadomość na adres <a href="mailto:kontakt@adamchrapek.pl">kontakt@adamchrapek.pl</a> Dołożyliśmy jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.</p>
             <p><strong>Bezpieczeństwo.</strong> Zapewniamy poufność wszelkich przekazanych nam danych osobowych. Zapewniamy podjęcie odpowiednich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.</p>
             <p>Odbiorcy danych. Twoje dane osobowe mogą być przetwarzane przez podmioty, z których usług korzystamy, a których usługi wiążą się lub mogą wiązać się z przetwarzaniem danych osobowych. Chodzi o, w szczególności, następujące podmioty:</p>
             <ul>
               <li>hostingodawca - na serwerze przechowywane są Twoje dane osobowe,</li>
               <li>dostawca usługi poczty elektronicznej - w ramach poczty elektronicznej dochodzi do przetwarzania Twoich danych osobowych,</li>
               <li>dostawcy oprogramowania chmurowego, takiego jak system mailingowy, fakturowy, księgowy, system CRM - w ramach oprogramowania przetwarzane są Twoje dane osobowe,</li>
-              <li>firmy kurierskie - firmy te przetwarzają Twoje dane osobowe w celu doręczenia do Ciebie przesyłki,</li>
               <li>biuro rachunkowe - biuro przetwarza Twoje dane osobowe zawarte na fakturach i innych dokumentach księgowych,</li>
               <li>podmiot świadczący usługi w zakresie obsługi technicznej strony internetowej - podmiot ten może uzyskiwać dostęp do Twoich danych w związku z pracami technicznymi dotyczącymi tych obszarów, w których przetwarzane są dane,</li>
               <li>podmiot świadczący usługi marketingowe - podmiot ten może uzyskiwać dostęp do Twoich danych osobowych w zakresie, jaki jest niezbędny do realizacji powierzonych działań marketingowych.</li>
@@ -78,8 +76,6 @@ const PrivacyPolicyContent = () => {
             <p>Cookies to niewielkie informacje tekstowe, przechowywane na Twoim urządzeniu końcowym (np. komputerze, tablecie, smartfonie), które mogą być odczytywane przez nasz system teleinformatyczny (cookies własne) lub system teleinformatyczny podmiotów trzecich (cookies podmiotów trzecich).</p>
             <p>Niektóre używane przez nas cookies są usuwane po zakończeniu sesji przeglądarki internetowej, tzn. po jej zamknięciu (tzw. cookies sesyjne). Inne cookies są zachowywane na Twoim urządzeniu końcowym i umożliwiają nam rozpoznanie Twojej przeglądarki przy kolejnym wejściu na stronę (trwałe cookies).</p>
             <p>Jeżeli chcesz dowiedzieć się więcej o plikach cookies jako takich, możesz zapoznać się np. z tym materiałem <a href="https://pl.wikipedia.org/wiki/HTTP_cookie" target="_blank" rel="noreferrer">HTTP cookie</a>.</p>
-            <p>Poniżej znajdziesz natomiast szczegółowe informacje na temat plików cookies funkcjonujących w ramach naszej strony.</p>
-            <p>Podczas pierwszej wizyty na stronie wyświetlana jest Ci informacja na temat stosowania plików cookies wraz z pytaniem o zgodę na wykorzystywanie tych plików.</p>
           </div>
         </div>
         <div className="wrapper">
@@ -136,6 +132,9 @@ const StyledPrivacy = styled.section`
         }
       }
     }
+  }
+  @media (max-width: 599px){
+    padding-bottom: 0;
   }
 `
  
