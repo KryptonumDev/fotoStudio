@@ -35,5 +35,7 @@ export const onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
 }
 
 export const wrapPageElement = ({ props, element }) => {
-  return <Layout {...props}>{element}</Layout>
+  if(!props.path.includes("przerwa-techniczna")){
+    return <Layout {...props}>{element}</Layout>
+  }
 }

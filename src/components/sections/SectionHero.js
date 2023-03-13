@@ -11,7 +11,7 @@ const SectionHero = ({heading, copy, image, button}) => {
         <header>
           <h1>{heading}</h1>
           {copy && copy.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
+            <p key={i} dangerouslySetInnerHTML={{__html: paragraph}}></p>
           ))}
           {button && (
             <Button to={button.to}>{button.text}</Button>
