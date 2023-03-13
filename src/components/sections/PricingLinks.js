@@ -28,6 +28,14 @@ const PricingLinks = ({location}) => {
           gatsbyImageData(placeholder: BLURRED)
           alt
         }
+        sklepStacjonarny {
+          gatsbyImageData(placeholder: BLURRED)
+          alt
+        }
+        fotografiaAnalogowa {
+          gatsbyImageData(placeholder: BLURRED)
+          alt
+        }
       }
     }
   `);
@@ -35,7 +43,7 @@ const PricingLinks = ({location}) => {
     {
       id: 1,
       name: 'Ślub',
-      href: '?type=slub',
+      href: '?typ=slub',
       heading: 'Ślub',
       price: '2000',
       image: {
@@ -64,7 +72,7 @@ const PricingLinks = ({location}) => {
     {
       id: 2,
       name: 'Chrzest',
-      href: '?type=chrzest',
+      href: '?typ=chrzest',
       heading: 'Chrzest',
       price: '500',
       image: {
@@ -87,7 +95,7 @@ const PricingLinks = ({location}) => {
     {
       id: 3,
       name: 'Komunia',
-      href: '?type=komunia',
+      href: '?typ=komunia',
       heading: 'Komunia',
       price: '400',
       image: {
@@ -107,12 +115,26 @@ const PricingLinks = ({location}) => {
     {
       id: 4,
       name: 'Oferta stacjonarna',
-      href: '/slub'
+      href: '?typ=stacjonarna',
+      heading: 'Skleb stacjonarny',
+      price: '',
+      image: {
+        gatsbyImageData: grid.sklepStacjonarny.gatsbyImageData,
+        alt: grid.sklepStacjonarny.alt || ''
+      },
+      copy:`<p>W sklepie stacjonarnym możesz skorzystać z następujących usług:</p>
+            <ul>
+              <li><strong>Przygotuję</strong> dla Ciebie zdjęcia do dokumentów w mniej niż 15 minut.</li>
+              <li><strong>Zorganizuję</strong> dla Ciebie profesjonalną sesję zdjęciową (patrz: cennik fotografii reportażowej).</li>
+              <li><strong>Zrobię</strong> zdjęcia Twoich produktów, abyś mógł rozwijać swoją firmę w sieci (patrz: cennik fotografii produktowej).</li>
+              <li><strong>Udostępnię</strong> Ci studio i podzielę się wiedzą oraz najlepszymi praktykami (cena do uzgodnienia).</li>
+            </ul>
+      `,
     },
     {
       id: 5,
       name: 'Biznesowa',
-      href: '?type=biznesowa',
+      href: '?typ=biznesowa',
       heading: 'Sesja Biznesowa',
       price: '300',
       image: {
@@ -127,7 +149,7 @@ const PricingLinks = ({location}) => {
     {
       id: 6,
       name: 'Produktowa',
-      href: '?type=produktowa',
+      href: '?typ=produktowa',
       heading: 'Sesja Produktowa',
       price: '',
       image: {
@@ -141,7 +163,21 @@ const PricingLinks = ({location}) => {
     {
       id: 7,
       name: 'Analogowa',
-      href: '/slub'
+      href: '?typ=analogowa',
+      heading: 'Analogowa',
+      price: '',
+      image: {
+        gatsbyImageData: grid.fotografiaAnalogowa.gatsbyImageData,
+        alt: grid.fotografiaAnalogowa.alt || ''
+      },
+      copy:`<p>W ramach sesji produktowych wykonuję przede wszystkim zdjęcia, które zostaną umieszczone na opakowaniach, wykorzystane na portalach aukcyjnych lub do promocji produktów, działań marketingowych i reklamy.</p>
+            <p>W ramach fotografii analogowej oferuję:</p>
+            <ul>
+              <li><strong>Cyfryzację</strong> / digitalizację zdjęć.</li>
+              <li><strong>Rekonstrukcję</strong> starych fotografii.</li>
+              <li><strong>Sesje</strong> zdjęciowe aparatem analogowym.</li>
+            </ul>
+      `,
     },
     {
       id: 8,
@@ -165,11 +201,11 @@ const PricingLinks = ({location}) => {
   }, [])
 
   useEffect(() => {
-    const type = new URLSearchParams(location.search).get('type');
-    if(type){
+    const typ = new URLSearchParams(location.search).get('typ');
+    if(typ){
       document.getElementById('zobacz')?.scrollIntoView();
     }
-    const element = document.querySelector(`.links-wrapper a[href="/cennik/?type=${type}"]`);
+    const element = document.querySelector(`.links-wrapper a[href="/cennik/?typ=${typ}"]`);
     if(element){
       setComponentShowId(element.getAttribute('data-key'));
       component.current.classList.add('active');
