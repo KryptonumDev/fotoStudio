@@ -34,19 +34,19 @@ export const query = graphql`
   query {
     home: datoCmsHome {
       hero {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       hello {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       lab {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       slider {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
     }

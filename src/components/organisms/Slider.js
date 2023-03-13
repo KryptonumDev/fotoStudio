@@ -35,7 +35,7 @@ const Slider = ({data}) => {
   );
 }
 
-const StyledSlider = styled.section`
+const StyledSlider = styled.div`
   width: 60%;
   position: absolute;
   right: 0;

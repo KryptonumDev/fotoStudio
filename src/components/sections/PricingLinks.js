@@ -9,11 +9,11 @@ const PricingLinks = ({location}) => {
     query {
       grid: datoCmsPricing {
         slub {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
         komunia {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
         biznesowa {
@@ -21,11 +21,11 @@ const PricingLinks = ({location}) => {
           alt
         }
         chrzest {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
         produktowa {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
       }

@@ -48,7 +48,6 @@ const ContactForm = () => {
   useEffect(() => {
     document.cookie.indexOf('formSent=true') !== -1 && setFormSent(true);
 
-
     const form = document.querySelector('.form');
     const scrollSnap = document.querySelector('.scrollSnap');
     const handleScroll = () => {

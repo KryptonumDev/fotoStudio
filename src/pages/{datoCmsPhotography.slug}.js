@@ -12,7 +12,7 @@ const PhotographyPage = ({data: {photography}}) => {
   inject();
   const scrollRestoration = useScrollRestoration(`PhotographyPage`);
   return (
-    <div className="scrollSnap" style={{scrollSnapType:"none"}} {...scrollRestoration}>
+    <div className="scrollSnap" style={{scrollSnapType:"BLURRED"}} {...scrollRestoration}>
       <PageIndicator>
         <SectionHero
           heading={photography.name}
@@ -33,18 +33,18 @@ export const query = graphql`
       name
       slug
       hero {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       heroCopy
       gallery {
         heading
         galleryLeft {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
         galleryRight {
-          gatsbyImageData(placeholder: NONE)
+          gatsbyImageData(placeholder: BLURRED)
           alt
         }
       }

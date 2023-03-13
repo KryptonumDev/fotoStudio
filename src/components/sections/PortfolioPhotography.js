@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Slider from "../organisms/Slider";
 import Button from "../atoms/Button";
 
 const PortfolioPhotography = ({id, slider, heading, content, button}) => {
+  useEffect(() => {
+    const photography = document.querySelectorAll('.photography');
+    const scrollSnap = document.querySelector('.scrollSnap');
+    const handleScroll = () => {
+      photography.forEach(e => {
+        let target = e.getBoundingClientRect();
+        if(target.height > window.innerHeight){
+          if(target.bottom <= window.innerHeight*1.1){
+            e.style.scrollSnapAlign = 'end';
+          } else {
+            e.style = 'null';
+          }
+        }
+      })
+    }
+    scrollSnap.addEventListener('scroll', handleScroll);
+  }, [])
+
   return (
     <StyledPhotography className="photography sec" id={id || ''}>
       <div className="max-width">
@@ -61,10 +79,11 @@ const StyledPhotography = styled.section`
   }
   @media only screen and (max-width: 1299px) and (max-height: 889px){
     &.sec {
-      height: 200%;
+      height: 160%;
     }
     .slider {
-      bottom: 25%;
+      bottom: 30%;
+      transform: translateY(50%);
     }
   }
   @media only screen and (max-width: 1299px) and (max-height: 689px){

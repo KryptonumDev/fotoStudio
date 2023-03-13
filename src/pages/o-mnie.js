@@ -46,19 +46,19 @@ export const query = graphql`
   query {
     about: datoCmsAboutMe {
       hero {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       slider {
-        gatsbyImageData(placeholder: NONE, width: 400)
+        gatsbyImageData(placeholder: BLURRED, width: 400)
         alt
       }
       cooperation {
-        gatsbyImageData(placeholder: NONE)
+        gatsbyImageData(placeholder: BLURRED)
         alt
       }
       slider2 {
-        gatsbyImageData(placeholder: NONE, width: 400)
+        gatsbyImageData(placeholder: BLURRED, width: 400)
         alt
       }
     }

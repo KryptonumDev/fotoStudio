@@ -44,6 +44,16 @@ const StyledCooperation = styled.section`
     z-index: -1;
     width: 50%;
     height: 100%;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, #000, rgba(0,0,0,0) 30%);
+    }
   }
   @media only screen and (max-width: 729px){
     align-items: flex-end;
@@ -68,13 +78,6 @@ const StyledCooperation = styled.section`
         object-position: 60%;
       }
       &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
         background: linear-gradient(rgba(0,0,0,0) 30%, #000 80%);
       }
     }
