@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/(.*(?!/przerwa-techniczna))", "destination": "/przerwa-techniczna" }
+    { "source": "/((?!przerwa-techniczna).*)", "destination": "/przerwa-techniczna" }
   ]
 }
