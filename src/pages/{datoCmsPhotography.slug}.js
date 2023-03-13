@@ -12,7 +12,7 @@ const PhotographyPage = ({data: {photography}}) => {
   inject();
   const scrollRestoration = useScrollRestoration(`PhotographyPage`);
   return (
-    <div className="scrollSnap" style={{scrollSnapType:"BLURRED"}} {...scrollRestoration}>
+    <div className="scrollSnap" style={{scrollSnapType: 'none'}} {...scrollRestoration}>
       <PageIndicator>
         <SectionHero
           heading={photography.name}

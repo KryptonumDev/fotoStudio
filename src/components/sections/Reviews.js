@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const reviews = [
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",
-    author: "Sandra Hachuła"
+    content: "Chciałbym szczerze polecić Foto Studio u Pana Adama Chrapka w Łasku. Profesjonalny sprzęt, super doradztwo i miła obsługa oraz co ważne terminowość. Naprawdę można tutaj polegać na tej firmie.",
+    author: "Bartosz Janicki"
   },
   {
-    content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej.",
-    author: "Sandra Hachuła"
+    content: "Niezwykle dyskretny a zarazem pełny empatii fotograf ;) zarazem z dużym doświadczeniem i warsztatem. Polecam gorąco na sesje portretowe, plenerowe oraz okolicznościowe.",
+    author: "Anna Chrapek-Budacz"
   },
   {
     content: "Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie! Powierzyłam sesję naszego zespołu Panu Adamowi, gdyż robią piękne portrety biznesowe i zdjęcia w kolorystyce czarno-białej. Sesja i studio i atmosfera są niezapomnianą przygodą, ciekawym przeżyciem i oswajają z pracą przed obiektywem. Zdjęcia wyszły rewelacyjnie!",

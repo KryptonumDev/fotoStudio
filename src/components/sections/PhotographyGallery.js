@@ -54,9 +54,12 @@ const StyledGallery = styled.section`
   &.sec {
     height: auto;
   }
-  padding-top: ${400/10.8}vh;
+  padding: ${400/10.8}vh 0;
   .max-width {
     max-width: 1584px;
+    @media only screen and (min-width: 729px) and (max-width: 1824px){
+      max-width: calc(100% - ${336/19.2}vw);
+    }
   }
   .gallery-wrapper {
     display: flex;
@@ -71,7 +74,7 @@ const StyledGallery = styled.section`
       left: 50%;
       transform: translate(-50%, -100%);
       top: 0;
-      font-size: ${310/19.2}vw;
+      font-size: min(${310/19.2}vw, ${350/16}rem);
       will-change: transform;
       transition: transform .05s;
       mix-blend-mode: hard-light;
