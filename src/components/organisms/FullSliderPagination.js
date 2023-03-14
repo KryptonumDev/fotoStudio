@@ -88,6 +88,9 @@ const StyledSliderPagination = styled.div`
     &.active span {
       transform: scale(1.618);
     }
+    &:hover svg {
+      fill: currentColor;
+    }
     svg {
       padding: 6px;
       width: 100%;

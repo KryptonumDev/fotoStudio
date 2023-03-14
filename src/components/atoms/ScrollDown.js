@@ -24,6 +24,9 @@ const StyledArrow = styled.a`
   }
   bottom: 21px;
   padding: 5px;
+  &:hover svg {
+    fill: currentColor;
+  }
   svg {
     width: 38px;
     height: 38px;

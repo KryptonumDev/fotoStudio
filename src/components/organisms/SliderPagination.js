@@ -63,11 +63,16 @@ const StyledSliderPagination = styled.div`
     margin: 0 ${24/16}rem;
     font-family: "DM Serif Display", serif;
   }
-  button svg {
-    width: 44px;
-    height: 44px;
-    margin: auto;
-    display: block;
+  button {
+    &:hover svg {
+      fill: currentColor;
+    }
+    svg {
+      width: 44px;
+      height: 44px;
+      margin: auto;
+      display: block;
+    }
   }
   @media only screen and (max-width: 999px){
     margin-top: 1rem;

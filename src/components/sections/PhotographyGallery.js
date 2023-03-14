@@ -78,6 +78,7 @@ const StyledGallery = styled.section`
       will-change: transform;
       transition: transform .05s;
       mix-blend-mode: hard-light;
+      pointer-events: none;
     }
   }
   .gallery-left, .gallery-right {
@@ -85,6 +86,13 @@ const StyledGallery = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .gallery-item {
+    transition: filter .2s;
+    will-change: filter;
+    &:not(:hover) {
+      filter: grayscale(100%);
+    }
   }
   @media (max-width: 990px){
     .max-width {

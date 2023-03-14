@@ -325,6 +325,7 @@ const StyledForm = styled.section`
     }
   }
   .sent {
+    animation: sent .6s;
     width: 100%;
     text-align: center;
     header {
@@ -342,6 +343,14 @@ const StyledForm = styled.section`
     > svg {
       width: 60%;
       max-width: 233px;
+    }
+  }
+  @keyframes sent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
   @media only screen and (max-width: 1199px){
