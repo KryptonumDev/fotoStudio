@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    { 
+      "source": "/wspolpraca/",
+      "destination": "/kontakt/", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/sesje-biznesowe/",
+      "destination": "/portfolio/", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/sesje-rodzinne/",
+      "destination": "/portfolio/", 
+      "statusCode": 301
+    }
+  ]
+}
