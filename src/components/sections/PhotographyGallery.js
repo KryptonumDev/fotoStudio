@@ -6,7 +6,6 @@ const PhotographyGallery = ({data}) => {
   useEffect(() => {
     const headings = document.querySelectorAll('.gallery h2');
     const handleScroll = () => {
-      console.log('he');
       headings.forEach(e => {
         if(e.getBoundingClientRect().top <= window.innerHeight && e.getBoundingClientRect().bottom >= 0){
           e.style.transform = `translate(-50%, ${e.getBoundingClientRect().top / window.innerHeight * 100 * -1}%)`;
@@ -88,24 +87,10 @@ const StyledGallery = styled.section`
     justify-content: space-between;
   }
   .gallery-item {
-    transition: filter .2s;
+    transition: filter .3s;
     will-change: filter;
     &:not(:hover) {
       filter: grayscale(100%);
-    }
-  }
-  @media (max-width: 990px){
-    .max-width {
-      width: 100%;
-    }
-    .gallery-wrapper {
-      flex-direction: column;
-    }
-    .gallery-item:nth-child(1n) {
-      transform: translateX(-21px);
-    }
-    .gallery-item:nth-child(2n) {
-      transform: translateX(21px);
     }
   }
 `
