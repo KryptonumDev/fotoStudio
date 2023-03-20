@@ -94,6 +94,7 @@ const StyledGallery = styled.section`
     }
   }
   @media (max-width: 990px){
+    padding: ${300/10.8}vh 0 ${150/10.8}vh;
     .max-width {
       width: 100%;
     }
