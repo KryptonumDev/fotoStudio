@@ -93,6 +93,20 @@ const StyledGallery = styled.section`
       filter: grayscale(100%);
     }
   }
+  @media (max-width: 990px){
+    .max-width {
+      width: 100%;
+    }
+    .gallery-wrapper {
+      flex-direction: column;
+    }
+    .gallery-item:nth-child(1n) {
+      transform: translateX(-21px);
+    }
+    .gallery-item:nth-child(2n) {
+      transform: translateX(21px);
+    }
+  }
 `
  
 export default PhotographyGallery;
