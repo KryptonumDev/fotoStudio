@@ -151,7 +151,7 @@ const ContactForm = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="adamchrapek@gmail.com"
+                      placeholder="adres@email.com"
                       onChange={e => setFormData({
                         ...formData,
                         [e.target.name]: e.target.value
