@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        exclude: ["/przerwa-techniczna/"],
+        excludes: ["/przerwa-techniczna"],
       },
     },
     {
