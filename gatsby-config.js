@@ -19,7 +19,12 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        exclude: ["/przerwa-techniczna/"],
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
