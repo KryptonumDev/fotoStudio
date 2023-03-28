@@ -7,7 +7,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Foto Studio`,
-    siteUrl: `https://www.adamchrapek.pl/`
+    siteUrl: `https://www.adamchrapek.pl`
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -24,7 +24,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.adamchrapek.pl',
-        sitemap: 'https://www.adamchrapek.pl/sitemap_index.xml',
+        sitemap: 'https://www.adamchrapek.pl/sitemap-index.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
     },
