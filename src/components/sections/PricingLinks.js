@@ -279,7 +279,7 @@ const StyledLinks = styled.section`
       text-align: center;
       font-size: clamp(${24/16}rem, ${42/19.2}vw, ${42/16}rem);
       font-family: var(--serif-font);
-      height: clamp(200px, ${288/10.8}vh, 288px);
+      height: clamp(136px, ${250/10.24}vh, 288px);
       border: 1px solid var(--color);
       &:hover, &:focus {
         background-color: var(--color);
@@ -291,19 +291,12 @@ const StyledLinks = styled.section`
     }
   }
   @media only screen and (max-width: 899px){
-    .max-width {
-      width: 100%;
-      overflow-x: auto;
-      padding: 0 1rem;
-      scroll-snap-align: x mandatory;
-    }
     .links-wrapper {
-      width: 180%;
-    }
-  }
-  @media only screen and (max-width: 549px){
-    .links-wrapper {
-      width: 280%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      a {
+        height: 110px;
+      }
     }
   }
   .component {
