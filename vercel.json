@@ -14,17 +14,6 @@
       "source": "/sesje-rodzinne/",
       "destination": "/portfolio/", 
       "statusCode": 301
-    },
-    { 
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "adamchrapek.pl"
-        }
-      ],
-      "destination": "https://www.adamchrapek.pl/:path*", 
-      "statusCode": 301
     }
   ]
 }
