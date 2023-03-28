@@ -10,7 +10,6 @@ export const Seo = ({title, children}) => {
           tags
         }
         globalSeo {
-          titleSuffix
           fallbackSeo {
             description
             title
@@ -25,8 +24,7 @@ export const Seo = ({title, children}) => {
   return (
     <>
       <HelmetDatoCms favicon={data.faviconMetaTags} />
-      <meta name="robots" content="noindex" />
-      <title>{title || data.globalSeo.fallbackSeo.title}{data.globalSeo.titleSuffix}</title>
+      <title>{title || data.globalSeo.fallbackSeo.title} - Foto Studio | Adam Chrapek</title>
       <meta name="description" content={data.globalSeo.fallbackSeo.description} />
 	    <meta property="og:description" content={data.globalSeo.fallbackSeo.description} />
 	    <meta property="og:image" content={data.globalSeo.fallbackSeo.image.url} />

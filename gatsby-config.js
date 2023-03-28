@@ -7,19 +7,24 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Foto Studio`,
-    siteUrl: `https://adamchrapek.pl/`
+    siteUrl: `https://www.adamchrapek.pl/`
   },
   plugins: [
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
+    {
+      resolve: "gatsby-plugin-image",
+      options: {
+        placeholder: `BLURRED`,
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://adamchrapek.pl',
-        sitemap: 'https://adamchrapek.pl/sitemap_index.xml',
+        host: 'https://www.adamchrapek.pl',
+        sitemap: 'https://www.adamchrapek.pl/sitemap_index.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
     },
@@ -33,7 +38,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://adamchrapek.pl`,
+        siteUrl: `https://www.adamchrapek.pl`,
       },
     },
   ]

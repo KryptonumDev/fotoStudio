@@ -33,7 +33,7 @@ export const query = graphql`
   query {
     pricing: datoCmsPricing {
       hero {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
     }

@@ -33,18 +33,18 @@ export const query = graphql`
       name
       slug
       hero {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
       heroCopy
       gallery {
         heading
         galleryLeft {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData
           alt
         }
         galleryRight {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData
           alt
         }
       }

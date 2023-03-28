@@ -24,7 +24,7 @@ export const query = graphql`
   query {
     about: datoCmsAboutMe {
       hero {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
     }

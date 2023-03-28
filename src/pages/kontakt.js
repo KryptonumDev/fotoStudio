@@ -42,15 +42,15 @@ export const query = graphql`
   query {
     contact: datoCmsContact {
       hero {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
       details {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
       slider {
-        gatsbyImageData(placeholder: BLURRED, width: 400)
+        gatsbyImageData
         alt
       }
     }

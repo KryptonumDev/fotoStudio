@@ -53,23 +53,23 @@ export const query = graphql`
   query {
     portfolio: datoCmsPortfolio {
       hero {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
       reportage {
-        gatsbyImageData(placeholder: BLURRED, width: 400)
+        gatsbyImageData
         alt
       }
       analog {
-        gatsbyImageData(placeholder: BLURRED, width: 400)
+        gatsbyImageData
         alt
       }
       product {
-        gatsbyImageData(placeholder: BLURRED, width: 400)
+        gatsbyImageData
         alt
       }
       pricing {
-        gatsbyImageData(placeholder: BLURRED)
+        gatsbyImageData
         alt
       }
     }

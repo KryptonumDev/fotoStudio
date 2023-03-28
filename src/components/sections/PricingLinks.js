@@ -116,7 +116,7 @@ const PricingLinks = ({location}) => {
       id: 4,
       name: 'Oferta stacjonarna',
       href: '?typ=stacjonarna',
-      heading: 'Skleb stacjonarny',
+      heading: 'Sklep stacjonarny',
       price: '',
       image: {
         gatsbyImageData: grid.sklepStacjonarny.gatsbyImageData,
@@ -170,10 +170,10 @@ const PricingLinks = ({location}) => {
         gatsbyImageData: grid.fotografiaAnalogowa.gatsbyImageData,
         alt: grid.fotografiaAnalogowa.alt || ''
       },
-      copy:`<p>W ramach sesji produktowych wykonuję przede wszystkim zdjęcia, które zostaną umieszczone na opakowaniach, wykorzystane na portalach aukcyjnych lub do promocji produktów, działań marketingowych i reklamy.</p>
+      copy:`<p>Fotografia analogowa, choć uważana przez wielu za przestarzałą, w ostatnich latach odzyskuje dawny blask. Zdjęcia robione przy pomocy kliszy mają unikatowy charakter i niepowtarzalne kolory, dlatego klienci sięgają po nie coraz chętniej.</p>
             <p>W ramach fotografii analogowej oferuję:</p>
             <ul>
-              <li><strong>Cyfryzację</strong> / digitalizację zdjęć.</li>
+              <li><strong>Cyfryzację / digitalizację</strong> zdjęć, abyś mógł na nowo cieszyć się wspomnieniami i dzielić się nimi z innymi.</li>
               <li><strong>Rekonstrukcję</strong> starych fotografii.</li>
               <li><strong>Sesje</strong> zdjęciowe aparatem analogowym.</li>
             </ul>
