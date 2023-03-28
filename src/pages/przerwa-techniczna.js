@@ -53,5 +53,6 @@ export const Head = () => (
   <Seo
     title="Przerwa techniczna"
   >
+    <meta name="robots" content="noindex"/>
   </Seo>
 )
